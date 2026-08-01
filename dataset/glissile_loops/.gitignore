@@ -1,0 +1,4 @@
+# Generated simulation outputs (large binary data)
+generated/
+**/raw/
+**/figures/frames/

@@ -1,0 +1,55 @@
+# Representative cases for elasticity-enabled glissile-loop dataset generation.
+# Physics settings are inherited from dataset/glissile_loops/SimpleGlide_001.
+
+representative_cases:
+  - case_type: single_loop
+    num_loops: 1
+    seed: 1
+    stress_scale: 1.0
+
+  - case_type: double_loop
+    num_loops: 2
+    seed: 2
+    stress_scale: 1.0
+
+  - case_type: triple_loop
+    num_loops: 3
+    seed: 3
+    stress_scale: 1.0
+
+  - case_type: six_loop
+    num_loops: 6
+    seed: 4
+    stress_scale: 1.0
+
+  - case_type: twelve_loop
+    num_loops: 12
+    seed: 5
+    stress_scale: 1.0
+
+  - case_type: line_loop
+    num_loops: 1
+    seed: 6
+    stress_scale: 1.0
+    box_size: 32.0
+
+  - case_type: binary_junction
+    num_loops: 0
+    seed: 7
+    stress_scale: 0.5
+    box_size: 32.0
+    max_step: 100
+
+# Additional stress perturbation sweep (single loop, box 32)
+stress_perturbations:
+  - stress_scale: 0.8
+    seed: 10
+  - stress_scale: 1.2
+    seed: 11
+
+# Field-of-view variants (subset visualization, same simulation box)
+fov_variants:
+  - field_of_view: 16.0
+    seed: 20
+  - field_of_view: 24.0
+    seed: 21

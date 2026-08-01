@@ -1,0 +1,57 @@
+# Authoritative reference configuration for elasticity-enabled glissile-loop DDD.
+# All generated dataset cases inherit these physics settings unless noted below.
+
+case_id: SimpleGlide_001
+description: Single BCC glissile prismatic loop with SimpleGlide mobility and DDD-FFT elasticity
+
+geometry:
+  case_type: single_loop
+  crystal: bcc
+  num_loops: 1
+  box_size: 32.0          # cubic 3D box: h = box_size * I_3
+  loop_radius: 6.72       # 0.21 * box_size
+  field_of_view: 32.0     # visualization extent (same as box for full view)
+  seed: 1
+
+material:
+  burgmag: 2.85e-10
+  mu: 55.0e9
+  nu: 0.339
+  a: 1.0
+
+discretization:
+  maxseg: 3.2             # 0.1 * box_size
+  minseg: 0.64            # 0.02 * box_size
+  rtol: 0.3
+  rann: 0.6
+  nextdt: 5.0e-13
+
+force:
+  mode: DDD_FFT_MODEL
+  Ngrid: 32
+
+mobility:
+  law: SimpleGlide
+  mob: 1000.0
+
+integrator:
+  type: Trapezoid
+
+collision:
+  mode: Retroactive
+
+topology:
+  mode: TopologySerial
+
+remesh:
+  rule: LengthBased
+
+loading:
+  mode: stress
+  applied_stress: [0.0, 0.0, 0.0, 0.0, 0.0, 2.0e8]  # Voigt [xx, yy, zz, yz, xz, xy] Pa
+
+simulation:
+  max_step: 200
+  print_freq: 10
+  write_freq: 10
+  plot_freq: 0
