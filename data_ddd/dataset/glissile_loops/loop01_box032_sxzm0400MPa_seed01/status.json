@@ -1,0 +1,8 @@
+{
+  "name": "loop01_box032_sxzm0400MPa_seed01",
+  "success": true,
+  "steps_completed": 47,
+  "termination_reason": "network fully annihilated",
+  "wall_time_s": 4.15,
+  "n_frames": 6
+}

@@ -1,0 +1,53 @@
+{
+  "checks": {
+    "sanity": {
+      "passed": true,
+      "detail": "is_sane: connectivity and Burgers conservation"
+    },
+    "min_degree": {
+      "passed": true,
+      "detail": "all nodes have >=2 arms"
+    },
+    "duplicate_nodes": {
+      "passed": true,
+      "detail": "no duplicate node positions"
+    },
+    "duplicate_links": {
+      "passed": true,
+      "detail": "no duplicate links"
+    },
+    "zero_length_segments": {
+      "passed": true,
+      "detail": "min segment length 1.141"
+    },
+    "segment_lengths": {
+      "passed": true,
+      "detail": "segment lengths in [1.14, 1.14], maxseg=1.92"
+    },
+    "burgers_consistency": {
+      "passed": true,
+      "detail": "all segments carry a nonzero Burgers vector"
+    },
+    "glide_planes": {
+      "passed": true,
+      "detail": "non-unit normals: 0, b.n != 0: 0, line out of plane: 0"
+    },
+    "inside_box": {
+      "passed": true,
+      "detail": "all nodes inside the simulation box"
+    },
+    "loop_separation": {
+      "passed": true,
+      "detail": "single primitive; no pairs to check"
+    },
+    "image_proximity": {
+      "passed": true,
+      "detail": "min distance to own periodic image 32 (threshold 1.0)"
+    },
+    "force_model": {
+      "passed": true,
+      "detail": "elasticity force model, mobility and material parameters present; stress tensor valid"
+    }
+  },
+  "passed": true
+}

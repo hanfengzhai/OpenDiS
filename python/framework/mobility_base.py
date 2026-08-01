@@ -4,6 +4,7 @@ MobilityLaw_Base: base class for MobilityLaw
 Defines the interface for the MobilityLaw module
 """
 
+import numpy as np
 from abc import ABC, abstractmethod 
 from framework.disnet_manager import DisNetManager
 

@@ -1,0 +1,60 @@
+{
+    "cell": {
+        "h": [
+            [
+                32.0,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                32.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                32.0
+            ]
+        ],
+        "origin": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "is_periodic": [
+            true,
+            true,
+            true
+        ]
+    },
+    "nodes": {
+        "tags": [],
+        "positions": [],
+        "constraints": []
+    },
+    "segs": {
+        "nodeids": [],
+        "burgers": [],
+        "planes": []
+    },
+    "version": "1.0",
+    "nodes_attr": [
+        "domain",
+        "index",
+        "x",
+        "y",
+        "z",
+        "constraint"
+    ],
+    "segs_attr": [
+        "node1",
+        "node2",
+        "bx",
+        "by",
+        "bz",
+        "nx",
+        "ny",
+        "nz"
+    ]
+}

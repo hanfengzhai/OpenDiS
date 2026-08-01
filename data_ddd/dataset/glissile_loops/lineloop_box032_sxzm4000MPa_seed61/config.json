@@ -1,0 +1,140 @@
+{
+  "name": "lineloop_box032_sxzm4000MPa_seed61",
+  "case_type": "lineloop",
+  "seed": 61,
+  "box_size": [
+    32.0,
+    32.0,
+    32.0
+  ],
+  "fov": [
+    32.0,
+    32.0,
+    32.0
+  ],
+  "loops": [
+    {
+      "center": [
+        4.0,
+        0.0,
+        0.0
+      ],
+      "radius": 6.0,
+      "burgers": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "n_nodes": 50
+    }
+  ],
+  "lines": [
+    {
+      "point": [
+        -9.0,
+        0.0,
+        0.0
+      ],
+      "direction": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "burgers": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "n_nodes": 42
+    }
+  ],
+  "applied_stress_voigt": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -4000000000.0,
+    0.0
+  ],
+  "stress_scale": 1.0,
+  "stress_perturb_frac": 0.0,
+  "dt": 1e-10,
+  "max_step": 200,
+  "write_freq": 10,
+  "intended_interaction": true,
+  "allow_boundary_proximity": false,
+  "notes": "periodic straight line (b=[100], n=[001]) and coplanar expanding loop -> line-loop reaction",
+  "derived": {
+    "applied_stress_tensor_Pa": [
+      [
+        0.0,
+        0.0,
+        -4000000000.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        -4000000000.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "voigt_order": [
+      "xx",
+      "yy",
+      "zz",
+      "yz",
+      "xz",
+      "xy"
+    ],
+    "numerical_params": {
+      "maxseg": 1.28,
+      "minseg": 0.32,
+      "rann": 0.096
+    },
+    "n_loops": 1,
+    "n_lines": 1,
+    "length_unit": "burgmag = 3e-10 m"
+  },
+  "reference": {
+    "description": "Fixed solver settings pinned to the SimpleGlide elasticity reference configuration",
+    "settings": {
+      "burgmag": 3e-10,
+      "mu": 50000000000.0,
+      "nu": 0.3,
+      "a": 1.0,
+      "force_mode": "Elasticity_SBA",
+      "Ec": null,
+      "mobility_law": "SimpleGlide",
+      "mob": 1.0,
+      "vmax": 1000000000.0,
+      "integrator": "EulerForward",
+      "split_mode": "MaxDiss",
+      "collision_mode": "Proximity",
+      "remesh_rule": "LengthBased",
+      "pbc": true,
+      "cell_ndiv": [
+        8,
+        8,
+        8
+      ],
+      "maxseg_frac": 0.04,
+      "minseg_frac": 0.01,
+      "rann_frac": 0.003,
+      "loading_mode": "stress"
+    }
+  }
+}

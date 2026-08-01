@@ -1,0 +1,53 @@
+{
+  "checks": {
+    "sanity": {
+      "passed": true,
+      "detail": "is_sane: connectivity and Burgers conservation"
+    },
+    "min_degree": {
+      "passed": true,
+      "detail": "all nodes have >=2 arms"
+    },
+    "duplicate_nodes": {
+      "passed": true,
+      "detail": "no duplicate node positions"
+    },
+    "duplicate_links": {
+      "passed": true,
+      "detail": "no duplicate links"
+    },
+    "zero_length_segments": {
+      "passed": true,
+      "detail": "min segment length 0.7535"
+    },
+    "segment_lengths": {
+      "passed": true,
+      "detail": "segment lengths in [0.753, 0.762], maxseg=1.28"
+    },
+    "burgers_consistency": {
+      "passed": true,
+      "detail": "all segments carry a nonzero Burgers vector"
+    },
+    "glide_planes": {
+      "passed": true,
+      "detail": "non-unit normals: 0, b.n != 0: 0, line out of plane: 0"
+    },
+    "inside_box": {
+      "passed": true,
+      "detail": "all nodes inside the simulation box"
+    },
+    "loop_separation": {
+      "passed": true,
+      "detail": "interaction intended for this case; check skipped"
+    },
+    "image_proximity": {
+      "passed": true,
+      "detail": "boundary proximity allowed; skipped"
+    },
+    "force_model": {
+      "passed": true,
+      "detail": "elasticity force model, mobility and material parameters present; stress tensor valid"
+    }
+  },
+  "passed": true
+}

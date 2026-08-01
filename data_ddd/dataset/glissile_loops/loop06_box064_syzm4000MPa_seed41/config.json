@@ -1,0 +1,211 @@
+{
+  "name": "loop06_box064_syzm4000MPa_seed41",
+  "case_type": "loop06",
+  "seed": 41,
+  "box_size": [
+    64.0,
+    64.0,
+    64.0
+  ],
+  "fov": [
+    64.0,
+    64.0,
+    64.0
+  ],
+  "loops": [
+    {
+      "center": [
+        18.620195221442188,
+        10.985215716059571,
+        -15.335199381683715
+      ],
+      "radius": 10.0,
+      "burgers": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "n_nodes": 41
+    },
+    {
+      "center": [
+        4.994062438728864,
+        9.531871637199561,
+        14.804619496867495
+      ],
+      "radius": 10.0,
+      "burgers": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "n_nodes": 41
+    },
+    {
+      "center": [
+        10.865894621448572,
+        -14.040650846736133,
+        -9.12076733590688
+      ],
+      "radius": 10.0,
+      "burgers": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "n_nodes": 41
+    },
+    {
+      "center": [
+        -10.138366218452543,
+        17.306314256327354,
+        -16.192938906909617
+      ],
+      "radius": 10.0,
+      "burgers": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "n_nodes": 41
+    },
+    {
+      "center": [
+        2.108893395446625,
+        -16.54009576379943,
+        19.51623945316328
+      ],
+      "radius": 10.0,
+      "burgers": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "n_nodes": 41
+    },
+    {
+      "center": [
+        -18.024857836663124,
+        -11.883056377513086,
+        -10.339411242683212
+      ],
+      "radius": 10.0,
+      "burgers": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "n_nodes": 41
+    }
+  ],
+  "lines": [],
+  "applied_stress_voigt": [
+    0.0,
+    0.0,
+    0.0,
+    -4000000000.0,
+    -4000000000.0,
+    0.0
+  ],
+  "stress_scale": 1.0,
+  "stress_perturb_frac": 0.0,
+  "dt": 1e-10,
+  "max_step": 250,
+  "write_freq": 10,
+  "intended_interaction": false,
+  "allow_boundary_proximity": false,
+  "notes": "six loops in a 64^3 box",
+  "derived": {
+    "applied_stress_tensor_Pa": [
+      [
+        0.0,
+        0.0,
+        -4000000000.0
+      ],
+      [
+        0.0,
+        0.0,
+        -4000000000.0
+      ],
+      [
+        -4000000000.0,
+        -4000000000.0,
+        0.0
+      ]
+    ],
+    "voigt_order": [
+      "xx",
+      "yy",
+      "zz",
+      "yz",
+      "xz",
+      "xy"
+    ],
+    "numerical_params": {
+      "maxseg": 2.56,
+      "minseg": 0.64,
+      "rann": 0.192
+    },
+    "n_loops": 6,
+    "n_lines": 0,
+    "length_unit": "burgmag = 3e-10 m"
+  },
+  "reference": {
+    "description": "Fixed solver settings pinned to the SimpleGlide elasticity reference configuration",
+    "settings": {
+      "burgmag": 3e-10,
+      "mu": 50000000000.0,
+      "nu": 0.3,
+      "a": 1.0,
+      "force_mode": "Elasticity_SBA",
+      "Ec": null,
+      "mobility_law": "SimpleGlide",
+      "mob": 1.0,
+      "vmax": 1000000000.0,
+      "integrator": "EulerForward",
+      "split_mode": "MaxDiss",
+      "collision_mode": "Proximity",
+      "remesh_rule": "LengthBased",
+      "pbc": true,
+      "cell_ndiv": [
+        8,
+        8,
+        8
+      ],
+      "maxseg_frac": 0.04,
+      "minseg_frac": 0.01,
+      "rann_frac": 0.003,
+      "loading_mode": "stress"
+    }
+  }
+}

@@ -4,6 +4,7 @@ CalForce_Base: base class for Calforce
 Defines the interface for the CalForce module
 """
 
+import numpy as np
 from abc import ABC, abstractmethod 
 from framework.disnet_manager import DisNetManager
 

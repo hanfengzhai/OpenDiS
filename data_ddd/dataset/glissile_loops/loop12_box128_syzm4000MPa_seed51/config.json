@@ -1,0 +1,325 @@
+{
+  "name": "loop12_box128_syzm4000MPa_seed51",
+  "case_type": "loop12",
+  "seed": 51,
+  "box_size": [
+    128.0,
+    128.0,
+    128.0
+  ],
+  "fov": [
+    128.0,
+    128.0,
+    128.0
+  ],
+  "loops": [
+    {
+      "center": [
+        40.704590056878345,
+        -17.74327080743591,
+        -22.54858963387907
+      ],
+      "radius": 16.0,
+      "burgers": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "n_nodes": 33
+    },
+    {
+      "center": [
+        -25.519095700899673,
+        26.330788303100547,
+        -26.062859885111486
+      ],
+      "radius": 16.0,
+      "burgers": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "n_nodes": 33
+    },
+    {
+      "center": [
+        28.126838350621185,
+        21.40454947843105,
+        -7.196724531393521
+      ],
+      "radius": 16.0,
+      "burgers": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "n_nodes": 33
+    },
+    {
+      "center": [
+        -0.7513134887152049,
+        37.65015452124446,
+        26.769436197206744
+      ],
+      "radius": 16.0,
+      "burgers": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "n_nodes": 33
+    },
+    {
+      "center": [
+        9.637092240079696,
+        -24.71669981792573,
+        -40.98189958177621
+      ],
+      "radius": 16.0,
+      "burgers": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "n_nodes": 33
+    },
+    {
+      "center": [
+        -37.255746337066135,
+        -12.867920341389713,
+        -37.52897771491466
+      ],
+      "radius": 16.0,
+      "burgers": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "n_nodes": 33
+    },
+    {
+      "center": [
+        5.717159063261356,
+        -14.416690384546694,
+        5.157296147838537
+      ],
+      "radius": 16.0,
+      "burgers": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "n_nodes": 33
+    },
+    {
+      "center": [
+        13.152786611921229,
+        32.59822543172842,
+        -42.91651665524635
+      ],
+      "radius": 16.0,
+      "burgers": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "n_nodes": 33
+    },
+    {
+      "center": [
+        -35.73946376690145,
+        3.5670582178620123,
+        18.961381936775936
+      ],
+      "radius": 16.0,
+      "burgers": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "n_nodes": 33
+    },
+    {
+      "center": [
+        45.972871391347525,
+        -17.431687513317307,
+        44.377752691861545
+      ],
+      "radius": 16.0,
+      "burgers": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "n_nodes": 33
+    },
+    {
+      "center": [
+        -17.74472254813124,
+        -43.23661238252422,
+        29.309172344937224
+      ],
+      "radius": 16.0,
+      "burgers": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "n_nodes": 33
+    },
+    {
+      "center": [
+        -8.281584144946756,
+        -44.59038536926619,
+        -13.612091880460675
+      ],
+      "radius": 16.0,
+      "burgers": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "n_nodes": 33
+    }
+  ],
+  "lines": [],
+  "applied_stress_voigt": [
+    0.0,
+    0.0,
+    0.0,
+    -4000000000.0,
+    -4000000000.0,
+    0.0
+  ],
+  "stress_scale": 1.0,
+  "stress_perturb_frac": 0.0,
+  "dt": 1e-10,
+  "max_step": 300,
+  "write_freq": 10,
+  "intended_interaction": false,
+  "allow_boundary_proximity": false,
+  "notes": "twelve loops in a 128^3 box",
+  "derived": {
+    "applied_stress_tensor_Pa": [
+      [
+        0.0,
+        0.0,
+        -4000000000.0
+      ],
+      [
+        0.0,
+        0.0,
+        -4000000000.0
+      ],
+      [
+        -4000000000.0,
+        -4000000000.0,
+        0.0
+      ]
+    ],
+    "voigt_order": [
+      "xx",
+      "yy",
+      "zz",
+      "yz",
+      "xz",
+      "xy"
+    ],
+    "numerical_params": {
+      "maxseg": 5.12,
+      "minseg": 1.28,
+      "rann": 0.384
+    },
+    "n_loops": 12,
+    "n_lines": 0,
+    "length_unit": "burgmag = 3e-10 m"
+  },
+  "reference": {
+    "description": "Fixed solver settings pinned to the SimpleGlide elasticity reference configuration",
+    "settings": {
+      "burgmag": 3e-10,
+      "mu": 50000000000.0,
+      "nu": 0.3,
+      "a": 1.0,
+      "force_mode": "Elasticity_SBA",
+      "Ec": null,
+      "mobility_law": "SimpleGlide",
+      "mob": 1.0,
+      "vmax": 1000000000.0,
+      "integrator": "EulerForward",
+      "split_mode": "MaxDiss",
+      "collision_mode": "Proximity",
+      "remesh_rule": "LengthBased",
+      "pbc": true,
+      "cell_ndiv": [
+        8,
+        8,
+        8
+      ],
+      "maxseg_frac": 0.04,
+      "minseg_frac": 0.01,
+      "rann_frac": 0.003,
+      "loading_mode": "stress"
+    }
+  }
+}
