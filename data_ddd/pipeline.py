@@ -18,7 +18,7 @@ import os
 import subprocess
 import sys
 import time
-from typing import Any, Dict, Iterable, List, Optional
+from typing import Any, Dict, List, Optional
 
 from data_ddd.catalog import default_catalog
 from data_ddd.config import CaseConfig, load_case
@@ -72,11 +72,11 @@ def cmd_generate(args: argparse.Namespace) -> int:
         paths = case_paths(args.dataset_root, case.name)
         print("[generate] %s" % case.name, flush=True)
         try:
-            reports = generate_case(case, paths)
+            generate_case(case, paths)
             status = "generated"
             message = ""
         except Exception as exc:  # noqa: BLE001 - report and continue
-            reports, status, message = {}, "failed", str(exc)
+            status, message = "failed", str(exc)
             failures += 1
             print("  FAILED: %s" % exc, flush=True)
         index.append(
