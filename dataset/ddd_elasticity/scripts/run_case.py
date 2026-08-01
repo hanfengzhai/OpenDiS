@@ -100,8 +100,12 @@ def run_simulation(case_dir: Path, cfg: dict, N, state: dict) -> None:
         force=calforce,
         mobility=mobility,
     )
-    collision = Collision(collision_mode=solver["collision_mode"], state=state)
-    remesh = Remesh(remesh_rule=solver["remesh_rule"], state=state)
+    collision = None
+    if solver.get("collision_mode"):
+        collision = Collision(collision_mode=solver["collision_mode"], state=state)
+    remesh = None
+    if solver.get("remesh_rule"):
+        remesh = Remesh(remesh_rule=solver["remesh_rule"], state=state)
     topology = None
     if solver.get("topology_mode"):
         topology = Topology(
@@ -163,12 +167,19 @@ def build_and_run(
     max_step: int | None = None,
     write_freq: int | None = None,
     print_freq: int | None = None,
+    remesh_rule: str | None = None,
+    collision_mode: str | None = None,
     physics_path: Path | None = None,
     cases_root: Path | None = None,
     skip_viz: bool = False,
     skip_sim: bool = False,
 ) -> Path:
     physics = load_reference_physics(physics_path)
+    # Optional per-case overrides (e.g. enable remesh for FR junctions)
+    if remesh_rule is not None:
+        physics = {**physics, "remesh_rule": remesh_rule}
+    if collision_mode is not None:
+        physics = {**physics, "collision_mode": collision_mode}
     box_f = box_size_for_nloops(physics, n_loops, override=box)
     fov_f = float(fov) if fov is not None else box_f
     state = make_state(physics, box_f)
@@ -212,6 +223,7 @@ def build_and_run(
             write_freq=write_freq,
             print_freq=print_freq,
             physics_source=str(physics_path or (CONFIGS_DIR / "reference_physics.yaml")),
+            physics=physics,
         )
         _write_yaml(case_dir / "config.yaml", cfg)
         _write_yaml(case_dir / "metadata" / "geometry.yaml", geom_meta)
@@ -222,16 +234,21 @@ def build_and_run(
                 "applied_stress": applied.tolist(),
                 "stress_factor": stress_factor,
                 "reference_applied_stress": physics["reference_applied_stress"],
+                "loading_note": "sigma_xz drives (001)[100] glide; negative expands loops",
             },
         )
         _write_yaml(
             case_dir / "metadata" / "box_fov.yaml",
             {
-                "box_size_3d": [box_f, box_f, box_f],
-                "field_of_view_3d": [fov_f, fov_f, fov_f],
+                "dimensionality": "2D",
+                "glide_plane": "001",
+                "box_size_solver_3d": [box_f, box_f, box_f],
+                "field_of_view_001_2d": [fov_f, fov_f],
+                "field_of_view_notation": f"{fov_f:g}^2 on 001",
                 "ngrid_3d": [solver["ngrid"], solver["ngrid"], solver["ngrid"]],
                 "pbc": solver["pbc"],
                 "random_seed": seed,
+                "z_plane": 0.5 * box_f,
             },
         )
 
@@ -240,6 +257,8 @@ def build_and_run(
             zero_seg_tol=float(physics["zero_segment_tol"]),
             bn_tol=float(physics["burgers_plane_dot_tol"]),
             require_elasticity_settings=solver,
+            require_planar_001=True,
+            planarity_z_tol=float(physics.get("planarity_z_tol_over_Lbox", 1e-6)) * box_f,
         )
         write_validation(pre, case_dir / "validation" / "pre_simulation.json")
         if not pre["ok"]:
@@ -257,7 +276,12 @@ def build_and_run(
                     Gf = ExaDisNet()
                     Gf.read_paradis(str(final_files[-1]))
                     nf = DisNetManager(Gf)
-                    final_rep = validate_network(nf, require_elasticity_settings=solver)
+                    final_rep = validate_network(
+                        nf,
+                        require_elasticity_settings=solver,
+                        require_planar_001=True,
+                        planarity_z_tol=float(physics.get("planarity_z_tol_over_Lbox", 1e-6)) * box_f,
+                    )
                     post["final_network"] = {
                         "n_nodes": final_rep["n_nodes"],
                         "n_segments": final_rep["n_segments"],
@@ -309,6 +333,8 @@ def main(argv=None) -> int:
     p.add_argument("--fov", type=float, default=None)
     p.add_argument("--max-step", type=int, default=None)
     p.add_argument("--write-freq", type=int, default=None)
+    p.add_argument("--remesh-rule", default=None)
+    p.add_argument("--collision-mode", default=None)
     p.add_argument("--skip-viz", action="store_true")
     p.add_argument("--skip-sim", action="store_true")
     p.add_argument("--cases-root", type=Path, default=None)
@@ -322,6 +348,8 @@ def main(argv=None) -> int:
         fov=args.fov,
         max_step=args.max_step,
         write_freq=args.write_freq,
+        remesh_rule=args.remesh_rule,
+        collision_mode=args.collision_mode,
         cases_root=args.cases_root,
         skip_viz=args.skip_viz,
         skip_sim=args.skip_sim,

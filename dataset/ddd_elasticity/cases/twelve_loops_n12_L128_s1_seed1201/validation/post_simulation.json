@@ -4,8 +4,8 @@
   "warnings": [],
   "n_frames": 5,
   "final_network": {
-    "n_nodes": 106,
-    "n_segments": 106,
+    "n_nodes": 144,
+    "n_segments": 144,
     "ok": true,
     "issues": []
   }

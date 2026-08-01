@@ -11,9 +11,11 @@
         "stress_factor": 1.0,
         "box": null,
         "fov": null,
-        "max_step": 80,
+        "max_step": 60,
         "write_freq": 10,
-        "print_freq": 10
+        "print_freq": 10,
+        "remesh_rule": null,
+        "collision_mode": null
       },
       "case_dir": "/workspace/dataset/ddd_elasticity/cases/single_loop_n1_L32_s1_seed101",
       "status": "success"
@@ -26,9 +28,11 @@
         "stress_factor": 1.0,
         "box": null,
         "fov": null,
-        "max_step": 80,
+        "max_step": 60,
         "write_freq": 10,
-        "print_freq": 10
+        "print_freq": 10,
+        "remesh_rule": null,
+        "collision_mode": null
       },
       "case_dir": "/workspace/dataset/ddd_elasticity/cases/double_loop_n2_L32_s1_seed201",
       "status": "success"
@@ -41,9 +45,11 @@
         "stress_factor": 1.0,
         "box": null,
         "fov": null,
-        "max_step": 80,
+        "max_step": 60,
         "write_freq": 10,
-        "print_freq": 10
+        "print_freq": 10,
+        "remesh_rule": null,
+        "collision_mode": null
       },
       "case_dir": "/workspace/dataset/ddd_elasticity/cases/triple_loop_n3_L32_s1_seed301",
       "status": "success"
@@ -56,9 +62,11 @@
         "stress_factor": 1.0,
         "box": null,
         "fov": null,
-        "max_step": 80,
+        "max_step": 60,
         "write_freq": 10,
-        "print_freq": 10
+        "print_freq": 10,
+        "remesh_rule": null,
+        "collision_mode": null
       },
       "case_dir": "/workspace/dataset/ddd_elasticity/cases/six_loops_n6_L64_s1_seed601",
       "status": "success"
@@ -73,7 +81,9 @@
         "fov": null,
         "max_step": 40,
         "write_freq": 10,
-        "print_freq": 10
+        "print_freq": 10,
+        "remesh_rule": null,
+        "collision_mode": null
       },
       "case_dir": "/workspace/dataset/ddd_elasticity/cases/twelve_loops_n12_L128_s1_seed1201",
       "status": "success"
@@ -86,9 +96,11 @@
         "stress_factor": 1.0,
         "box": null,
         "fov": null,
-        "max_step": 80,
+        "max_step": 60,
         "write_freq": 10,
-        "print_freq": 10
+        "print_freq": 10,
+        "remesh_rule": null,
+        "collision_mode": null
       },
       "case_dir": "/workspace/dataset/ddd_elasticity/cases/line_loop_n1_L32_s1_seed401",
       "status": "success"
@@ -101,9 +113,11 @@
         "stress_factor": 1.0,
         "box": 64.0,
         "fov": null,
-        "max_step": 80,
+        "max_step": 60,
         "write_freq": 10,
-        "print_freq": 10
+        "print_freq": 10,
+        "remesh_rule": "LengthBased",
+        "collision_mode": "Proximity"
       },
       "case_dir": "/workspace/dataset/ddd_elasticity/cases/glissile_junction_n0_L64_s1_seed501",
       "status": "success"
@@ -116,9 +130,11 @@
         "stress_factor": 1.0,
         "box": 64.0,
         "fov": 32.0,
-        "max_step": 80,
+        "max_step": 60,
         "write_freq": 10,
-        "print_freq": 10
+        "print_freq": 10,
+        "remesh_rule": null,
+        "collision_mode": null
       },
       "case_dir": "/workspace/dataset/ddd_elasticity/cases/fov_variant_n2_L64_s1_seed701_fov32",
       "status": "success"

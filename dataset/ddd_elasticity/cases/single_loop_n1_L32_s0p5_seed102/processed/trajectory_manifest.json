@@ -1,11 +1,13 @@
 {
-  "n_frames": 5,
+  "n_frames": 7,
   "frames": [
     "config.0.data",
     "config.10.data",
     "config.20.data",
     "config.30.data",
-    "config.40.data"
+    "config.40.data",
+    "config.50.data",
+    "config.60.data"
   ],
   "stress_strain_dens": "raw_trajectory/stress_strain_dens.dat"
 }

@@ -101,6 +101,16 @@ def _draw_box(ax, origin: np.ndarray, box: np.ndarray, color="0.3", lw=0.8):
         )
 
 
+def _draw_plane_square(ax, center_xy, edge, z, color="#c45c26", lw=1.4):
+    """Draw an in-plane FOV square on the 001 (z=const) plane."""
+    half = 0.5 * edge
+    x0, y0 = center_xy
+    xs = [x0 - half, x0 + half, x0 + half, x0 - half, x0 - half]
+    ys = [y0 - half, y0 - half, y0 + half, y0 + half, y0 - half]
+    zs = [z] * 5
+    ax.plot(xs, ys, zs, color=color, lw=lw)
+
+
 def render_frame(
     N: DisNetManager,
     *,
@@ -108,36 +118,51 @@ def render_frame(
     fov: float,
     title: str,
     out_path: Path | None = None,
-    elev: float = 22.0,
-    azim: float = -60.0,
+    elev: float = 78.0,
+    azim: float = -90.0,
 ):
+    """
+    Render a true top-down 2D view of the (001) glide plane (x–y).
+
+    The solver cell is still 3D, but all dataset dislocations are planar on z=L/2.
+    """
+    _ = elev, azim  # kept for API compatibility; 2D top-down view does not use them
     origin = np.zeros(3)
     center = origin + 0.5 * box
     lines, colors = _segment_polylines(N, center)
 
-    # Size chosen so ffmpeg macro-block padding is minimal (approx 800x800 after save)
     fig = plt.figure(figsize=(8.0, 8.0), dpi=100)
-    ax = fig.add_subplot(111, projection="3d")
+    ax = fig.add_subplot(111)
     if len(lines):
-        lc = Line3DCollection(lines, colors=np.clip(colors, 0, 1), linewidths=2.8, alpha=1.0)
-        ax.add_collection3d(lc)
-        # Node markers improve visibility for compact prismatic loops
-        pts = np.unique(np.vstack([np.asarray(seg) for seg in lines]), axis=0)
-        ax.scatter(pts[:, 0], pts[:, 1], pts[:, 2], c="k", s=12, depthshade=False)
-    _draw_box(ax, origin, np.array([box, box, box]), color="0.25", lw=1.2)
-    if abs(fov - box) > 1e-9:
-        fov_origin = center - 0.5 * fov
-        _draw_box(ax, fov_origin, np.array([fov, fov, fov]), color="#c45c26", lw=1.4)
+        for seg, col in zip(lines, colors):
+            seg = np.asarray(seg)
+            ax.plot(seg[:, 0], seg[:, 1], color=np.clip(col, 0, 1), lw=2.4, solid_capstyle="round")
+        pts = np.unique(np.vstack([np.asarray(seg) for seg in lines])[:, :2], axis=0)
+        ax.scatter(pts[:, 0], pts[:, 1], c="k", s=10, zorder=3)
 
-    ax.set_xlim(origin[0], origin[0] + box)
-    ax.set_ylim(origin[1], origin[1] + box)
-    ax.set_zlim(origin[2], origin[2] + box)
+    # Box footprint on 001
+    ax.plot(
+        [0, box, box, 0, 0],
+        [0, 0, box, box, 0],
+        color="0.2",
+        lw=1.4,
+    )
+    if abs(fov - box) > 1e-9:
+        half = 0.5 * fov
+        ax.plot(
+            [center[0] - half, center[0] + half, center[0] + half, center[0] - half, center[0] - half],
+            [center[1] - half, center[1] - half, center[1] + half, center[1] + half, center[1] - half],
+            color="#c45c26",
+            lw=1.6,
+        )
+
+    ax.set_xlim(0, box)
+    ax.set_ylim(0, box)
+    ax.set_aspect("equal", adjustable="box")
     ax.set_xlabel("x")
     ax.set_ylabel("y")
-    ax.set_zlabel("z")
-    ax.view_init(elev=elev, azim=azim)
-    ax.set_title(title, fontsize=11)
-    ax.set_box_aspect((1, 1, 1))
+    ax.set_title(title + "  —  2D (001) plane", fontsize=11)
+    ax.grid(True, alpha=0.25)
     fig.tight_layout()
     if out_path is not None:
         out_path.parent.mkdir(parents=True, exist_ok=True)
@@ -215,6 +240,21 @@ def make_video(
     except OSError:
         pass
     return out_mp4
+
+
+def box_fov_from_config(cfg: dict) -> tuple[float, float]:
+    """Read solver box edge and in-plane FOV from case config (new or legacy keys)."""
+    if "box_size_solver_3d" in cfg:
+        box = float(cfg["box_size_solver_3d"][0])
+    else:
+        box = float(cfg["box_size"][0])
+    if "field_of_view_001_2d" in cfg:
+        fov = float(cfg["field_of_view_001_2d"][0])
+    elif "field_of_view" in cfg:
+        fov = float(cfg["field_of_view"][0])
+    else:
+        fov = box
+    return box, fov
 
 
 def visualize_case(case_dir: Path, box: float, fov: float) -> dict[str, str]:

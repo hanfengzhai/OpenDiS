@@ -3,7 +3,7 @@
 
 defaults:
   crystal: fcc
-  max_step: 80
+  max_step: 60
   write_freq: 10
   print_freq: 10
   geometries_per_type: 2
@@ -46,6 +46,7 @@ cases:
     interaction: line_loop
     seeds: [401, 402]
     stress_factors: [1.0]
+    # Keep remesh/collision off so the planar loop is not annihilated.
 
   - case_type: glissile_junction
     n_loops: 0
@@ -54,6 +55,8 @@ cases:
     seeds: [501]
     stress_factors: [1.0]
     box_size: 64.0
+    remesh_rule: LengthBased
+    collision_mode: Proximity
 
   - case_type: fov_variant
     n_loops: 2

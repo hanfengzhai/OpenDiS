@@ -9,14 +9,15 @@ applied_stress:
 - 0.0
 - 0.0
 - 0.0
+- -2500000000.0
+- -2500000000.0
 - 0.0
-- 0.0
-- 250000000.0
 stress_factor: 0.5
 reference_applied_stress:
 - 0.0
 - 0.0
 - 0.0
+- -5.0e9
+- -5.0e9
 - 0.0
-- 0.0
-- 5.0e8
+loading_note: sigma_xz drives (001)[100] glide; negative expands loops

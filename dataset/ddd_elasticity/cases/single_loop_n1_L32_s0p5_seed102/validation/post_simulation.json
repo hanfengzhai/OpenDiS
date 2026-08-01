@@ -2,10 +2,10 @@
   "ok": true,
   "issues": [],
   "warnings": [],
-  "n_frames": 5,
+  "n_frames": 7,
   "final_network": {
-    "n_nodes": 8,
-    "n_segments": 8,
+    "n_nodes": 19,
+    "n_segments": 19,
     "ok": true,
     "issues": []
   }

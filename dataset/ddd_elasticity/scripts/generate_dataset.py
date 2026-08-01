@@ -48,6 +48,8 @@ def expand_catalog(catalog: dict, representatives_only: bool = False) -> list[di
                         "max_step": entry.get("max_step", defaults.get("max_step")),
                         "write_freq": entry.get("write_freq", defaults.get("write_freq")),
                         "print_freq": entry.get("print_freq", defaults.get("print_freq")),
+                        "remesh_rule": entry.get("remesh_rule"),
+                        "collision_mode": entry.get("collision_mode"),
                     }
                 )
     return jobs
@@ -100,6 +102,8 @@ def main(argv=None) -> int:
                 max_step=job.get("max_step"),
                 write_freq=job.get("write_freq"),
                 print_freq=job.get("print_freq"),
+                remesh_rule=job.get("remesh_rule"),
+                collision_mode=job.get("collision_mode"),
                 cases_root=args.cases_root,
                 skip_viz=args.skip_viz,
             )

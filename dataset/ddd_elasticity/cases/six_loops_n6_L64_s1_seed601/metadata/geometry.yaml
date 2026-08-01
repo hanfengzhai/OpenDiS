@@ -1,7 +1,104 @@
-generator: generate_prismatic_config
-crystal: fcc
+generator: planar_circular_loops_001
 n_loops: 6
-radius: 11.52
-maxseg: 6.4
+radius: 7.4879999999999995
+maxseg: 3.84
 seed: 601
-loop_kind: prismatic_glissile
+loops:
+- index: 0
+  center:
+  - 49.92
+  - 14.604402672688158
+  - 32.0
+  radius: 7.96960914089672
+  burgers:
+  - 1.0
+  - 0.0
+  - 0.0
+  plane:
+  - 0.0
+  - 0.0
+  - 1.0
+  plane_name: '001'
+- index: 1
+  center:
+  - 49.92
+  - 48.79249873956102
+  - 32.0
+  radius: 7.428972047151689
+  burgers:
+  - -1.0
+  - 0.0
+  - 0.0
+  plane:
+  - 0.0
+  - 0.0
+  - 1.0
+  plane_name: '001'
+- index: 2
+  center:
+  - 16.97750455121428
+  - 31.905812680665196
+  - 32.0
+  radius: 7.782960562734472
+  burgers:
+  - 0.0
+  - 1.0
+  - 0.0
+  plane:
+  - 0.0
+  - 0.0
+  - 1.0
+  plane_name: '001'
+- index: 3
+  center:
+  - 31.88823225709462
+  - 34.29669133714121
+  - 32.0
+  radius: 7.704035841888048
+  burgers:
+  - 0.0
+  - -1.0
+  - 0.0
+  plane:
+  - 0.0
+  - 0.0
+  - 1.0
+  plane_name: '001'
+- index: 4
+  center:
+  - 49.92
+  - 30.65420933024015
+  - 32.0
+  radius: 6.902822589934731
+  burgers:
+  - 0.7071067811865475
+  - 0.7071067811865475
+  - 0.0
+  plane:
+  - 0.0
+  - 0.0
+  - 1.0
+  plane_name: '001'
+- index: 5
+  center:
+  - 14.599887928324254
+  - 49.92
+  - 32.0
+  radius: 6.973486142830062
+  burgers:
+  - 0.7071067811865475
+  - -0.7071067811865475
+  - 0.0
+  plane:
+  - 0.0
+  - 0.0
+  - 1.0
+  plane_name: '001'
+loop_kind: circular_glissile_001
+dimensionality: 2D
+glide_plane: '001'
+plane_normal:
+- 0.0
+- 0.0
+- 1.0
+z_plane: 32.0

@@ -43,6 +43,8 @@ def validate_network(
     bn_tol: float = 1e-4,
     require_elasticity_settings: dict[str, Any] | None = None,
     check_outside_box: bool = True,
+    require_planar_001: bool = False,
+    planarity_z_tol: float = 1e-6,
 ) -> dict[str, Any]:
     """Return a validation report with ok flag and list of issues."""
     issues: list[str] = []
@@ -142,6 +144,37 @@ def validate_network(
         if list(pbc) != [1, 1, 1] and list(pbc) != [True, True, True]:
             issues.append(f"ForceFFT requires full 3D PBC, got pbc={pbc}")
 
+    # 2D (001) planarity: all nodes near a common z, planes ~ [001], b · n ~ 0
+    planarity = None
+    if require_planar_001 and n_nodes > 0:
+        z = a["positions"][:, 2]
+        zspan = float(z.max() - z.min())
+        zmean = float(z.mean())
+        planarity = {"z_mean": zmean, "z_span": zspan, "tol": float(planarity_z_tol)}
+        if zspan > max(planarity_z_tol, 1e-8 * float(np.max(a["box"]))):
+            issues.append(f"Network not planar on 001: z_span={zspan:g} > tol={planarity_z_tol:g}")
+        if n_segs > 0:
+            p = a["planes"]
+            pnorm = np.linalg.norm(p, axis=1) + 1e-30
+            p_hat = p / pnorm[:, None]
+            # alignment with ±001
+            align = np.abs(p_hat[:, 2])
+            bad_plane = align < 0.99
+            if np.any(bad_plane):
+                issues.append(
+                    f"{int(bad_plane.sum())} segments do not have plane normal ≈ [001]"
+                )
+            b = a["burgers"]
+            bn = np.abs(np.sum(b * p_hat, axis=1)) / (np.linalg.norm(b, axis=1) + 1e-30)
+            if np.any(bn > max(bn_tol, 1e-3)):
+                issues.append(
+                    f"{int((bn > max(bn_tol, 1e-3)).sum())} segments violate b·n≈0 on 001"
+                )
+            # burgers should be in-plane (bz ≈ 0)
+            bz = np.abs(b[:, 2]) / (np.linalg.norm(b, axis=1) + 1e-30)
+            if np.any(bz > 1e-3):
+                issues.append(f"{int((bz > 1e-3).sum())} segments have out-of-plane Burgers")
+
     report = {
         "ok": len(issues) == 0,
         "issues": issues,
@@ -152,6 +185,7 @@ def validate_network(
         "segment_length_min": float(np.min(lengths)) if n_segs else None,
         "segment_length_max": float(np.max(lengths)) if n_segs else None,
         "segment_length_mean": float(np.mean(lengths)) if n_segs else None,
+        "planarity_001": planarity,
     }
     return report
 

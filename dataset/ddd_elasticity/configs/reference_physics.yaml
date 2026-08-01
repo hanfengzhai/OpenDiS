@@ -1,55 +1,66 @@
-# Frozen DDD physics for elasticity-enabled dataset generation.
+# Frozen DDD physics for elasticity-enabled 2D (001)-plane dataset generation.
+#
+# Geometry constraint for this dataset:
+#   All dislocations lie on the (001) plane (plane normal [0,0,1], z = L/2).
+#   The solver cell remains a 3D cube with full PBC because ForceFFT requires it.
+#   Field-of-view / box sizing for the dataset is the in-plane L x L extent on 001
+#   (often written L^2 in notes); the solver input is still the 3D cell L^3.
 #
 # The path dataset/glissile_loops/SimpleGlide_001 was not available in this
-# cloud workspace. Settings below are taken from the closest in-repo reference
-# that combines SimpleGlide mobility with DDD_FFT_MODEL elasticity:
+# cloud workspace. Mobility/force/integrator settings follow the closest in-repo
+# SimpleGlide + DDD_FFT_MODEL example:
 #   core/exadis/examples/03_collision/test_collision.py
 #
-# Intended case-to-case differences are limited to geometry, box size, FOV,
-# and applied stress. Do not change these physics fields without updating
-# every case consistently.
+# Applied-stress convention is adapted for (001)[100] glide:
+#   resolved shear for b=[100], n=[001] is sigma_xz.
+#   Negative sigma_xz expands planar circular loops against self-stress.
 
 crystal: fcc
 burgmag: 2.55e-10
 mu: 54.6e9
 nu: 0.324
 
-# Core radius and segment length scale with Lbox (see physics.py).
-# Reference ratios from Lbox=300 collision example: a=6, maxseg=0.10*L, minseg=0.02*L
+dimensionality: "2D"
+glide_plane: "001"
+plane_normal: [0.0, 0.0, 1.0]
+
+# Core radius and segment length scale with Lbox (in-plane edge length).
 a_over_Lbox: 0.02
-maxseg_over_Lbox: 0.10
-minseg_over_Lbox: 0.02
-rtol: 1.0
-nextdt: 5.0e-13
-rann: null  # let ExaDiS set from a when null
+maxseg_over_Lbox: 0.06
+minseg_over_Lbox: 0.015
+rtol: 0.5
+nextdt: 5.0e-14
+rann: null
 
 force_mode: DDD_FFT_MODEL
 mobility_law: SimpleGlide
-mobility_mob: 1000.0
+mobility_mob: 400.0
 integrator: Trapezoid
-collision_mode: Proximity
+# Collision/remesh can annihilate small planar FFT loops; keep off by default.
+# Enable per-case via case_catalog overrides (e.g. glissile_junction).
+collision_mode: null
 topology_mode: null
-remesh_rule: LengthBased
+remesh_rule: null
 loading_mode: stress
 
 # Voigt order: [xx, yy, zz, yz, xz, xy]
-# Reference shear loading from collision example: sigma_xy = 500 MPa
+# For (001) glide:
+#   RSS(b=[100]) = sigma_xz, RSS(b=[010]) = sigma_yz
+# Negative values expand planar loops against self-stress (no-remesh FFT).
 reference_applied_stress:
   - 0.0
   - 0.0
   - 0.0
+  - -5.0e9
+  - -5.0e9
   - 0.0
-  - 0.0
-  - 5.0e8
 
-# Controlled stress magnitude perturbations (multipliers on the shear component)
 stress_perturbation_factors:
   - 0.5
   - 1.0
   - 1.5
 
-# 3D cubic periodic box is required by ForceFFT.
-# Box edge lengths (b-units / code length units), not 2D FOV.
+# In-plane box edge length L (dataset FOV ~ L^2 on 001). Solver cell is L^3.
 box_size_by_nloops:
   "1": 32.0
   "2": 32.0
@@ -57,25 +68,23 @@ box_size_by_nloops:
   "6": 64.0
   "12": 128.0
 
-# FFT grid (Ngrid^3). Must be 3D; FOV metadata is separate.
+# FFT grid (Ngrid^3) for the 3D ForceFFT solver.
 ngrid_by_box:
   "32.0": 16
   "64.0": 32
   "128.0": 64
 
-# Field of view for visualization / Nye sampling (edge length). Defaults to Lbox.
-# Stored as 3D cubic FOV; do not use 64^2-style 2D notation in solver inputs.
 default_fov_equals_box: true
 
 pbc: [1, 1, 1]
 
-# Default run schedule for representative cases (kept short enough to finish
-# locally while still producing multi-frame trajectories).
-default_max_step: 80
+default_max_step: 60
 default_write_freq: 10
 default_print_freq: 10
+# Base radius; geometry.py further scales down with loop count for 2D packing.
 default_radius_over_Lbox: 0.18
-default_boundary_margin_over_Lbox: 0.25
-default_min_loop_separation_over_radius: 2.5
+default_boundary_margin_over_Lbox: 0.22
+default_min_loop_separation_over_radius: 2.15
 zero_segment_tol: 1.0e-8
 burgers_plane_dot_tol: 1.0e-4
+planarity_z_tol_over_Lbox: 1.0e-6

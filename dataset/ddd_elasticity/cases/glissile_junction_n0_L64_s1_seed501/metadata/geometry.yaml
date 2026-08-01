@@ -1,8 +1,22 @@
-generator: glissile_junction_fr_sources
+generator: glissile_junction_fr_001
 n_loops: 0
 n_fr_sources: 2
-disloc_length: 35.2
-phi1_deg: 29.964263585627208
-phi2_deg: 26.395665089208507
+disloc_length: 28.8
+phi1_deg: 39.96426358562721
+phi2_deg: -33.60433491079149
 seed: 501
-loop_kind: glissile_junction
+loop_kind: glissile_junction_001
+dimensionality: 2D
+glide_plane: '001'
+plane_normal:
+- 0.0
+- 0.0
+- 1.0
+z_plane: 32.0
+burgers:
+- - 1.0
+  - 0.0
+  - 0.0
+- - 0.0
+  - 1.0
+  - 0.0

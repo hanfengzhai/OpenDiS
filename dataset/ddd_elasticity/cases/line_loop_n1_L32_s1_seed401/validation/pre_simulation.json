@@ -2,17 +2,21 @@
   "ok": true,
   "issues": [],
   "warnings": [
-    "20 nodes outside [origin, origin+box] before folding (may be ok if solver folds on read)",
-    "More than half of nodes lie within 2% of a periodic boundary"
+    "7 nodes outside [origin, origin+box] before folding (may be ok if solver folds on read)"
   ],
-  "n_nodes": 32,
-  "n_segments": 32,
+  "n_nodes": 35,
+  "n_segments": 35,
   "box": [
     32.0,
     32.0,
     32.0
   ],
-  "segment_length_min": 2.879999999999999,
-  "segment_length_max": 3.26598632371091,
-  "segment_length_mean": 3.169489742783178
+  "segment_length_min": 1.896129680034051,
+  "segment_length_max": 2.0,
+  "segment_length_mean": 1.943613254875629,
+  "planarity_001": {
+    "z_mean": 16.0,
+    "z_span": 0.0,
+    "tol": 3.2e-05
+  }
 }

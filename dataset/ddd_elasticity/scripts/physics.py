@@ -111,12 +111,19 @@ def case_config_dict(
     write_freq: int,
     print_freq: int,
     physics_source: str,
+    physics: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
+    physics = physics or {}
     cfg = {
         "case_type": case_type,
         "n_loops": int(n_loops),
-        "box_size": [float(box), float(box), float(box)],
-        "field_of_view": [float(fov), float(fov), float(fov)],
+        "dimensionality": physics.get("dimensionality", "2D"),
+        "glide_plane": physics.get("glide_plane", "001"),
+        "plane_normal": physics.get("plane_normal", [0.0, 0.0, 1.0]),
+        # Solver cell is always 3D (ForceFFT). Dataset FOV is the in-plane LxL on 001.
+        "box_size_solver_3d": [float(box), float(box), float(box)],
+        "field_of_view_001_2d": [float(fov), float(fov)],
+        "field_of_view_note": f"{fov:g}^2 on the 001 plane (in-plane); solver cell is {box:g}^3",
         "random_seed": int(seed),
         "stress_factor": float(stress_factor),
         "applied_stress_voigt_xx_yy_zz_yz_xz_xy": applied_stress.tolist(),
@@ -130,9 +137,10 @@ def case_config_dict(
         },
         "physics_source": physics_source,
         "notes": [
-            "Box and FOV are three-dimensional cubic extents.",
-            "ForceFFT requires full 3D PBC; 64^2-style 2D box notation is invalid for the solver.",
-            "Physics settings are frozen across cases; only geometry/box/FOV/stress vary.",
+            "All dislocations are constrained to the (001) plane (2D glide).",
+            "Dataset FOV/box sizing is the in-plane LxL extent (e.g. 64^2 on 001).",
+            "ForceFFT still requires a 3D cubic periodic cell L^3 with full PBC.",
+            "Reference stress is sigma_xz < 0 so (001)[100] loops expand.",
         ],
     }
     return cfg

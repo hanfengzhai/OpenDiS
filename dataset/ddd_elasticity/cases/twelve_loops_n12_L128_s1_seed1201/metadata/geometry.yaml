@@ -1,7 +1,194 @@
-generator: generate_prismatic_config
-crystal: fcc
+generator: planar_circular_loops_001
 n_loops: 12
-radius: 23.04
-maxseg: 12.8
+radius: 11.52
+maxseg: 7.68
 seed: 1201
-loop_kind: prismatic_glissile
+loops:
+- index: 0
+  center:
+  - 30.503332722902307
+  - 96.4916559403796
+  - 64.0
+  radius: 11.727338129633104
+  burgers:
+  - 1.0
+  - 0.0
+  - 0.0
+  plane:
+  - 0.0
+  - 0.0
+  - 1.0
+  plane_name: '001'
+- index: 1
+  center:
+  - 52.66921342445032
+  - 75.4331982637458
+  - 64.0
+  radius: 12.335966391359658
+  burgers:
+  - -1.0
+  - 0.0
+  - 0.0
+  plane:
+  - 0.0
+  - 0.0
+  - 1.0
+  plane_name: '001'
+- index: 2
+  center:
+  - 76.50451351029953
+  - 99.84
+  - 64.0
+  radius: 12.040291769249924
+  burgers:
+  - 0.0
+  - 1.0
+  - 0.0
+  plane:
+  - 0.0
+  - 0.0
+  - 1.0
+  plane_name: '001'
+- index: 3
+  center:
+  - 71.59195410407524
+  - 73.02259043367415
+  - 64.0
+  radius: 11.062867522226753
+  burgers:
+  - 0.0
+  - -1.0
+  - 0.0
+  plane:
+  - 0.0
+  - 0.0
+  - 1.0
+  plane_name: '001'
+- index: 4
+  center:
+  - 52.713901931466104
+  - 99.84
+  - 64.0
+  radius: 12.205497450510354
+  burgers:
+  - 0.7071067811865475
+  - 0.7071067811865475
+  - 0.0
+  plane:
+  - 0.0
+  - 0.0
+  - 1.0
+  plane_name: '001'
+- index: 5
+  center:
+  - 73.7703752094123
+  - 50.62823959597013
+  - 64.0
+  radius: 10.926943626153781
+  burgers:
+  - 0.7071067811865475
+  - -0.7071067811865475
+  - 0.0
+  plane:
+  - 0.0
+  - 0.0
+  - 1.0
+  plane_name: '001'
+- index: 6
+  center:
+  - 28.16
+  - 28.16
+  - 64.0
+  radius: 12.03157434582038
+  burgers:
+  - -0.7071067811865475
+  - 0.7071067811865475
+  - 0.0
+  plane:
+  - 0.0
+  - 0.0
+  - 1.0
+  plane_name: '001'
+- index: 7
+  center:
+  - 28.16
+  - 50.186691087067324
+  - 64.0
+  radius: 12.191613699775319
+  burgers:
+  - -0.7071067811865475
+  - -0.7071067811865475
+  - 0.0
+  plane:
+  - 0.0
+  - 0.0
+  - 1.0
+  plane_name: '001'
+- index: 8
+  center:
+  - 98.28312906881345
+  - 96.24526381907445
+  - 64.0
+  radius: 11.477311974598607
+  burgers:
+  - 1.0
+  - 0.0
+  - 0.0
+  plane:
+  - 0.0
+  - 0.0
+  - 1.0
+  plane_name: '001'
+- index: 9
+  center:
+  - 99.84
+  - 51.902854851097295
+  - 64.0
+  radius: 11.597228765143074
+  burgers:
+  - -1.0
+  - 0.0
+  - 0.0
+  plane:
+  - 0.0
+  - 0.0
+  - 1.0
+  plane_name: '001'
+- index: 10
+  center:
+  - 96.85080260490747
+  - 28.16
+  - 64.0
+  radius: 12.196070005834235
+  burgers:
+  - 0.0
+  - 1.0
+  - 0.0
+  plane:
+  - 0.0
+  - 0.0
+  - 1.0
+  plane_name: '001'
+- index: 11
+  center:
+  - 99.84
+  - 80.10573963512529
+  - 64.0
+  radius: 11.719639103631124
+  burgers:
+  - 0.0
+  - -1.0
+  - 0.0
+  plane:
+  - 0.0
+  - 0.0
+  - 1.0
+  plane_name: '001'
+loop_kind: circular_glissile_001
+dimensionality: 2D
+glide_plane: '001'
+plane_normal:
+- 0.0
+- 0.0
+- 1.0
+z_plane: 64.0

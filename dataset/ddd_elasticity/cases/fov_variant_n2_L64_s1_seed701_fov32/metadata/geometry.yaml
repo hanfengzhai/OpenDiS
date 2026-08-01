@@ -1,7 +1,44 @@
-generator: generate_prismatic_config
-crystal: fcc
+generator: planar_circular_loops_001
 n_loops: 2
-radius: 11.52
-maxseg: 6.4
+radius: 9.792
+maxseg: 3.84
 seed: 701
-loop_kind: prismatic_glissile
+loops:
+- index: 0
+  center:
+  - 18.53130405788161
+  - 49.92
+  - 32.0
+  radius: 9.500110233987499
+  burgers:
+  - 1.0
+  - 0.0
+  - 0.0
+  plane:
+  - 0.0
+  - 0.0
+  - 1.0
+  plane_name: '001'
+- index: 1
+  center:
+  - 14.08
+  - 14.08
+  - 32.0
+  radius: 10.463640203291071
+  burgers:
+  - -1.0
+  - 0.0
+  - 0.0
+  plane:
+  - 0.0
+  - 0.0
+  - 1.0
+  plane_name: '001'
+loop_kind: circular_glissile_001
+dimensionality: 2D
+glide_plane: '001'
+plane_normal:
+- 0.0
+- 0.0
+- 1.0
+z_plane: 32.0

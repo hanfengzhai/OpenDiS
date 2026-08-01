@@ -2,14 +2,19 @@
   "ok": true,
   "issues": [],
   "warnings": [],
-  "n_nodes": 16,
-  "n_segments": 14,
+  "n_nodes": 20,
+  "n_segments": 18,
   "box": [
     64.0,
     64.0,
     64.0
   ],
-  "segment_length_min": 5.028571428571424,
-  "segment_length_max": 5.028571428571434,
-  "segment_length_mean": 5.02857142857143
+  "segment_length_min": 3.199999999999992,
+  "segment_length_max": 3.2000000000000077,
+  "segment_length_mean": 3.1999999999999997,
+  "planarity_001": {
+    "z_mean": 32.0,
+    "z_span": 0.0,
+    "tol": 6.4e-05
+  }
 }

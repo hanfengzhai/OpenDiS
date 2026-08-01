@@ -1,11 +1,13 @@
-box_size_3d:
+dimensionality: 2D
+glide_plane: '001'
+box_size_solver_3d:
 - 32.0
 - 32.0
 - 32.0
-field_of_view_3d:
+field_of_view_001_2d:
 - 32.0
 - 32.0
-- 32.0
+field_of_view_notation: 32^2 on 001
 ngrid_3d:
 - 16
 - 16
@@ -15,3 +17,4 @@ pbc:
 - 1
 - 1
 random_seed: 301
+z_plane: 16.0
