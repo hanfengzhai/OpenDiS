@@ -1,0 +1,29 @@
+{
+  "checked": [
+    "connectivity",
+    "segment_lengths",
+    "duplicate_nodes_links",
+    "burgers_plane_consistency",
+    "box_bounds",
+    "intersections",
+    "periodic_image_clearance"
+  ],
+  "issues": [],
+  "minimum_boundary_clearance": 3.2,
+  "minimum_segment_length": 1.2514757203218452,
+  "node_count": 20,
+  "segment_count": 20,
+  "simulation": {
+    "snapshots": [
+      "config.0.data",
+      "config.10.data",
+      "config.15.data",
+      "config.20.data",
+      "config.25.data",
+      "config.30.data",
+      "config.5.data"
+    ],
+    "status": "success"
+  },
+  "valid": true
+}

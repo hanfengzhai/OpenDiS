@@ -1,0 +1,112 @@
+{
+  "applied_stress_pa": [
+    1250000.0,
+    1250000.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "box": {
+    "cell_matrix": [
+      [
+        128.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        128.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        128.0
+      ]
+    ],
+    "dimensions": 3,
+    "field_of_view": 80,
+    "periodic": [
+      true,
+      true,
+      true
+    ]
+  },
+  "case": {
+    "box_size": 128,
+    "field_of_view": 80,
+    "geometry": "loops",
+    "loop_count": 12,
+    "name": "twelve-l12-b128-fov080-s125-seed112",
+    "output_frequency": 5,
+    "radius": 9,
+    "seed": 112,
+    "steps": 30,
+    "stress_scale": 1.25
+  },
+  "geometry_validation": {
+    "checked": [
+      "connectivity",
+      "segment_lengths",
+      "duplicate_nodes_links",
+      "burgers_plane_consistency",
+      "box_bounds",
+      "intersections",
+      "periodic_image_clearance"
+    ],
+    "issues": [],
+    "minimum_boundary_clearance": 12.799999999999997,
+    "minimum_segment_length": 2.8158203707241443,
+    "node_count": 240,
+    "segment_count": 240,
+    "valid": true
+  },
+  "provenance_warning": "The user-specified Nye_Disloc_Distance reference was unavailable in this checkout. This configuration is frozen from OpenDiS examples/01_loop/test_disl_loop_exadis.py.",
+  "reference_baseline": {
+    "applied_stress_voigt_order": [
+      "xx",
+      "yy",
+      "zz",
+      "yz",
+      "xz",
+      "xy"
+    ],
+    "boundary_conditions": {
+      "periodic": [
+        true,
+        true,
+        true
+      ]
+    },
+    "collision": {
+      "mode": "Retroactive"
+    },
+    "elasticity": {
+      "core_energy": 1000000.0,
+      "force_mode": "LineTension"
+    },
+    "material": {
+      "burgmag_m": 3e-10,
+      "core_a": 0.01,
+      "maxseg": 0.3,
+      "minseg": 0.1,
+      "mu_pa": 160000000000.0,
+      "nu": 0.31,
+      "rann": 0.02
+    },
+    "mobility": {
+      "law": "SimpleGlide"
+    },
+    "output": {
+      "snapshot_format": "ParaDiS .data"
+    },
+    "remesh": null,
+    "source": "examples/01_loop/test_disl_loop_exadis.py",
+    "time_integration": {
+      "dt_s": 1e-09,
+      "integrator": "EulerForward"
+    },
+    "topology": null
+  }
+}
