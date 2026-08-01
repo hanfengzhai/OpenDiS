@@ -1,0 +1,86 @@
+{
+  "loop01_box032_sxzm0400MPa_seed01": {
+    "success": true,
+    "steps": 47,
+    "wall_s": 4.17,
+    "reason": "network fully annihilated",
+    "video": "/workspace/data_ddd/dataset/glissile_loops/loop01_box032_sxzm0400MPa_seed01/vis/evolution.mp4"
+  },
+  "loop01_box032_sxzm4000MPa_seed01": {
+    "success": true,
+    "steps": 150,
+    "wall_s": 15.73,
+    "reason": "max_step reached",
+    "video": "/workspace/data_ddd/dataset/glissile_loops/loop01_box032_sxzm4000MPa_seed01/vis/evolution.mp4"
+  },
+  "loop01_box032_sxzm3600MPa_seed11": {
+    "success": true,
+    "steps": 75,
+    "wall_s": 9.94,
+    "reason": "max_step reached",
+    "video": "/workspace/data_ddd/dataset/glissile_loops/loop01_box032_sxzm3600MPa_seed11/vis/evolution.mp4"
+  },
+  "loop01_box032_sxzm3982MPa_seed12": {
+    "success": true,
+    "steps": 75,
+    "wall_s": 9.94,
+    "reason": "max_step reached",
+    "video": "/workspace/data_ddd/dataset/glissile_loops/loop01_box032_sxzm3982MPa_seed12/vis/evolution.mp4"
+  },
+  "loop01_box048_sxzm4000MPa_seed01": {
+    "success": true,
+    "steps": 150,
+    "wall_s": 14.44,
+    "reason": "max_step reached",
+    "video": "/workspace/data_ddd/dataset/glissile_loops/loop01_box048_sxzm4000MPa_seed01/vis/evolution.mp4"
+  },
+  "loop01_box032_sxzm4000MPa_seed02_fov024": {
+    "success": true,
+    "steps": 90,
+    "wall_s": 9.95,
+    "reason": "max_step reached",
+    "video": "/workspace/data_ddd/dataset/glissile_loops/loop01_box032_sxzm4000MPa_seed02_fov024/vis/evolution.mp4"
+  },
+  "loop02_box032_syzm4000MPa_seed21": {
+    "success": true,
+    "steps": 100,
+    "wall_s": 41.13,
+    "reason": "max_step reached",
+    "video": "/workspace/data_ddd/dataset/glissile_loops/loop02_box032_syzm4000MPa_seed21/vis/evolution.mp4"
+  },
+  "loop02c_box032_sxzm4000MPa_seed22": {
+    "success": true,
+    "steps": 150,
+    "wall_s": 14.95,
+    "reason": "max_step reached",
+    "video": "/workspace/data_ddd/dataset/glissile_loops/loop02c_box032_sxzm4000MPa_seed22/vis/evolution.mp4"
+  },
+  "loop03_box032_syzm4000MPa_seed31": {
+    "success": true,
+    "steps": 100,
+    "wall_s": 65.12,
+    "reason": "max_step reached",
+    "video": "/workspace/data_ddd/dataset/glissile_loops/loop03_box032_syzm4000MPa_seed31/vis/evolution.mp4"
+  },
+  "loop06_box064_syzm4000MPa_seed41": {
+    "success": true,
+    "steps": 200,
+    "wall_s": 521.35,
+    "reason": "max_step reached",
+    "video": "/workspace/data_ddd/dataset/glissile_loops/loop06_box064_syzm4000MPa_seed41/vis/evolution.mp4"
+  },
+  "loop12_box128_syzm4000MPa_seed51": {
+    "success": true,
+    "steps": 300,
+    "wall_s": 1948.43,
+    "reason": "max_step reached",
+    "video": "/workspace/data_ddd/dataset/glissile_loops/loop12_box128_syzm4000MPa_seed51/vis/evolution.mp4"
+  },
+  "lineloop_box032_sxzm4000MPa_seed61": {
+    "success": true,
+    "steps": 150,
+    "wall_s": 70.82,
+    "reason": "max_step reached",
+    "video": "/workspace/data_ddd/dataset/glissile_loops/lineloop_box032_sxzm4000MPa_seed61/vis/evolution.mp4"
+  }
+}

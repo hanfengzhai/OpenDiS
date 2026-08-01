@@ -46,7 +46,7 @@
   "stress_perturb_frac": 0.0,
   "dt": 1e-10,
   "max_step": 200,
-  "write_freq": 10,
+  "write_freq": 5,
   "intended_interaction": false,
   "allow_boundary_proximity": false,
   "notes": "single glissile loop at the reference stress; sub-critical radius -> shrinks by self-stress",

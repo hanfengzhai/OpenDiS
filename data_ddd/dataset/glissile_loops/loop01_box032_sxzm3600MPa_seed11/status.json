@@ -1,0 +1,8 @@
+{
+  "name": "loop01_box032_sxzm3600MPa_seed11",
+  "success": true,
+  "steps_completed": 75,
+  "termination_reason": "max_step reached",
+  "wall_time_s": 9.94,
+  "n_frames": 16
+}

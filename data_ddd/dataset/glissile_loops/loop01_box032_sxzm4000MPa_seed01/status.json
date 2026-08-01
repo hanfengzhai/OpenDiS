@@ -3,6 +3,6 @@
   "success": true,
   "steps_completed": 150,
   "termination_reason": "max_step reached",
-  "wall_time_s": 15.48,
+  "wall_time_s": 15.73,
   "n_frames": 16
 }

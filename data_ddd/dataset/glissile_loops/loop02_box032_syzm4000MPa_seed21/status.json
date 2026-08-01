@@ -1,0 +1,8 @@
+{
+  "name": "loop02_box032_syzm4000MPa_seed21",
+  "success": true,
+  "steps_completed": 100,
+  "termination_reason": "max_step reached",
+  "wall_time_s": 41.13,
+  "n_frames": 21
+}

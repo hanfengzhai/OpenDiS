@@ -49,5 +49,16 @@
       "detail": "elasticity force model, mobility and material parameters present; stress tensor valid"
     }
   },
-  "passed": true
+  "passed": true,
+  "post_run": {
+    "passed": true,
+    "completed": true,
+    "termination_reason": "max_step reached",
+    "final_state_sane": true,
+    "final_state_nan_free": true,
+    "frames_written": 21,
+    "frames_expected": 21,
+    "final_num_nodes": 194,
+    "final_num_segments": 200
+  }
 }

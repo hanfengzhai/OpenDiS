@@ -47,9 +47,9 @@
   "dt": 1e-10,
   "max_step": 150,
   "write_freq": 10,
-  "intended_interaction": false,
+  "intended_interaction": true,
   "allow_boundary_proximity": false,
-  "notes": "single glissile loop at 10x reference stress -> expands",
+  "notes": "single glissile loop at 10x reference stress -> expands; periodic self-image reaction beyond r=L/2 is intentional",
   "derived": {
     "applied_stress_tensor_Pa": [
       [

@@ -1,0 +1,8 @@
+{
+  "name": "loop01_box032_sxzm4000MPa_seed02_fov024",
+  "success": true,
+  "steps_completed": 90,
+  "termination_reason": "max_step reached",
+  "wall_time_s": 9.95,
+  "n_frames": 19
+}

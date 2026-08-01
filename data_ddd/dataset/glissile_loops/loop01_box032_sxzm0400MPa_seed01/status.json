@@ -3,6 +3,6 @@
   "success": true,
   "steps_completed": 47,
   "termination_reason": "network fully annihilated",
-  "wall_time_s": 4.15,
-  "n_frames": 6
+  "wall_time_s": 4.17,
+  "n_frames": 11
 }

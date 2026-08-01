@@ -1,0 +1,21 @@
+[20:35:57] building network: 1 loops, 0 lines, box=[32.0, 32.0, 32.0]
+[20:35:57] pre-run validation passed (12 checks)
+[20:35:57] modules: force=Elasticity_SBA mobility=SimpleGlide dt=1e-10 max_step=75 stress(Voigt)=[-5.65493404e+07 -2.04633824e+08  2.61183165e+08 -1.30056444e+08
+ -3.60000000e+09  1.89348642e+08]
+[20:35:57] step 0: nodes=66 segs=66 total_length=50.25
+[20:35:58] step 5: nodes=66 segs=66 total_length=53.39
+[20:35:58] step 10: nodes=66 segs=66 total_length=56.53
+[20:35:59] step 15: nodes=66 segs=66 total_length=59.67
+[20:35:59] step 20: nodes=66 segs=66 total_length=62.81
+[20:35:59] step 25: nodes=66 segs=66 total_length=65.95
+[20:36:00] step 30: nodes=66 segs=66 total_length=69.09
+[20:36:00] step 35: nodes=66 segs=66 total_length=72.23
+[20:36:00] step 40: nodes=66 segs=66 total_length=75.37
+[20:36:01] step 45: nodes=66 segs=66 total_length=78.51
+[20:36:01] step 50: nodes=66 segs=66 total_length=81.65
+[20:36:02] step 55: nodes=132 segs=132 total_length=84.79
+[20:36:03] step 60: nodes=132 segs=132 total_length=87.93
+[20:36:04] step 65: nodes=132 segs=132 total_length=91.07
+[20:36:06] step 70: nodes=132 segs=132 total_length=94.21
+[20:36:07] step 75: nodes=132 segs=132 total_length=97.35
+[20:36:07] run finished: max_step reached; 16 frames written

@@ -1,0 +1,35 @@
+[20:47:33] building network: 12 loops, 0 lines, box=[128.0, 128.0, 128.0]
+[20:47:33] pre-run validation passed (12 checks)
+[20:47:33] modules: force=Elasticity_SBA mobility=SimpleGlide dt=1e-10 max_step=300 stress(Voigt)=[ 0.e+00  0.e+00  0.e+00 -4.e+09 -4.e+09  0.e+00]
+[20:47:33] step 0: nodes=396 segs=396 total_length=1204.55
+[20:47:56] step 10: nodes=396 segs=396 total_length=1279.83
+[20:48:18] step 20: nodes=396 segs=396 total_length=1355.12
+[20:48:41] step 30: nodes=396 segs=396 total_length=1430.40
+[20:49:03] step 40: nodes=396 segs=396 total_length=1505.69
+[20:49:26] step 50: nodes=396 segs=396 total_length=1580.97
+[20:49:49] step 60: nodes=396 segs=396 total_length=1656.26
+[20:50:11] step 70: nodes=396 segs=396 total_length=1731.54
+[20:50:34] step 80: nodes=396 segs=396 total_length=1806.83
+[20:50:56] step 90: nodes=396 segs=396 total_length=1882.11
+[20:51:19] step 100: nodes=396 segs=396 total_length=1957.39
+[20:51:43] step 110: nodes=788 segs=788 total_length=2032.68
+[20:53:12] step 120: nodes=792 segs=792 total_length=2107.96
+[20:54:42] step 130: nodes=792 segs=792 total_length=2183.26
+[20:56:12] step 140: nodes=792 segs=792 total_length=2258.56
+[20:57:42] step 150: nodes=792 segs=792 total_length=2333.86
+[20:59:12] step 160: nodes=792 segs=792 total_length=2409.17
+[21:00:42] step 170: nodes=792 segs=792 total_length=2484.48
+[21:02:12] step 180: nodes=792 segs=792 total_length=2559.79
+[21:03:42] step 190: nodes=792 segs=792 total_length=2635.11
+[21:05:12] step 200: nodes=792 segs=792 total_length=2710.43
+[21:06:41] step 210: nodes=792 segs=792 total_length=2785.75
+[21:08:11] step 220: nodes=792 segs=792 total_length=2861.08
+[21:09:40] step 230: nodes=792 segs=792 total_length=2936.41
+[21:11:09] step 240: nodes=792 segs=792 total_length=3011.73
+[21:12:38] step 250: nodes=792 segs=792 total_length=3087.07
+[21:14:07] step 260: nodes=792 segs=792 total_length=3162.40
+[21:15:35] step 270: nodes=792 segs=792 total_length=3237.74
+[21:17:04] step 280: nodes=792 segs=792 total_length=3313.07
+[21:18:33] step 290: nodes=792 segs=792 total_length=3388.41
+[21:20:01] step 300: nodes=792 segs=792 total_length=3463.75
+[21:20:01] run finished: max_step reached; 31 frames written

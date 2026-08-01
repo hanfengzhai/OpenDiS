@@ -1,0 +1,8 @@
+{
+  "name": "loop02c_box032_sxzm4000MPa_seed22",
+  "success": true,
+  "steps_completed": 150,
+  "termination_reason": "max_step reached",
+  "wall_time_s": 14.95,
+  "n_frames": 16
+}

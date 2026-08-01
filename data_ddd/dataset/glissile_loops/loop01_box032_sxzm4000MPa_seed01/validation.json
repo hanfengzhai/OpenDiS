@@ -38,11 +38,11 @@
     },
     "loop_separation": {
       "passed": true,
-      "detail": "single primitive; no pairs to check"
+      "detail": "interaction intended for this case; check skipped"
     },
     "image_proximity": {
       "passed": true,
-      "detail": "min distance to own periodic image 16 (threshold 1.0)"
+      "detail": "boundary proximity allowed; skipped"
     },
     "force_model": {
       "passed": true,

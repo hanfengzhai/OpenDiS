@@ -1,0 +1,8 @@
+{
+  "name": "loop12_box128_syzm4000MPa_seed51",
+  "success": true,
+  "steps_completed": 300,
+  "termination_reason": "max_step reached",
+  "wall_time_s": 1948.43,
+  "n_frames": 31
+}
