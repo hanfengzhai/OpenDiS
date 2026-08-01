@@ -1,0 +1,15 @@
+{
+  "ok": true,
+  "issues": [],
+  "warnings": [],
+  "n_nodes": 48,
+  "n_segments": 48,
+  "box": [
+    64.0,
+    64.0,
+    64.0
+  ],
+  "segment_length_min": 5.759999999999997,
+  "segment_length_max": 5.760000000000003,
+  "segment_length_mean": 5.760000000000001
+}

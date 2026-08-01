@@ -1,0 +1,22 @@
+generator: line_prismatic_loop
+crystal: fcc
+n_loops: 1
+n_lines: 1
+radius: 5.76
+maxseg: 3.2
+seed: 401
+line:
+  burgers:
+  - 0.0
+  - 0.7071067811865475
+  - -0.7071067811865475
+  plane:
+  - 0.5773502691896258
+  - 0.5773502691896258
+  - 0.5773502691896258
+  origin:
+  - 9.971291328562687
+  - 9.378482770714848
+  - 16.751991344071993
+  theta_deg: 90.0
+loop_kind: line_loop

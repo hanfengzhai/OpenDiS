@@ -1,0 +1,8 @@
+generator: glissile_junction_fr_sources
+n_loops: 0
+n_fr_sources: 2
+disloc_length: 35.2
+phi1_deg: 29.964263585627208
+phi2_deg: 26.395665089208507
+seed: 501
+loop_kind: glissile_junction

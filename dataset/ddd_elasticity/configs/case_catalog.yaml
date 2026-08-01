@@ -1,0 +1,64 @@
+# Representative case catalog for elasticity-enabled DDD datasets.
+# Each entry expands into one or more concrete cases via geometry + stress seeds.
+
+defaults:
+  crystal: fcc
+  max_step: 80
+  write_freq: 10
+  print_freq: 10
+  geometries_per_type: 2
+
+cases:
+  - case_type: single_loop
+    n_loops: 1
+    interaction: none
+    seeds: [101, 102]
+    stress_factors: [1.0, 0.5]
+
+  - case_type: double_loop
+    n_loops: 2
+    interaction: loop_loop
+    seeds: [201, 202]
+    stress_factors: [1.0]
+
+  - case_type: triple_loop
+    n_loops: 3
+    interaction: loop_loop
+    seeds: [301]
+    stress_factors: [1.0]
+
+  - case_type: six_loops
+    n_loops: 6
+    interaction: multi_loop
+    seeds: [601]
+    stress_factors: [1.0]
+
+  - case_type: twelve_loops
+    n_loops: 12
+    interaction: multi_loop
+    seeds: [1201]
+    stress_factors: [1.0]
+    max_step: 40   # larger system; shorter representative run
+
+  - case_type: line_loop
+    n_loops: 1
+    n_lines: 1
+    interaction: line_loop
+    seeds: [401, 402]
+    stress_factors: [1.0]
+
+  - case_type: glissile_junction
+    n_loops: 0
+    n_fr_sources: 2
+    interaction: glissile_junction
+    seeds: [501]
+    stress_factors: [1.0]
+    box_size: 64.0
+
+  - case_type: fov_variant
+    n_loops: 2
+    interaction: loop_loop
+    seeds: [701]
+    stress_factors: [1.0]
+    box_size: 64.0
+    fov: 32.0   # half-box FOV for visualization/metadata

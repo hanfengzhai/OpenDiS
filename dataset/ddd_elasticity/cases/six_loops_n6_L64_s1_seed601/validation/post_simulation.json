@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "issues": [],
+  "warnings": [],
+  "n_frames": 9,
+  "final_network": {
+    "n_nodes": 57,
+    "n_segments": 58,
+    "ok": true,
+    "issues": []
+  }
+}

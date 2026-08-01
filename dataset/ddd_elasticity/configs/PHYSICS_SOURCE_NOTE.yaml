@@ -1,0 +1,23 @@
+# Physics source note
+#
+# Requested authoritative reference:
+#   /home/cai/hzhai/codes/Nye_Disloc_Distance/dataset/glissile_loops/SimpleGlide_001
+# was not available in this cloud workspace (path does not exist on the VM;
+# Nye_Disloc_Distance / NyeDiffusion/data_ddd are not present in the OpenDiS repo).
+#
+# Frozen physics in reference_physics.yaml therefore follows the closest in-repo
+# SimpleGlide + DDD_FFT_MODEL elasticity example:
+#   core/exadis/examples/03_collision/test_collision.py
+#
+# When SimpleGlide_001 becomes available, diff it against reference_physics.yaml
+# and update only if a setting truly differs; then regenerate cases.
+
+authoritative_reference_requested: /home/cai/hzhai/codes/Nye_Disloc_Distance/dataset/glissile_loops/SimpleGlide_001
+dataset_generator_requested: /home/cai/hzhai/codes/Nye_Disloc_Distance/NyeDiffusion/data_ddd
+fallback_in_repo_reference: core/exadis/examples/03_collision/test_collision.py
+force_mode: DDD_FFT_MODEL
+mobility_law: SimpleGlide
+mobility_mob: 1000.0
+reference_applied_stress_voigt: [0.0, 0.0, 0.0, 0.0, 0.0, 5.0e8]
+box_is_3d_cubic: true
+fft_requires_full_pbc: true

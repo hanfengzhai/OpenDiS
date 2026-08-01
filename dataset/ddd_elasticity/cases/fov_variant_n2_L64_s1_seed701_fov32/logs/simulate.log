@@ -1,0 +1,32 @@
+CASE DIR: /workspace/dataset/ddd_elasticity/cases/fov_variant_n2_L64_s1_seed701_fov32
+APPLIED STRESS: [0.0, 0.0, 0.0, 0.0, 0.0, 500000000.0]
+SOLVER: {
+  "force_mode": "DDD_FFT_MODEL",
+  "mobility_law": "SimpleGlide",
+  "mobility_mob": 1000.0,
+  "integrator": "Trapezoid",
+  "collision_mode": "Proximity",
+  "topology_mode": null,
+  "remesh_rule": "LengthBased",
+  "loading_mode": "stress",
+  "ngrid": 32,
+  "pbc": [
+    1,
+    1,
+    1
+  ],
+  "box": [
+    64.0,
+    64.0,
+    64.0
+  ]
+}
+step = 10, nodes = 16, dt = 2.579890e-12, time = 1.297934e-11, elapsed = 0.1 sec
+step = 20, nodes = 16, dt = 2.773264e-12, time = 6.405833e-11, elapsed = 0.1 sec
+step = 30, nodes = 16, dt = 2.981132e-12, time = 8.970742e-11, elapsed = 0.2 sec
+step = 40, nodes = 16, dt = 3.204580e-12, time = 1.151326e-10, elapsed = 0.2 sec
+step = 50, nodes = 16, dt = 1.722389e-12, time = 1.383489e-10, elapsed = 0.3 sec
+step = 60, nodes = 16, dt = 1.851489e-12, time = 1.629609e-10, elapsed = 0.3 sec
+step = 70, nodes = 16, dt = 1.658555e-12, time = 1.874274e-10, elapsed = 0.4 sec
+step = 80, nodes = 16, dt = 1.782871e-12, time = 2.119449e-10, elapsed = 0.4 sec
+RUN TIME: 0.432893 sec

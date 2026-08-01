@@ -1,0 +1,32 @@
+CASE DIR: /workspace/dataset/ddd_elasticity/cases/line_loop_n1_L32_s1_seed401
+APPLIED STRESS: [0.0, 0.0, 0.0, 0.0, 0.0, 500000000.0]
+SOLVER: {
+  "force_mode": "DDD_FFT_MODEL",
+  "mobility_law": "SimpleGlide",
+  "mobility_mob": 1000.0,
+  "integrator": "Trapezoid",
+  "collision_mode": "Proximity",
+  "topology_mode": null,
+  "remesh_rule": "LengthBased",
+  "loading_mode": "stress",
+  "ngrid": 16,
+  "pbc": [
+    1,
+    1,
+    1
+  ],
+  "box": [
+    32.0,
+    32.0,
+    32.0
+  ]
+}
+step = 10, nodes = 47, dt = 4.478976e-13, time = 6.159354e-12, elapsed = 0.0 sec
+step = 20, nodes = 45, dt = 4.814694e-13, time = 1.068881e-11, elapsed = 0.1 sec
+step = 30, nodes = 46, dt = 5.175576e-13, time = 1.514178e-11, elapsed = 0.1 sec
+step = 40, nodes = 49, dt = 2.781754e-13, time = 1.927769e-11, elapsed = 0.1 sec
+step = 50, nodes = 45, dt = 1.245941e-13, time = 2.095711e-11, elapsed = 0.1 sec
+step = 60, nodes = 45, dt = 2.678659e-13, time = 2.271641e-11, elapsed = 0.1 sec
+step = 70, nodes = 46, dt = 2.879436e-13, time = 2.623088e-11, elapsed = 0.2 sec
+step = 80, nodes = 43, dt = 7.738154e-14, time = 2.845452e-11, elapsed = 0.2 sec
+RUN TIME: 0.199462 sec

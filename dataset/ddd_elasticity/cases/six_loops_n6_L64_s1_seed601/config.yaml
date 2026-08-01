@@ -1,0 +1,64 @@
+case_type: six_loops
+n_loops: 6
+box_size:
+- 64.0
+- 64.0
+- 64.0
+field_of_view:
+- 64.0
+- 64.0
+- 64.0
+random_seed: 601
+stress_factor: 1.0
+applied_stress_voigt_xx_yy_zz_yz_xz_xy:
+- 0.0
+- 0.0
+- 0.0
+- 0.0
+- 0.0
+- 500000000.0
+state:
+  crystal: fcc
+  burgmag: 2.55e-10
+  mu: 54600000000.0
+  nu: 0.324
+  a: 1.28
+  maxseg: 6.4
+  minseg: 1.28
+  rtol: 1.0
+  nextdt: 5.0e-13
+solver:
+  force_mode: DDD_FFT_MODEL
+  mobility_law: SimpleGlide
+  mobility_mob: 1000.0
+  integrator: Trapezoid
+  collision_mode: Proximity
+  topology_mode: null
+  remesh_rule: LengthBased
+  loading_mode: stress
+  ngrid: 32
+  pbc:
+  - 1
+  - 1
+  - 1
+  box:
+  - 64.0
+  - 64.0
+  - 64.0
+geometry:
+  generator: generate_prismatic_config
+  crystal: fcc
+  n_loops: 6
+  radius: 11.52
+  maxseg: 6.4
+  seed: 601
+  loop_kind: prismatic_glissile
+simulation:
+  max_step: 80
+  write_freq: 10
+  print_freq: 10
+physics_source: /workspace/dataset/ddd_elasticity/configs/reference_physics.yaml
+notes:
+- Box and FOV are three-dimensional cubic extents.
+- ForceFFT requires full 3D PBC; 64^2-style 2D box notation is invalid for the solver.
+- Physics settings are frozen across cases; only geometry/box/FOV/stress vary.

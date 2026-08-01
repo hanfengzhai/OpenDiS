@@ -1,0 +1,28 @@
+CASE DIR: /workspace/dataset/ddd_elasticity/cases/twelve_loops_n12_L128_s1_seed1201
+APPLIED STRESS: [0.0, 0.0, 0.0, 0.0, 0.0, 500000000.0]
+SOLVER: {
+  "force_mode": "DDD_FFT_MODEL",
+  "mobility_law": "SimpleGlide",
+  "mobility_mob": 1000.0,
+  "integrator": "Trapezoid",
+  "collision_mode": "Proximity",
+  "topology_mode": null,
+  "remesh_rule": "LengthBased",
+  "loading_mode": "stress",
+  "ngrid": 64,
+  "pbc": [
+    1,
+    1,
+    1
+  ],
+  "box": [
+    128.0,
+    128.0,
+    128.0
+  ]
+}
+step = 10, nodes = 96, dt = 2.579890e-12, time = 1.297934e-11, elapsed = 0.4 sec
+step = 20, nodes = 98, dt = 2.773264e-12, time = 5.111644e-11, elapsed = 0.8 sec
+step = 30, nodes = 104, dt = 4.140461e-12, time = 8.372150e-11, elapsed = 1.2 sec
+step = 40, nodes = 106, dt = 2.225403e-12, time = 1.111423e-10, elapsed = 1.7 sec
+RUN TIME: 1.657695 sec

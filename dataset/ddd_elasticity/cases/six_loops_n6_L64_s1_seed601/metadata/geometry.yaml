@@ -1,0 +1,7 @@
+generator: generate_prismatic_config
+crystal: fcc
+n_loops: 6
+radius: 11.52
+maxseg: 6.4
+seed: 601
+loop_kind: prismatic_glissile
