@@ -46,6 +46,10 @@
     "stress_scale": 1.5
   },
   "geometry_validation": {
+    "burgers_closure": {
+      "free_node_violations": [],
+      "pinned_endpoint_exception": "allowed only for the explicit finite line in line_loop cases"
+    },
     "checked": [
       "connectivity",
       "segment_lengths",

@@ -10,6 +10,7 @@ this program to claim byte-for-byte equivalence with an unavailable reference.
 from __future__ import annotations
 
 import argparse
+import itertools
 import json
 import os
 import shutil
@@ -172,6 +173,19 @@ def validate_geometry(nodes: np.ndarray, segs: np.ndarray, components: list[list
     b, p = segs[:, 2:5], segs[:, 5:8]
     if np.any(np.linalg.norm(p, axis=1) < 1e-12) or np.any(np.abs(np.sum(b * p, axis=1)) > 1e-8):
         issues.append("invalid glide-plane definitions")
+    closure_failures: list[int] = []
+    for node in range(len(nodes)):
+        closure = np.zeros(3)
+        for segment, (first, second) in enumerate(endpoints):
+            if node == first:
+                closure += b[segment]
+            elif node == second:
+                closure -= b[segment]
+        # The only non-closed endpoints are explicit pinned Frank--Read anchors.
+        if nodes[node, 3] != 7 and np.linalg.norm(closure) > 1e-8:
+            closure_failures.append(node)
+    if closure_failures:
+        issues.append(f"inconsistent Burgers vectors at free nodes: {closure_failures}")
     clearance = min(np.min(nodes[:, :3]), spec.box_size - np.max(nodes[:, :3]))
     # The center-placement rule guarantees this safety distance after including
     # the loop radius; require a meaningful gap rather than a full extra radius.
@@ -193,6 +207,10 @@ def validate_geometry(nodes: np.ndarray, segs: np.ndarray, components: list[list
             "connectivity", "segment_lengths", "duplicate_nodes_links", "burgers_plane_consistency",
             "box_bounds", "intersections", "periodic_image_clearance",
         ],
+        "burgers_closure": {
+            "free_node_violations": closure_failures,
+            "pinned_endpoint_exception": "allowed only for the explicit finite line in line_loop cases",
+        },
     }
 
 
@@ -287,7 +305,7 @@ def run_case(path: Path) -> None:
     _json(path / "validation.json", report)
 
 
-def _draw(ax, data: dict, title: str, field_of_view: float) -> None:
+def _draw(ax, data: dict, title: str, field_of_view: float, box_size: float) -> None:
     positions = np.asarray(data["nodes"]["positions"])
     segs = np.asarray(data["segs"]["nodeids"], dtype=int)
     burgers = np.asarray(data["segs"]["burgers"])
@@ -295,10 +313,19 @@ def _draw(ax, data: dict, title: str, field_of_view: float) -> None:
     for index, (first, second) in enumerate(segs):
         color = colors[hash(tuple(np.round(burgers[index], 6))) % len(colors)]
         ax.plot(*positions[[first, second]].T, color=color, linewidth=1.7)
-    box = float(field_of_view)
-    center = positions.mean(axis=0)
-    for setter, value in zip((ax.set_xlim, ax.set_ylim, ax.set_zlim), center):
-        setter(value - box / 2, value + box / 2)
+    corners = np.asarray(list(itertools.product((0.0, box_size), repeat=3)))
+    for first, second in itertools.combinations(corners, 2):
+        if np.count_nonzero(first != second) == 1:
+            ax.plot(*np.vstack((first, second)).T, color="#505050", alpha=.45, linewidth=.8)
+    # The dashed cube is the downstream field of view; the solid cube is the
+    # full periodic simulation cell and prevents geometry from being clipped.
+    center = np.clip(positions.mean(axis=0), field_of_view / 2, box_size - field_of_view / 2)
+    fov_min, fov_max = center - field_of_view / 2, center + field_of_view / 2
+    fov_corners = np.asarray(list(itertools.product(*zip(fov_min, fov_max))))
+    for first, second in itertools.combinations(fov_corners, 2):
+        if np.count_nonzero(np.abs(first - second) > 1e-10) == 1:
+            ax.plot(*np.vstack((first, second)).T, color="#808080", alpha=.35, linestyle="--", linewidth=.6)
+    ax.set_xlim(0, box_size); ax.set_ylim(0, box_size); ax.set_zlim(0, box_size)
     ax.set_xlabel("x"); ax.set_ylabel("y"); ax.set_zlabel("z")
     ax.set_title(title)
     ax.set_box_aspect((1, 1, 1))
@@ -324,7 +351,8 @@ def visualize_case(path: Path) -> None:
         states = [read_paradis(str(snapshot)).export_data() for snapshot in snapshots]
         for label, state in (("initial", states[0]), ("final", states[-1])):
             fig = plt.figure(figsize=(7, 6))
-            _draw(fig.add_subplot(111, projection="3d"), state, f"{spec.name}: {label}", spec.field_of_view)
+            _draw(fig.add_subplot(111, projection="3d"), state, f"{spec.name}: {label}",
+                  spec.field_of_view, spec.box_size)
             fig.savefig(figures / f"{label}.png", dpi=160)
             plt.close(fig)
         video = figures / "evolution.mp4"
@@ -333,7 +361,8 @@ def visualize_case(path: Path) -> None:
         writer = FFMpegWriter(fps=4, metadata={"title": spec.name})
         with writer.saving(fig, str(video), dpi=130):
             for frame, state in enumerate(states):
-                ax.clear(); _draw(ax, state, f"{spec.name}: frame {frame + 1}/{len(states)}", spec.field_of_view)
+                ax.clear(); _draw(ax, state, f"{spec.name}: frame {frame + 1}/{len(states)}",
+                                  spec.field_of_view, spec.box_size)
                 writer.grab_frame()
         plt.close(fig)
     finally:

@@ -1,4 +1,8 @@
 {
+  "burgers_closure": {
+    "free_node_violations": [],
+    "pinned_endpoint_exception": "allowed only for the explicit finite line in line_loop cases"
+  },
   "checked": [
     "connectivity",
     "segment_lengths",
@@ -13,5 +17,17 @@
   "minimum_segment_length": 1.2514757203218452,
   "node_count": 29,
   "segment_count": 28,
+  "simulation": {
+    "snapshots": [
+      "config.0.data",
+      "config.10.data",
+      "config.15.data",
+      "config.20.data",
+      "config.25.data",
+      "config.30.data",
+      "config.5.data"
+    ],
+    "status": "success"
+  },
   "valid": true
 }
