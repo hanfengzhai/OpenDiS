@@ -1,0 +1,135 @@
+{
+  "reference_implementation": {
+    "name": "SimpleGlide_001-equivalent",
+    "note": "Reference path from user instructions is not present on this machine. This workflow preserves the in-repo ExaDiS SimpleGlide + DDD_FFT_MODEL settings from core/exadis/examples/03_collision/test_collision.py."
+  },
+  "random_seed": 1729,
+  "variants_per_template": 3,
+  "simulate_per_template": 1,
+  "stress_multipliers": [
+    0.5,
+    1.0,
+    2.0
+  ],
+  "fov_fractions": [
+    0.6,
+    0.8,
+    1.0
+  ],
+  "reference_physics": {
+    "state": {
+      "crystal": "fcc",
+      "burgmag": 2.55e-10,
+      "mu": 54600000000.0,
+      "nu": 0.324,
+      "a": 6.0,
+      "rtol": 0.2,
+      "rann": 0.2,
+      "nextdt": 1e-13,
+      "maxdt": 5e-13
+    },
+    "maxseg_ratio": 0.1,
+    "minseg_ratio": 0.02,
+    "force": {
+      "force_mode": "DDD_FFT_MODEL",
+      "Ngrid": 32,
+      "Ec": 1000000.0
+    },
+    "mobility": {
+      "mobility_law": "SimpleGlide",
+      "mob": 1000.0
+    },
+    "time_integration": {
+      "integrator": "Trapezoid"
+    },
+    "collision": {
+      "collision_mode": "Retroactive"
+    },
+    "topology": {
+      "enabled": false,
+      "topology_mode": "TopologySerial"
+    },
+    "remesh": {
+      "remesh_rule": "LengthBased"
+    },
+    "boundary_conditions": {
+      "is_periodic": [
+        1,
+        1,
+        1
+      ]
+    },
+    "loading_mode": "stress",
+    "reference_applied_stress": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      5000000.0
+    ],
+    "simulation": {
+      "max_step": 30,
+      "print_freq": 5,
+      "write_freq": 5
+    }
+  },
+  "case_templates": [
+    {
+      "case_type": "single_loop",
+      "interaction_type": "isolated_loop",
+      "num_loops": 1,
+      "num_lines": 0,
+      "box_size": 32.0,
+      "loop_radius_fraction": 0.11
+    },
+    {
+      "case_type": "double_loops",
+      "interaction_type": "paired_loops",
+      "num_loops": 2,
+      "num_lines": 0,
+      "box_size": 32.0,
+      "loop_radius_fraction": 0.1
+    },
+    {
+      "case_type": "triple_loops",
+      "interaction_type": "triple_loop_cluster",
+      "num_loops": 3,
+      "num_lines": 0,
+      "box_size": 32.0,
+      "loop_radius_fraction": 0.095
+    },
+    {
+      "case_type": "six_loops",
+      "interaction_type": "distributed_multi_loop",
+      "num_loops": 6,
+      "num_lines": 0,
+      "box_size": 64.0,
+      "loop_radius_fraction": 0.075
+    },
+    {
+      "case_type": "twelve_loops",
+      "interaction_type": "high_density_multi_loop",
+      "num_loops": 12,
+      "num_lines": 0,
+      "box_size": 128.0,
+      "loop_radius_fraction": 0.055
+    },
+    {
+      "case_type": "line_loop_interaction",
+      "interaction_type": "line_loop_crossing",
+      "num_loops": 2,
+      "num_lines": 1,
+      "box_size": 64.0,
+      "loop_radius_fraction": 0.08
+    },
+    {
+      "case_type": "multi_loop_interaction",
+      "interaction_type": "mixed_slip_systems",
+      "num_loops": 4,
+      "num_lines": 1,
+      "box_size": 64.0,
+      "loop_radius_fraction": 0.08
+    }
+  ]
+}
