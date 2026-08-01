@@ -1,0 +1,59 @@
+{
+  "state": {
+    "crystal": "fcc",
+    "burgmag": 2.55e-10,
+    "mu": 54600000000.0,
+    "nu": 0.324,
+    "a": 6.0,
+    "maxseg": 300.0,
+    "minseg": 80.0,
+    "rann": 10.0,
+    "rtol": 1.0,
+    "nextdt": 5e-13,
+    "maxdt": 1e-10
+  },
+  "force": {
+    "force_mode": "DDD_FFT_MODEL",
+    "Ec": -1.0,
+    "Ngrid": [
+      32,
+      32,
+      32
+    ]
+  },
+  "mobility": {
+    "mobility_law": "SimpleGlide",
+    "mob": 1000.0
+  },
+  "time_integration": {
+    "integrator": "Trapezoid",
+    "nextdt": 5e-13,
+    "maxdt": 1e-10
+  },
+  "collision": {
+    "collision_mode": "Retroactive"
+  },
+  "topology": {
+    "topology_mode": "TopologyParallel",
+    "splitMultiNodeAlpha": 0.001
+  },
+  "remesh": {
+    "remesh_rule": "LengthBased"
+  },
+  "loading": {
+    "loading_mode": "stress",
+    "applied_stress_voigt_Pa": [
+      1813248.572007657,
+      36517326.33730062,
+      461669425.09069186,
+      129841954.14422397,
+      28933050.751438104,
+      8137259.356481639
+    ]
+  },
+  "control": {
+    "max_step": 100,
+    "write_freq": 2,
+    "print_freq": 5
+  }
+}

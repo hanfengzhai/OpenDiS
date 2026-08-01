@@ -1,0 +1,353 @@
+
+$ /usr/bin/python3 -m data_ddd.simulate /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006
+Kokkos::OpenMP::initialize WARNING: OMP_PROC_BIND environment variable not set
+  In general, for best performance with OpenMP 4.0 or better set OMP_PROC_BIND=spread and OMP_PLACES=threads
+  For best performance with OpenMP 3.1 set OMP_PROC_BIND=true
+  For unit testing set OMP_PROC_BIND=false
+
+Host Parallel Execution Space:
+  KOKKOS_ENABLE_OPENMP: yes
+
+OpenMP Runtime Configuration:
+Kokkos::OpenMP thread_pool_topology[ 1 x 4 x 1 ]
+Exporting configuration in ParaDiS format
+ Output file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.0.data
+Exporting configuration in ParaDiS format
+ Output file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.2.data
+Exporting configuration in ParaDiS format
+ Output file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.4.data
+Exporting configuration in ParaDiS format
+ Output file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.6.data
+Exporting configuration in ParaDiS format
+ Output file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.8.data
+Exporting configuration in ParaDiS format
+ Output file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.10.data
+Exporting configuration in ParaDiS format
+ Output file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.12.data
+Exporting configuration in ParaDiS format
+ Output file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.14.data
+Exporting configuration in ParaDiS format
+ Output file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.16.data
+Exporting configuration in ParaDiS format
+ Output file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.18.data
+Exporting configuration in ParaDiS format
+ Output file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.20.data
+Exporting configuration in ParaDiS format
+ Output file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.22.data
+Exporting configuration in ParaDiS format
+ Output file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.24.data
+Exporting configuration in ParaDiS format
+ Output file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.26.data
+Exporting configuration in ParaDiS format
+ Output file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.28.data
+Exporting configuration in ParaDiS format
+ Output file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.30.data
+Exporting configuration in ParaDiS format
+ Output file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.32.data
+Exporting configuration in ParaDiS format
+ Output file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.34.data
+Exporting configuration in ParaDiS format
+ Output file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.36.data
+Exporting configuration in ParaDiS format
+ Output file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.38.data
+Exporting configuration in ParaDiS format
+ Output file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.40.data
+Exporting configuration in ParaDiS format
+ Output file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.42.data
+Exporting configuration in ParaDiS format
+ Output file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.44.data
+Exporting configuration in ParaDiS format
+ Output file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.46.data
+Exporting configuration in ParaDiS format
+ Output file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.48.data
+Exporting configuration in ParaDiS format
+ Output file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.50.data
+Exporting configuration in ParaDiS format
+ Output file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.52.data
+Exporting configuration in ParaDiS format
+ Output file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.54.data
+Exporting configuration in ParaDiS format
+ Output file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.56.data
+Exporting configuration in ParaDiS format
+ Output file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.58.data
+Exporting configuration in ParaDiS format
+ Output file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.60.data
+Exporting configuration in ParaDiS format
+ Output file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.62.data
+Exporting configuration in ParaDiS format
+ Output file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.64.data
+Exporting configuration in ParaDiS format
+ Output file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.66.data
+Exporting configuration in ParaDiS format
+ Output file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.68.data
+Exporting configuration in ParaDiS format
+ Output file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.70.data
+Exporting configuration in ParaDiS format
+ Output file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.72.data
+Exporting configuration in ParaDiS format
+ Output file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.74.data
+Exporting configuration in ParaDiS format
+ Output file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.76.data
+Exporting configuration in ParaDiS format
+ Output file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.78.data
+Exporting configuration in ParaDiS format
+ Output file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.80.data
+Exporting configuration in ParaDiS format
+ Output file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.82.data
+Exporting configuration in ParaDiS format
+ Output file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.84.data
+Exporting configuration in ParaDiS format
+ Output file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.86.data
+Exporting configuration in ParaDiS format
+ Output file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.88.data
+Exporting configuration in ParaDiS format
+ Output file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.90.data
+Exporting configuration in ParaDiS format
+ Output file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.92.data
+Exporting configuration in ParaDiS format
+ Output file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.94.data
+Exporting configuration in ParaDiS format
+ Output file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.96.data
+Exporting configuration in ParaDiS format
+ Output file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.98.data
+Exporting configuration in ParaDiS format
+ Output file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.100.data
+step = 5, nodes = 144, dt = 1.036800e-12, time = 3.720800e-12, elapsed = 0.0 sec
+step = 10, nodes = 144, dt = 2.579890e-12, time = 1.297934e-11, elapsed = 0.1 sec
+step = 15, nodes = 144, dt = 6.419592e-12, time = 3.601755e-11, elapsed = 0.1 sec
+step = 20, nodes = 144, dt = 1.597400e-11, time = 9.334400e-11, elapsed = 0.2 sec
+step = 25, nodes = 144, dt = 3.974842e-11, time = 2.359905e-10, elapsed = 0.2 sec
+step = 30, nodes = 184, dt = 9.890680e-11, time = 5.909408e-10, elapsed = 0.2 sec
+step = 35, nodes = 269, dt = 1.000000e-10, time = 1.090941e-09, elapsed = 0.3 sec
+step = 40, nodes = 276, dt = 1.000000e-10, time = 1.590941e-09, elapsed = 0.4 sec
+step = 45, nodes = 278, dt = 1.000000e-10, time = 2.090941e-09, elapsed = 0.4 sec
+step = 50, nodes = 280, dt = 1.000000e-10, time = 2.590941e-09, elapsed = 0.5 sec
+step = 55, nodes = 284, dt = 1.000000e-10, time = 3.090941e-09, elapsed = 0.6 sec
+step = 60, nodes = 286, dt = 1.000000e-10, time = 3.590941e-09, elapsed = 0.6 sec
+step = 65, nodes = 287, dt = 1.000000e-10, time = 4.090941e-09, elapsed = 0.7 sec
+step = 70, nodes = 287, dt = 1.000000e-10, time = 4.590941e-09, elapsed = 0.8 sec
+step = 75, nodes = 288, dt = 1.000000e-10, time = 5.090941e-09, elapsed = 0.8 sec
+step = 80, nodes = 288, dt = 1.000000e-10, time = 5.590941e-09, elapsed = 0.9 sec
+step = 85, nodes = 293, dt = 1.000000e-10, time = 6.090941e-09, elapsed = 1.0 sec
+step = 90, nodes = 300, dt = 1.000000e-10, time = 6.590941e-09, elapsed = 1.0 sec
+step = 95, nodes = 304, dt = 1.000000e-10, time = 7.090941e-09, elapsed = 1.1 sec
+step = 100, nodes = 307, dt = 1.000000e-10, time = 7.590941e-09, elapsed = 1.2 sec
+RUN TIME: 1.170878 sec
+case loop06_mix_b064_f048_s0400_r006 finished in 1.2 s (t = 7.591e-09 s)
+
+$ /usr/bin/python3 -m data_ddd.trajectory /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006
+Kokkos::OpenMP::initialize WARNING: OMP_PROC_BIND environment variable not set
+  In general, for best performance with OpenMP 4.0 or better set OMP_PROC_BIND=spread and OMP_PLACES=threads
+  For best performance with OpenMP 3.1 set OMP_PROC_BIND=true
+  For unit testing set OMP_PROC_BIND=false
+
+Host Parallel Execution Space:
+  KOKKOS_ENABLE_OPENMP: yes
+
+OpenMP Runtime Configuration:
+Kokkos::OpenMP thread_pool_topology[ 1 x 4 x 1 ]
+Reading ParaDiS configuration
+ Input file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.0.data
+ nodes: 144, segments: 144
+ Burgers vector is conserved for all nodes
+Reading ParaDiS configuration
+ Input file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.2.data
+ nodes: 144, segments: 144
+ Burgers vector is conserved for all nodes
+Reading ParaDiS configuration
+ Input file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.4.data
+ nodes: 144, segments: 144
+ Burgers vector is conserved for all nodes
+Reading ParaDiS configuration
+ Input file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.6.data
+ nodes: 144, segments: 144
+ Burgers vector is conserved for all nodes
+Reading ParaDiS configuration
+ Input file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.8.data
+ nodes: 144, segments: 144
+ Burgers vector is conserved for all nodes
+Reading ParaDiS configuration
+ Input file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.10.data
+ nodes: 144, segments: 144
+ Burgers vector is conserved for all nodes
+Reading ParaDiS configuration
+ Input file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.12.data
+ nodes: 144, segments: 144
+ Burgers vector is conserved for all nodes
+Reading ParaDiS configuration
+ Input file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.14.data
+ nodes: 144, segments: 144
+ Burgers vector is conserved for all nodes
+Reading ParaDiS configuration
+ Input file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.16.data
+ nodes: 144, segments: 144
+ Burgers vector is conserved for all nodes
+Reading ParaDiS configuration
+ Input file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.18.data
+ nodes: 144, segments: 144
+ Burgers vector is conserved for all nodes
+Reading ParaDiS configuration
+ Input file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.20.data
+ nodes: 144, segments: 144
+ Burgers vector is conserved for all nodes
+Reading ParaDiS configuration
+ Input file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.22.data
+ nodes: 144, segments: 144
+ Burgers vector is conserved for all nodes
+Reading ParaDiS configuration
+ Input file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.24.data
+ nodes: 144, segments: 144
+ Burgers vector is conserved for all nodes
+Reading ParaDiS configuration
+ Input file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.26.data
+ nodes: 144, segments: 144
+ Burgers vector is conserved for all nodes
+Reading ParaDiS configuration
+ Input file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.28.data
+ nodes: 168, segments: 168
+ Burgers vector is conserved for all nodes
+Reading ParaDiS configuration
+ Input file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.30.data
+ nodes: 184, segments: 184
+ Burgers vector is conserved for all nodes
+Reading ParaDiS configuration
+ Input file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.32.data
+ nodes: 216, segments: 216
+ Burgers vector is conserved for all nodes
+Reading ParaDiS configuration
+ Input file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.34.data
+ nodes: 241, segments: 241
+ Burgers vector is conserved for all nodes
+Reading ParaDiS configuration
+ Input file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.36.data
+ nodes: 272, segments: 272
+ Burgers vector is conserved for all nodes
+Reading ParaDiS configuration
+ Input file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.38.data
+ nodes: 272, segments: 272
+ Burgers vector is conserved for all nodes
+Reading ParaDiS configuration
+ Input file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.40.data
+ nodes: 276, segments: 276
+ Burgers vector is conserved for all nodes
+Reading ParaDiS configuration
+ Input file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.42.data
+ nodes: 276, segments: 276
+ Burgers vector is conserved for all nodes
+Reading ParaDiS configuration
+ Input file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.44.data
+ nodes: 276, segments: 276
+ Burgers vector is conserved for all nodes
+Reading ParaDiS configuration
+ Input file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.46.data
+ nodes: 279, segments: 279
+ Burgers vector is conserved for all nodes
+Reading ParaDiS configuration
+ Input file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.48.data
+ nodes: 280, segments: 280
+ Burgers vector is conserved for all nodes
+Reading ParaDiS configuration
+ Input file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.50.data
+ nodes: 280, segments: 280
+ Burgers vector is conserved for all nodes
+Reading ParaDiS configuration
+ Input file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.52.data
+ nodes: 280, segments: 280
+ Burgers vector is conserved for all nodes
+Reading ParaDiS configuration
+ Input file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.54.data
+ nodes: 283, segments: 283
+ Burgers vector is conserved for all nodes
+Reading ParaDiS configuration
+ Input file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.56.data
+ nodes: 284, segments: 284
+ Burgers vector is conserved for all nodes
+Reading ParaDiS configuration
+ Input file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.58.data
+ nodes: 286, segments: 286
+ Burgers vector is conserved for all nodes
+Reading ParaDiS configuration
+ Input file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.60.data
+ nodes: 286, segments: 286
+ Burgers vector is conserved for all nodes
+Reading ParaDiS configuration
+ Input file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.62.data
+ nodes: 286, segments: 286
+ Burgers vector is conserved for all nodes
+Reading ParaDiS configuration
+ Input file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.64.data
+ nodes: 287, segments: 287
+ Burgers vector is conserved for all nodes
+Reading ParaDiS configuration
+ Input file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.66.data
+ nodes: 287, segments: 287
+ Burgers vector is conserved for all nodes
+Reading ParaDiS configuration
+ Input file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.68.data
+ nodes: 287, segments: 287
+ Burgers vector is conserved for all nodes
+Reading ParaDiS configuration
+ Input file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.70.data
+ nodes: 287, segments: 287
+ Burgers vector is conserved for all nodes
+Reading ParaDiS configuration
+ Input file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.72.data
+ nodes: 288, segments: 288
+ Burgers vector is conserved for all nodes
+Reading ParaDiS configuration
+ Input file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.74.data
+ nodes: 288, segments: 288
+ Burgers vector is conserved for all nodes
+Reading ParaDiS configuration
+ Input file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.76.data
+ nodes: 288, segments: 288
+ Burgers vector is conserved for all nodes
+Reading ParaDiS configuration
+ Input file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.78.data
+ nodes: 288, segments: 288
+ Burgers vector is conserved for all nodes
+Reading ParaDiS configuration
+ Input file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.80.data
+ nodes: 288, segments: 288
+ Burgers vector is conserved for all nodes
+Reading ParaDiS configuration
+ Input file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.82.data
+ nodes: 288, segments: 288
+ Burgers vector is conserved for all nodes
+Reading ParaDiS configuration
+ Input file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.84.data
+ nodes: 292, segments: 292
+ Burgers vector is conserved for all nodes
+Reading ParaDiS configuration
+ Input file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.86.data
+ nodes: 296, segments: 296
+ Burgers vector is conserved for all nodes
+Reading ParaDiS configuration
+ Input file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.88.data
+ nodes: 298, segments: 298
+ Burgers vector is conserved for all nodes
+Reading ParaDiS configuration
+ Input file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.90.data
+ nodes: 300, segments: 300
+ Burgers vector is conserved for all nodes
+Reading ParaDiS configuration
+ Input file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.92.data
+ nodes: 301, segments: 301
+ Burgers vector is conserved for all nodes
+Reading ParaDiS configuration
+ Input file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.94.data
+ nodes: 303, segments: 303
+ Burgers vector is conserved for all nodes
+Reading ParaDiS configuration
+ Input file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.96.data
+ nodes: 305, segments: 305
+ Burgers vector is conserved for all nodes
+Reading ParaDiS configuration
+ Input file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.98.data
+ nodes: 307, segments: 307
+ Burgers vector is conserved for all nodes
+Reading ParaDiS configuration
+ Input file: /workspace/datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006/raw/config.100.data
+ nodes: 307, segments: 307
+ Burgers vector is conserved for all nodes
+processed loop06_mix_b064_f048_s0400_r006: 51 frames, validation ok=True

@@ -1,0 +1,85 @@
+{
+  "case": "loop06_mix_b064_f048_s0400_r006",
+  "stage": "network",
+  "ok": true,
+  "n_pass": 12,
+  "n_warn": 0,
+  "n_fail": 0,
+  "checks": [
+    {
+      "name": "network_size",
+      "status": "pass",
+      "message": "144 nodes, 144 segments",
+      "data": {
+        "n_nodes": 144,
+        "n_segs": 144
+      }
+    },
+    {
+      "name": "finite_positions",
+      "status": "pass",
+      "message": "all nodal positions are finite",
+      "data": {}
+    },
+    {
+      "name": "segment_node_ids",
+      "status": "pass",
+      "message": "all segment node indices are valid",
+      "data": {}
+    },
+    {
+      "name": "self_links",
+      "status": "pass",
+      "message": "no self-connected segments",
+      "data": {}
+    },
+    {
+      "name": "connectivity",
+      "status": "pass",
+      "message": "every node is pinned or has >= 2 arms",
+      "data": {}
+    },
+    {
+      "name": "duplicate_links",
+      "status": "pass",
+      "message": "no duplicate links",
+      "data": {}
+    },
+    {
+      "name": "segment_lengths",
+      "status": "pass",
+      "message": "lengths in [287.16, 287.16] b (minseg=80.0, maxseg=300.0)",
+      "data": {}
+    },
+    {
+      "name": "duplicate_nodes",
+      "status": "pass",
+      "message": "no coincident nodes",
+      "data": {}
+    },
+    {
+      "name": "burgers_nonzero",
+      "status": "pass",
+      "message": "all Burgers vectors are non-zero",
+      "data": {}
+    },
+    {
+      "name": "burgers_conservation",
+      "status": "pass",
+      "message": "Burgers vector conserved at every node",
+      "data": {}
+    },
+    {
+      "name": "glide_plane_burgers",
+      "status": "pass",
+      "message": "b.n = 0 for all segments",
+      "data": {}
+    },
+    {
+      "name": "glide_plane_tangent",
+      "status": "pass",
+      "message": "t.n = 0 for all segments",
+      "data": {}
+    }
+  ]
+}

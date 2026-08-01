@@ -1,0 +1,227 @@
+name: loop06_mix_b064_f064_s0500_r013
+case_type: six_loops
+interaction: mixed
+description: Six loops, perturbed stress magnitude and axis
+loops:
+- center:
+  - 32.01745906753347
+  - 43.31607380552913
+  - 32.31926670673685
+  radius: 5.5
+  burgers:
+  - 0.7071067811865475
+  - 0.0
+  - 0.7071067811865475
+  plane:
+  - -0.5773502691896258
+  - 0.5773502691896258
+  - 0.5773502691896258
+  slip_system: 5
+  sense: -1
+  n_nodes: 24
+- center:
+  - 32.23765877373576
+  - 20.203738353428154
+  - 16.39731623123983
+  radius: 5.5
+  burgers:
+  - 0.7071067811865475
+  - 0.0
+  - 0.7071067811865475
+  plane:
+  - 0.5773502691896258
+  - 0.5773502691896258
+  - -0.5773502691896258
+  slip_system: 4
+  sense: 1
+  n_nodes: 24
+- center:
+  - 32.39569237300193
+  - 20.787373796624095
+  - 31.72833617337065
+  radius: 5.5
+  burgers:
+  - 0.0
+  - 0.7071067811865475
+  - -0.7071067811865475
+  plane:
+  - 0.5773502691896258
+  - 0.5773502691896258
+  - 0.5773502691896258
+  slip_system: 10
+  sense: 1
+  n_nodes: 24
+- center:
+  - 31.797757451789003
+  - 42.6062652857274
+  - 48.390230773785326
+  radius: 5.5
+  burgers:
+  - 0.0
+  - 0.7071067811865475
+  - 0.7071067811865475
+  plane:
+  - 0.5773502691896258
+  - -0.5773502691896258
+  - 0.5773502691896258
+  slip_system: 9
+  sense: -1
+  n_nodes: 24
+- center:
+  - 31.87664001688392
+  - 21.135502586772475
+  - 47.69627274326062
+  radius: 5.5
+  burgers:
+  - 0.0
+  - 0.7071067811865475
+  - 0.7071067811865475
+  plane:
+  - 0.5773502691896258
+  - 0.5773502691896258
+  - -0.5773502691896258
+  slip_system: 8
+  sense: 1
+  n_nodes: 24
+- center:
+  - 33.069179526043705
+  - 44.445410486870486
+  - 16.708397474977428
+  radius: 5.5
+  burgers:
+  - 0.7071067811865475
+  - 0.0
+  - -0.7071067811865475
+  plane:
+  - 0.5773502691896258
+  - -0.5773502691896258
+  - 0.5773502691896258
+  slip_system: 7
+  sense: 1
+  n_nodes: 24
+lines: []
+box_size:
+- 64.0
+- 64.0
+- 64.0
+fov:
+- 64.0
+- 64.0
+- 64.0
+pbc:
+- true
+- true
+- true
+stress:
+  mode: uniaxial
+  magnitude: 500000000.0
+  axis:
+  - 0.06022040471480837
+  - 0.2702492417650811
+  - 0.9609052243490945
+  shear_dir:
+  - 1.0
+  - 0.0
+  - 0.0
+  shear_normal:
+  - 0.0
+  - 1.0
+  - 0.0
+  voigt:
+  - 1813248.572007657
+  - 36517326.33730062
+  - 461669425.09069186
+  - 129841954.14422397
+  - 28933050.751438104
+  - 8137259.356481639
+  perturbation:
+    base_magnitude_Pa: 400000000.0
+    base_axis:
+    - 0.0
+    - 2.0
+    - 5.0
+    magnitude_scale: 1.25
+    axis_jitter_deg: 7.0
+    seed: 13
+seed: 13
+num_steps: 100
+write_freq: 2
+print_freq: 5
+physics:
+  description: 'Elasticity-enabled glissile-loop reference (SimpleGlide): FCC Cu,
+    DDD-FFT force model, GLIDE mobility, trapezoid integration, retroactive collisions,
+    parallel topology, length-based remeshing.'
+  units:
+    unit_b: 200.0
+    length: b (burgmag)
+    stress: Pa
+    time: s
+  material:
+    crystal: fcc
+    burgmag: 2.55e-10
+    mu: 54600000000.0
+    nu: 0.324
+    a: 6.0
+  discretization:
+    maxseg: 300.0
+    minseg: 80.0
+    rann: 10.0
+    rtol: 1.0
+    fft_grid_spacing: 400.0
+    fft_grid_min: 8
+    fft_grid_max: 64
+  force:
+    force_mode: DDD_FFT_MODEL
+    Ec: -1.0
+  mobility:
+    mobility_law: SimpleGlide
+    mob: 1000.0
+  time_integration:
+    integrator: Trapezoid
+    nextdt: 5.0e-13
+    maxdt: 1.0e-10
+  collision:
+    collision_mode: Retroactive
+  topology:
+    topology_mode: TopologyParallel
+    splitMultiNodeAlpha: 0.001
+  remesh:
+    remesh_rule: LengthBased
+  cross_slip: null
+  loading:
+    loading_mode: stress
+  boundary_conditions:
+    pbc:
+    - true
+    - true
+    - true
+  output:
+    config_format: paradis
+    properties_file: stress_strain_dens.dat
+    write_freq: 2
+    print_freq: 5
+    num_steps: 100
+derived:
+  n_loops: 6
+  n_lines: 0
+  unit_b: 200.0
+  box_size_b:
+  - 12800.0
+  - 12800.0
+  - 12800.0
+  fov_b:
+  - 12800.0
+  - 12800.0
+  - 12800.0
+  fft_grid:
+  - 32
+  - 32
+  - 32
+  applied_stress_voigt_Pa:
+    xx: 1813248.572007657
+    yy: 36517326.33730062
+    zz: 461669425.09069186
+    yz: 129841954.14422397
+    xz: 28933050.751438104
+    xy: 8137259.356481639
+  applied_stress_von_mises_Pa: 500000000.0000002

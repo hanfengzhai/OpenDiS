@@ -1,0 +1,48 @@
+{
+  "case": "loop03_mix_b032_f032_s0400_r012",
+  "stage": "run",
+  "ok": true,
+  "n_pass": 6,
+  "n_warn": 0,
+  "n_fail": 0,
+  "checks": [
+    {
+      "name": "frame_count",
+      "status": "pass",
+      "message": "51 trajectory frames written",
+      "data": {}
+    },
+    {
+      "name": "exit_status",
+      "status": "pass",
+      "message": "simulation completed",
+      "data": {}
+    },
+    {
+      "name": "time_monotonic",
+      "status": "pass",
+      "message": "simulated 7.591e-09 s over 100 steps",
+      "data": {
+        "total_time_s": 7.590940784499427e-09
+      }
+    },
+    {
+      "name": "final_network",
+      "status": "pass",
+      "message": "network has 117 nodes at the end (51 initially)",
+      "data": {}
+    },
+    {
+      "name": "finite_trajectory",
+      "status": "pass",
+      "message": "all nodal positions are finite",
+      "data": {}
+    },
+    {
+      "name": "network_evolution",
+      "status": "pass",
+      "message": "maximum nodal displacement topology changed",
+      "data": {}
+    }
+  ]
+}

@@ -1,0 +1,145 @@
+{
+  "case": "loop12_mix_b128_f128_s0400_r007",
+  "stage": "config",
+  "ok": true,
+  "n_pass": 20,
+  "n_warn": 0,
+  "n_fail": 0,
+  "checks": [
+    {
+      "name": "box_is_3d",
+      "status": "pass",
+      "message": "box is a 3-D cell [128.0, 128.0, 128.0] (nominal) = [25600.0, 25600.0, 25600.0] b",
+      "data": {}
+    },
+    {
+      "name": "fov_within_box",
+      "status": "pass",
+      "message": "field of view [128.0, 128.0, 128.0] u",
+      "data": {}
+    },
+    {
+      "name": "elasticity_enabled",
+      "status": "pass",
+      "message": "force_mode=DDD_FFT_MODEL",
+      "data": {}
+    },
+    {
+      "name": "material_parameters",
+      "status": "pass",
+      "message": "mu=5.46e+10 Pa, nu=0.324, a=6 b, b=2.55e-10 m",
+      "data": {}
+    },
+    {
+      "name": "module_mobility",
+      "status": "pass",
+      "message": "{'mobility_law': 'SimpleGlide', 'mob': 1000.0}",
+      "data": {}
+    },
+    {
+      "name": "module_time_integration",
+      "status": "pass",
+      "message": "{'integrator': 'Trapezoid', 'nextdt': 5e-13, 'maxdt': 1e-10}",
+      "data": {}
+    },
+    {
+      "name": "module_collision",
+      "status": "pass",
+      "message": "{'collision_mode': 'Retroactive'}",
+      "data": {}
+    },
+    {
+      "name": "module_topology",
+      "status": "pass",
+      "message": "{'topology_mode': 'TopologyParallel', 'splitMultiNodeAlpha': 0.001}",
+      "data": {}
+    },
+    {
+      "name": "module_remesh",
+      "status": "pass",
+      "message": "{'remesh_rule': 'LengthBased'}",
+      "data": {}
+    },
+    {
+      "name": "pbc_for_fft",
+      "status": "pass",
+      "message": "pbc=[True, True, True]",
+      "data": {}
+    },
+    {
+      "name": "fft_grid",
+      "status": "pass",
+      "message": "Ngrid=[64, 64, 64], spacing=[400.0, 400.0, 400.0] b",
+      "data": {}
+    },
+    {
+      "name": "stress_finite",
+      "status": "pass",
+      "message": "sigma_vM=4e+08 Pa, voigt=[0.0, 55172413.79310345, 344827586.2068966, 137931034.48275864, 0.0, 0.0]",
+      "data": {}
+    },
+    {
+      "name": "stress_symmetric",
+      "status": "pass",
+      "message": "stress tensor is symmetric",
+      "data": {}
+    },
+    {
+      "name": "stress_magnitude",
+      "status": "pass",
+      "message": "sigma_vM/mu = 0.0073",
+      "data": {}
+    },
+    {
+      "name": "resolved_shear",
+      "status": "pass",
+      "message": "Schmid factors in [0.084, 0.493]",
+      "data": {
+        "schmid_factors": [
+          0.0845,
+          0.1971,
+          0.1971,
+          0.0845,
+          0.2112,
+          0.4927,
+          0.4927,
+          0.2112,
+          0.2956,
+          0.2956,
+          0.2956,
+          0.2956
+        ]
+      }
+    },
+    {
+      "name": "glide_planes",
+      "status": "pass",
+      "message": "12 loops on valid FCC slip systems",
+      "data": {}
+    },
+    {
+      "name": "loops_inside_box",
+      "status": "pass",
+      "message": "all loops lie inside the simulation box",
+      "data": {}
+    },
+    {
+      "name": "boundary_margin",
+      "status": "pass",
+      "message": "min boundary margin 4362.7 b",
+      "data": {}
+    },
+    {
+      "name": "periodic_image_proximity",
+      "status": "pass",
+      "message": "smallest gap to a periodic image is 22987.2 b",
+      "data": {}
+    },
+    {
+      "name": "loop_separation",
+      "status": "pass",
+      "message": "minimum loop-loop distance 3953.3 b (pair [1, 7])",
+      "data": {}
+    }
+  ]
+}

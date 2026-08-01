@@ -1,0 +1,9 @@
+
+$ /usr/bin/python3 -m data_ddd.visualize /workspace/datasets/glissile_loops/loop06_mix_b064_f032_s0400_r006 --fps 8
+rendered /workspace/datasets/glissile_loops/loop06_mix_b064_f032_s0400_r006 (51 frames): initial, final, video
+
+$ /usr/bin/python3 -m data_ddd.visualize /workspace/datasets/glissile_loops/loop06_mix_b064_f032_s0400_r006 --fps 8
+rendered /workspace/datasets/glissile_loops/loop06_mix_b064_f032_s0400_r006 (51 frames): initial, final, video
+
+$ /usr/bin/python3 -m data_ddd.visualize /workspace/datasets/glissile_loops/loop06_mix_b064_f032_s0400_r006 --fps 8
+rendered /workspace/datasets/glissile_loops/loop06_mix_b064_f032_s0400_r006 (51 frames): initial, final, video

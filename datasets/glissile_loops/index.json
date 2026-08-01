@@ -1,0 +1,400 @@
+{
+  "cases": [
+    {
+      "case": "loop01_iso_b032_f032_s0400_r001",
+      "case_type": "single_loop",
+      "interaction": "isolated",
+      "box_size": [
+        32.0,
+        32.0,
+        32.0
+      ],
+      "fov": [
+        32.0,
+        32.0,
+        32.0
+      ],
+      "n_loops": 1,
+      "n_lines": 0,
+      "stress_MPa": 400.0,
+      "seed": 1,
+      "status": "generated",
+      "message": "",
+      "dir": "datasets/glissile_loops/loop01_iso_b032_f032_s0400_r001"
+    },
+    {
+      "case": "loop02_copl_b032_f032_s0400_r002",
+      "case_type": "double_loop",
+      "interaction": "coplanar",
+      "box_size": [
+        32.0,
+        32.0,
+        32.0
+      ],
+      "fov": [
+        32.0,
+        32.0,
+        32.0
+      ],
+      "n_loops": 2,
+      "n_lines": 0,
+      "stress_MPa": 400.0,
+      "seed": 2,
+      "status": "generated",
+      "message": "",
+      "dir": "datasets/glissile_loops/loop02_copl_b032_f032_s0400_r002"
+    },
+    {
+      "case": "loop02_junc_b032_f032_s0400_r003",
+      "case_type": "double_loop",
+      "interaction": "junction",
+      "box_size": [
+        32.0,
+        32.0,
+        32.0
+      ],
+      "fov": [
+        32.0,
+        32.0,
+        32.0
+      ],
+      "n_loops": 2,
+      "n_lines": 0,
+      "stress_MPa": 400.0,
+      "seed": 3,
+      "status": "generated",
+      "message": "",
+      "dir": "datasets/glissile_loops/loop02_junc_b032_f032_s0400_r003"
+    },
+    {
+      "case": "loop02_dip_b032_f032_s0400_r004",
+      "case_type": "double_loop",
+      "interaction": "dipole",
+      "box_size": [
+        32.0,
+        32.0,
+        32.0
+      ],
+      "fov": [
+        32.0,
+        32.0,
+        32.0
+      ],
+      "n_loops": 2,
+      "n_lines": 0,
+      "stress_MPa": 400.0,
+      "seed": 4,
+      "status": "generated",
+      "message": "",
+      "dir": "datasets/glissile_loops/loop02_dip_b032_f032_s0400_r004"
+    },
+    {
+      "case": "loop03_mix_b032_f032_s0400_r005",
+      "case_type": "triple_loop",
+      "interaction": "mixed",
+      "box_size": [
+        32.0,
+        32.0,
+        32.0
+      ],
+      "fov": [
+        32.0,
+        32.0,
+        32.0
+      ],
+      "n_loops": 3,
+      "n_lines": 0,
+      "stress_MPa": 400.0,
+      "seed": 5,
+      "status": "generated",
+      "message": "",
+      "dir": "datasets/glissile_loops/loop03_mix_b032_f032_s0400_r005"
+    },
+    {
+      "case": "loop06_mix_b064_f064_s0400_r006",
+      "case_type": "six_loops",
+      "interaction": "mixed",
+      "box_size": [
+        64.0,
+        64.0,
+        64.0
+      ],
+      "fov": [
+        64.0,
+        64.0,
+        64.0
+      ],
+      "n_loops": 6,
+      "n_lines": 0,
+      "stress_MPa": 400.0,
+      "seed": 6,
+      "status": "generated",
+      "message": "",
+      "dir": "datasets/glissile_loops/loop06_mix_b064_f064_s0400_r006"
+    },
+    {
+      "case": "loop12_mix_b128_f128_s0400_r007",
+      "case_type": "twelve_loops",
+      "interaction": "mixed",
+      "box_size": [
+        128.0,
+        128.0,
+        128.0
+      ],
+      "fov": [
+        128.0,
+        128.0,
+        128.0
+      ],
+      "n_loops": 12,
+      "n_lines": 0,
+      "stress_MPa": 400.0,
+      "seed": 7,
+      "status": "generated",
+      "message": "",
+      "dir": "datasets/glissile_loops/loop12_mix_b128_f128_s0400_r007"
+    },
+    {
+      "case": "line01loop01_lnlp_b032_f032_s0400_r008",
+      "case_type": "line_loop",
+      "interaction": "line_loop",
+      "box_size": [
+        32.0,
+        32.0,
+        32.0
+      ],
+      "fov": [
+        32.0,
+        32.0,
+        32.0
+      ],
+      "n_loops": 1,
+      "n_lines": 1,
+      "stress_MPa": 400.0,
+      "seed": 8,
+      "status": "generated",
+      "message": "",
+      "dir": "datasets/glissile_loops/line01loop01_lnlp_b032_f032_s0400_r008"
+    },
+    {
+      "case": "line01loop03_lnlp_b064_f064_s0400_r009",
+      "case_type": "line_multiloop",
+      "interaction": "line_loop",
+      "box_size": [
+        64.0,
+        64.0,
+        64.0
+      ],
+      "fov": [
+        64.0,
+        64.0,
+        64.0
+      ],
+      "n_loops": 3,
+      "n_lines": 1,
+      "stress_MPa": 400.0,
+      "seed": 9,
+      "status": "generated",
+      "message": "",
+      "dir": "datasets/glissile_loops/line01loop03_lnlp_b064_f064_s0400_r009"
+    },
+    {
+      "case": "loop03_mix_b032_f016_s0400_r005",
+      "case_type": "triple_loop",
+      "interaction": "mixed",
+      "box_size": [
+        32.0,
+        32.0,
+        32.0
+      ],
+      "fov": [
+        16.0,
+        16.0,
+        16.0
+      ],
+      "n_loops": 3,
+      "n_lines": 0,
+      "stress_MPa": 400.0,
+      "seed": 5,
+      "status": "generated",
+      "message": "",
+      "dir": "datasets/glissile_loops/loop03_mix_b032_f016_s0400_r005"
+    },
+    {
+      "case": "loop06_mix_b064_f032_s0400_r006",
+      "case_type": "six_loops",
+      "interaction": "mixed",
+      "box_size": [
+        64.0,
+        64.0,
+        64.0
+      ],
+      "fov": [
+        32.0,
+        32.0,
+        32.0
+      ],
+      "n_loops": 6,
+      "n_lines": 0,
+      "stress_MPa": 400.0,
+      "seed": 6,
+      "status": "generated",
+      "message": "",
+      "dir": "datasets/glissile_loops/loop06_mix_b064_f032_s0400_r006"
+    },
+    {
+      "case": "loop06_mix_b064_f048_s0400_r006",
+      "case_type": "six_loops",
+      "interaction": "mixed",
+      "box_size": [
+        64.0,
+        64.0,
+        64.0
+      ],
+      "fov": [
+        48.0,
+        48.0,
+        48.0
+      ],
+      "n_loops": 6,
+      "n_lines": 0,
+      "stress_MPa": 400.0,
+      "seed": 6,
+      "status": "generated",
+      "message": "",
+      "dir": "datasets/glissile_loops/loop06_mix_b064_f048_s0400_r006"
+    },
+    {
+      "case": "loop01_iso_b032_f032_s0200_r001",
+      "case_type": "single_loop",
+      "interaction": "isolated",
+      "box_size": [
+        32.0,
+        32.0,
+        32.0
+      ],
+      "fov": [
+        32.0,
+        32.0,
+        32.0
+      ],
+      "n_loops": 1,
+      "n_lines": 0,
+      "stress_MPa": 200.0,
+      "seed": 1,
+      "status": "generated",
+      "message": "",
+      "dir": "datasets/glissile_loops/loop01_iso_b032_f032_s0200_r001"
+    },
+    {
+      "case": "loop01_iso_b032_f032_s0600_r001",
+      "case_type": "single_loop",
+      "interaction": "isolated",
+      "box_size": [
+        32.0,
+        32.0,
+        32.0
+      ],
+      "fov": [
+        32.0,
+        32.0,
+        32.0
+      ],
+      "n_loops": 1,
+      "n_lines": 0,
+      "stress_MPa": 600.0,
+      "seed": 1,
+      "status": "generated",
+      "message": "",
+      "dir": "datasets/glissile_loops/loop01_iso_b032_f032_s0600_r001"
+    },
+    {
+      "case": "loop01_iso_b032_f032_s0800_r001",
+      "case_type": "single_loop",
+      "interaction": "isolated",
+      "box_size": [
+        32.0,
+        32.0,
+        32.0
+      ],
+      "fov": [
+        32.0,
+        32.0,
+        32.0
+      ],
+      "n_loops": 1,
+      "n_lines": 0,
+      "stress_MPa": 800.0,
+      "seed": 1,
+      "status": "generated",
+      "message": "",
+      "dir": "datasets/glissile_loops/loop01_iso_b032_f032_s0800_r001"
+    },
+    {
+      "case": "loop03_mix_b032_f032_s0400_r011",
+      "case_type": "triple_loop",
+      "interaction": "mixed",
+      "box_size": [
+        32.0,
+        32.0,
+        32.0
+      ],
+      "fov": [
+        32.0,
+        32.0,
+        32.0
+      ],
+      "n_loops": 3,
+      "n_lines": 0,
+      "stress_MPa": 400.0,
+      "seed": 11,
+      "status": "generated",
+      "message": "",
+      "dir": "datasets/glissile_loops/loop03_mix_b032_f032_s0400_r011"
+    },
+    {
+      "case": "loop03_mix_b032_f032_s0400_r012",
+      "case_type": "triple_loop",
+      "interaction": "mixed",
+      "box_size": [
+        32.0,
+        32.0,
+        32.0
+      ],
+      "fov": [
+        32.0,
+        32.0,
+        32.0
+      ],
+      "n_loops": 3,
+      "n_lines": 0,
+      "stress_MPa": 400.0,
+      "seed": 12,
+      "status": "generated",
+      "message": "",
+      "dir": "datasets/glissile_loops/loop03_mix_b032_f032_s0400_r012"
+    },
+    {
+      "case": "loop06_mix_b064_f064_s0500_r013",
+      "case_type": "six_loops",
+      "interaction": "mixed",
+      "box_size": [
+        64.0,
+        64.0,
+        64.0
+      ],
+      "fov": [
+        64.0,
+        64.0,
+        64.0
+      ],
+      "n_loops": 6,
+      "n_lines": 0,
+      "stress_MPa": 500.0,
+      "seed": 13,
+      "status": "generated",
+      "message": "",
+      "dir": "datasets/glissile_loops/loop06_mix_b064_f064_s0500_r013"
+    }
+  ]
+}

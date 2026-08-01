@@ -1,0 +1,156 @@
+name: loop02_copl_b032_f032_s0400_r002
+case_type: double_loop
+interaction: coplanar
+description: 'Two coplanar same-sign loops: like-sign repulsion flattens their facing
+  sides as they expand'
+loops:
+- center:
+  - 15.95818012468154
+  - 12.714263723070529
+  - 12.551991415930692
+  radius: 4.0
+  burgers:
+  - 0.0
+  - 0.7071067811865475
+  - 0.7071067811865475
+  plane:
+  - 0.5773502691896258
+  - -0.5773502691896258
+  - 0.5773502691896258
+  slip_system: 9
+  sense: -1
+  n_nodes: 17
+- center:
+  - 16.143976590617672
+  - 19.3442244632211
+  - 19.226657366508693
+  radius: 4.0
+  burgers:
+  - 0.0
+  - 0.7071067811865475
+  - 0.7071067811865475
+  plane:
+  - 0.5773502691896258
+  - -0.5773502691896258
+  - 0.5773502691896258
+  slip_system: 9
+  sense: -1
+  n_nodes: 17
+lines: []
+box_size:
+- 32.0
+- 32.0
+- 32.0
+fov:
+- 32.0
+- 32.0
+- 32.0
+pbc:
+- true
+- true
+- true
+stress:
+  mode: uniaxial
+  magnitude: 400000000.0
+  axis:
+  - 0.0
+  - 2.0
+  - 5.0
+  shear_dir:
+  - 1.0
+  - 0.0
+  - 0.0
+  shear_normal:
+  - 0.0
+  - 1.0
+  - 0.0
+  voigt:
+  - 0.0
+  - 55172413.79310345
+  - 344827586.2068966
+  - 137931034.48275864
+  - 0.0
+  - 0.0
+  perturbation: {}
+seed: 2
+num_steps: 150
+write_freq: 3
+print_freq: 5
+physics:
+  description: 'Elasticity-enabled glissile-loop reference (SimpleGlide): FCC Cu,
+    DDD-FFT force model, GLIDE mobility, trapezoid integration, retroactive collisions,
+    parallel topology, length-based remeshing.'
+  units:
+    unit_b: 200.0
+    length: b (burgmag)
+    stress: Pa
+    time: s
+  material:
+    crystal: fcc
+    burgmag: 2.55e-10
+    mu: 54600000000.0
+    nu: 0.324
+    a: 6.0
+  discretization:
+    maxseg: 300.0
+    minseg: 80.0
+    rann: 10.0
+    rtol: 1.0
+    fft_grid_spacing: 400.0
+    fft_grid_min: 8
+    fft_grid_max: 64
+  force:
+    force_mode: DDD_FFT_MODEL
+    Ec: -1.0
+  mobility:
+    mobility_law: SimpleGlide
+    mob: 1000.0
+  time_integration:
+    integrator: Trapezoid
+    nextdt: 5.0e-13
+    maxdt: 1.0e-10
+  collision:
+    collision_mode: Retroactive
+  topology:
+    topology_mode: TopologyParallel
+    splitMultiNodeAlpha: 0.001
+  remesh:
+    remesh_rule: LengthBased
+  cross_slip: null
+  loading:
+    loading_mode: stress
+  boundary_conditions:
+    pbc:
+    - true
+    - true
+    - true
+  output:
+    config_format: paradis
+    properties_file: stress_strain_dens.dat
+    write_freq: 2
+    print_freq: 5
+    num_steps: 100
+derived:
+  n_loops: 2
+  n_lines: 0
+  unit_b: 200.0
+  box_size_b:
+  - 6400.0
+  - 6400.0
+  - 6400.0
+  fov_b:
+  - 6400.0
+  - 6400.0
+  - 6400.0
+  fft_grid:
+  - 16
+  - 16
+  - 16
+  applied_stress_voigt_Pa:
+    xx: 0.0
+    yy: 55172413.79310345
+    zz: 344827586.2068966
+    yz: 137931034.48275864
+    xz: 0.0
+    xy: 0.0
+  applied_stress_von_mises_Pa: 400000000.00000006

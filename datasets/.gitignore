@@ -1,0 +1,10 @@
+# Raw ExaDiS trajectory output (config.<step>.data + stress_strain_dens.dat) is
+# bulky (~50 MB for the full dataset) and fully regenerable with
+#   python3 -m data_ddd.pipeline run
+# The processed trajectories in processed/trajectory.npz keep every frame.
+**/raw/
+
+# The repository-wide .gitignore drops *.png / *.data / *.dat / *.txt anywhere;
+# re-include the dataset artifacts that are part of the deliverable.
+!**/vis/*.png
+!**/inputs/*.data

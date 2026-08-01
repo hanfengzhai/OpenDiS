@@ -1,0 +1,267 @@
+{
+  "case": "loop03_mix_b032_f032_s0400_r011",
+  "case_type": "triple_loop",
+  "interaction": "mixed",
+  "description": "Three loops, loading axis rotated by 5 deg",
+  "seed": 11,
+  "box": {
+    "size_nominal": [
+      32.0,
+      32.0,
+      32.0
+    ],
+    "size_b": [
+      6400.0,
+      6400.0,
+      6400.0
+    ],
+    "dimensionality": 3,
+    "pbc": [
+      true,
+      true,
+      true
+    ],
+    "unit_b": 200.0,
+    "burgmag_m": 2.55e-10,
+    "size_m": [
+      1.632e-06,
+      1.632e-06,
+      1.632e-06
+    ]
+  },
+  "field_of_view": {
+    "size_nominal": [
+      32.0,
+      32.0,
+      32.0
+    ],
+    "size_b": [
+      6400.0,
+      6400.0,
+      6400.0
+    ],
+    "center_b": [
+      3200.0,
+      3200.0,
+      3200.0
+    ]
+  },
+  "applied_stress": {
+    "mode": "uniaxial",
+    "magnitude_Pa": 400000000.0,
+    "axis": [
+      0.003686561444140526,
+      0.4508270743502938,
+      0.8926036961034126
+    ],
+    "voigt_Pa": {
+      "xx": 5436.294112569392,
+      "yy": 81298020.38689813,
+      "zz": 318696543.31898934,
+      "yz": 160963965.1474241,
+      "xz": 1316255.3483808672,
+      "xy": 664800.684109787
+    },
+    "tensor_Pa": [
+      [
+        5436.294112569392,
+        664800.684109787,
+        1316255.3483808672
+      ],
+      [
+        664800.684109787,
+        81298020.38689813,
+        160963965.1474241
+      ],
+      [
+        1316255.3483808672,
+        160963965.1474241,
+        318696543.31898934
+      ]
+    ],
+    "von_mises_Pa": 400000000.00000006,
+    "perturbation": {
+      "base_magnitude_Pa": 400000000.0,
+      "base_axis": [
+        0.0,
+        2.0,
+        5.0
+      ],
+      "magnitude_scale": 1.0,
+      "axis_jitter_deg": 5.0,
+      "seed": 11
+    }
+  },
+  "initial_geometry": {
+    "n_loops": 3,
+    "n_lines": 0,
+    "loops": [
+      {
+        "center_nominal": [
+          16.227890543028785,
+          15.977574224381753,
+          22.698754246502617
+        ],
+        "center_b": [
+          3245.578108605757,
+          3195.5148448763507,
+          4539.750849300523
+        ],
+        "radius_nominal": 4.0,
+        "radius_b": 800.0,
+        "burgers": [
+          0.7071067811865475,
+          -0.7071067811865475,
+          0.0
+        ],
+        "plane": [
+          0.5773502691896258,
+          0.5773502691896258,
+          0.5773502691896258
+        ],
+        "slip_system": 2,
+        "sense": 1,
+        "n_nodes": 17,
+        "schmid_factor": -0.24590865771299966
+      },
+      {
+        "center_nominal": [
+          15.261070080410356,
+          16.62661950987981,
+          15.961427135937752
+        ],
+        "center_b": [
+          3052.2140160820713,
+          3325.3239019759617,
+          3192.2854271875503
+        ],
+        "radius_nominal": 4.0,
+        "radius_b": 800.0,
+        "burgers": [
+          0.7071067811865475,
+          0.0,
+          -0.7071067811865475
+        ],
+        "plane": [
+          0.5773502691896258,
+          0.5773502691896258,
+          0.5773502691896258
+        ],
+        "slip_system": 6,
+        "sense": 1,
+        "n_nodes": 17,
+        "schmid_factor": -0.48886739870968915
+      },
+      {
+        "center_nominal": [
+          16.27215138130966,
+          15.945373466409269,
+          9.448360573170058
+        ],
+        "center_b": [
+          3254.430276261932,
+          3189.074693281854,
+          1889.6721146340117
+        ],
+        "radius_nominal": 4.0,
+        "radius_b": 800.0,
+        "burgers": [
+          0.0,
+          0.7071067811865475,
+          0.7071067811865475
+        ],
+        "plane": [
+          0.5773502691896258,
+          0.5773502691896258,
+          -0.5773502691896258
+        ],
+        "slip_system": 8,
+        "sense": 1,
+        "n_nodes": 17,
+        "schmid_factor": -0.2402719460177375
+      }
+    ],
+    "lines": []
+  },
+  "run": {
+    "num_steps": 100,
+    "write_freq": 2,
+    "print_freq": 5
+  },
+  "physics": {
+    "description": "Elasticity-enabled glissile-loop reference (SimpleGlide): FCC Cu, DDD-FFT force model, GLIDE mobility, trapezoid integration, retroactive collisions, parallel topology, length-based remeshing.",
+    "units": {
+      "unit_b": 200.0,
+      "length": "b (burgmag)",
+      "stress": "Pa",
+      "time": "s"
+    },
+    "material": {
+      "crystal": "fcc",
+      "burgmag": 2.55e-10,
+      "mu": 54600000000.0,
+      "nu": 0.324,
+      "a": 6.0
+    },
+    "discretization": {
+      "maxseg": 300.0,
+      "minseg": 80.0,
+      "rann": 10.0,
+      "rtol": 1.0,
+      "fft_grid_spacing": 400.0,
+      "fft_grid_min": 8,
+      "fft_grid_max": 64
+    },
+    "force": {
+      "force_mode": "DDD_FFT_MODEL",
+      "Ec": -1.0
+    },
+    "mobility": {
+      "mobility_law": "SimpleGlide",
+      "mob": 1000.0
+    },
+    "time_integration": {
+      "integrator": "Trapezoid",
+      "nextdt": 5e-13,
+      "maxdt": 1e-10
+    },
+    "collision": {
+      "collision_mode": "Retroactive"
+    },
+    "topology": {
+      "topology_mode": "TopologyParallel",
+      "splitMultiNodeAlpha": 0.001
+    },
+    "remesh": {
+      "remesh_rule": "LengthBased"
+    },
+    "cross_slip": null,
+    "loading": {
+      "loading_mode": "stress"
+    },
+    "boundary_conditions": {
+      "pbc": [
+        true,
+        true,
+        true
+      ]
+    },
+    "output": {
+      "config_format": "paradis",
+      "properties_file": "stress_strain_dens.dat",
+      "write_freq": 2,
+      "print_freq": 5,
+      "num_steps": 100
+    }
+  },
+  "provenance": {
+    "generated_by": "data_ddd.simulate.generate_case",
+    "python": "3.12.3",
+    "platform": "Linux-6.12.94+-x86_64-with-glibc2.39",
+    "timestamp": "2026-08-01T21:04:13"
+  },
+  "validation": {
+    "config": true,
+    "network": true
+  }
+}

@@ -1,0 +1,230 @@
+{
+  "case": "line01loop01_lnlp_b032_f032_s0400_r008",
+  "case_type": "line_loop",
+  "interaction": "line_loop",
+  "description": "Infinite periodic line intersected by an expanding loop",
+  "seed": 8,
+  "box": {
+    "size_nominal": [
+      32.0,
+      32.0,
+      32.0
+    ],
+    "size_b": [
+      6400.0,
+      6400.0,
+      6400.0
+    ],
+    "dimensionality": 3,
+    "pbc": [
+      true,
+      true,
+      true
+    ],
+    "unit_b": 200.0,
+    "burgmag_m": 2.55e-10,
+    "size_m": [
+      1.632e-06,
+      1.632e-06,
+      1.632e-06
+    ]
+  },
+  "field_of_view": {
+    "size_nominal": [
+      32.0,
+      32.0,
+      32.0
+    ],
+    "size_b": [
+      6400.0,
+      6400.0,
+      6400.0
+    ],
+    "center_b": [
+      3200.0,
+      3200.0,
+      3200.0
+    ]
+  },
+  "applied_stress": {
+    "mode": "uniaxial",
+    "magnitude_Pa": 400000000.0,
+    "axis": [
+      0.0,
+      2.0,
+      5.0
+    ],
+    "voigt_Pa": {
+      "xx": 0.0,
+      "yy": 55172413.79310345,
+      "zz": 344827586.2068966,
+      "yz": 137931034.48275864,
+      "xz": 0.0,
+      "xy": 0.0
+    },
+    "tensor_Pa": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        55172413.79310345,
+        137931034.48275864
+      ],
+      [
+        0.0,
+        137931034.48275864,
+        344827586.2068966
+      ]
+    ],
+    "von_mises_Pa": 400000000.00000006,
+    "perturbation": {}
+  },
+  "initial_geometry": {
+    "n_loops": 1,
+    "n_lines": 1,
+    "loops": [
+      {
+        "center_nominal": [
+          19.36292954325016,
+          13.61987854132396,
+          13.597666827348121
+        ],
+        "center_b": [
+          3872.5859086500323,
+          2723.975708264792,
+          2719.533365469624
+        ],
+        "radius_nominal": 4.0,
+        "radius_b": 800.0,
+        "burgers": [
+          0.7071067811865475,
+          0.0,
+          -0.7071067811865475
+        ],
+        "plane": [
+          0.5773502691896258,
+          0.5773502691896258,
+          0.5773502691896258
+        ],
+        "slip_system": 6,
+        "sense": 1,
+        "n_nodes": 17,
+        "schmid_factor": -0.4927134540081107
+      }
+    ],
+    "lines": [
+      {
+        "origin_nominal": [
+          15.443754752480999,
+          15.572274306182038,
+          15.564445853259205
+        ],
+        "origin_b": [
+          3088.7509504962,
+          3114.454861236408,
+          3112.889170651841
+        ],
+        "kind": "infinite",
+        "theta_deg": 30.0,
+        "burgers": [
+          0.7071067811865475,
+          0.0,
+          0.7071067811865475
+        ],
+        "plane": [
+          -0.5773502691896258,
+          0.5773502691896258,
+          0.5773502691896258
+        ],
+        "slip_system": 5,
+        "sense": -1,
+        "n_nodes": 52,
+        "schmid_factor": 0.4927134540081107
+      }
+    ]
+  },
+  "run": {
+    "num_steps": 150,
+    "write_freq": 3,
+    "print_freq": 5
+  },
+  "physics": {
+    "description": "Elasticity-enabled glissile-loop reference (SimpleGlide): FCC Cu, DDD-FFT force model, GLIDE mobility, trapezoid integration, retroactive collisions, parallel topology, length-based remeshing.",
+    "units": {
+      "unit_b": 200.0,
+      "length": "b (burgmag)",
+      "stress": "Pa",
+      "time": "s"
+    },
+    "material": {
+      "crystal": "fcc",
+      "burgmag": 2.55e-10,
+      "mu": 54600000000.0,
+      "nu": 0.324,
+      "a": 6.0
+    },
+    "discretization": {
+      "maxseg": 300.0,
+      "minseg": 80.0,
+      "rann": 10.0,
+      "rtol": 1.0,
+      "fft_grid_spacing": 400.0,
+      "fft_grid_min": 8,
+      "fft_grid_max": 64
+    },
+    "force": {
+      "force_mode": "DDD_FFT_MODEL",
+      "Ec": -1.0
+    },
+    "mobility": {
+      "mobility_law": "SimpleGlide",
+      "mob": 1000.0
+    },
+    "time_integration": {
+      "integrator": "Trapezoid",
+      "nextdt": 5e-13,
+      "maxdt": 1e-10
+    },
+    "collision": {
+      "collision_mode": "Retroactive"
+    },
+    "topology": {
+      "topology_mode": "TopologyParallel",
+      "splitMultiNodeAlpha": 0.001
+    },
+    "remesh": {
+      "remesh_rule": "LengthBased"
+    },
+    "cross_slip": null,
+    "loading": {
+      "loading_mode": "stress"
+    },
+    "boundary_conditions": {
+      "pbc": [
+        true,
+        true,
+        true
+      ]
+    },
+    "output": {
+      "config_format": "paradis",
+      "properties_file": "stress_strain_dens.dat",
+      "write_freq": 2,
+      "print_freq": 5,
+      "num_steps": 100
+    }
+  },
+  "provenance": {
+    "generated_by": "data_ddd.simulate.generate_case",
+    "python": "3.12.3",
+    "platform": "Linux-6.12.94+-x86_64-with-glibc2.39",
+    "timestamp": "2026-08-01T21:04:13"
+  },
+  "validation": {
+    "config": true,
+    "network": true
+  }
+}

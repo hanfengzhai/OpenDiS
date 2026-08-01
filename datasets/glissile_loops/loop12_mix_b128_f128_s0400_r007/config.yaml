@@ -1,0 +1,315 @@
+name: loop12_mix_b128_f128_s0400_r007
+case_type: twelve_loops
+interaction: mixed
+description: Twelve loops covering all 12 FCC slip systems in a 128-unit box
+loops:
+- center:
+  - 39.47217219644363
+  - 89.20623478515894
+  - 63.503620080144046
+  radius: 8.0
+  burgers:
+  - 0.7071067811865475
+  - 0.7071067811865475
+  - 0.0
+  plane:
+  - 0.5773502691896258
+  - -0.5773502691896258
+  - 0.5773502691896258
+  slip_system: 0
+  sense: -1
+  n_nodes: 34
+- center:
+  - 89.99187364014817
+  - 38.68550960652806
+  - 29.950998065864987
+  radius: 8.0
+  burgers:
+  - 0.7071067811865475
+  - 0.7071067811865475
+  - 0.0
+  plane:
+  - -0.5773502691896258
+  - 0.5773502691896258
+  - 0.5773502691896258
+  slip_system: 1
+  sense: -1
+  n_nodes: 34
+- center:
+  - 88.85562556423345
+  - 89.57659854202939
+  - 64.55624255556663
+  radius: 8.0
+  burgers:
+  - 0.7071067811865475
+  - -0.7071067811865475
+  - 0.0
+  plane:
+  - 0.5773502691896258
+  - 0.5773502691896258
+  - 0.5773502691896258
+  slip_system: 2
+  sense: 1
+  n_nodes: 34
+- center:
+  - 37.32462836217194
+  - 38.03390739116783
+  - 28.34568847482599
+  radius: 8.0
+  burgers:
+  - 0.7071067811865475
+  - -0.7071067811865475
+  - 0.0
+  plane:
+  - 0.5773502691896258
+  - 0.5773502691896258
+  - -0.5773502691896258
+  slip_system: 3
+  sense: -1
+  n_nodes: 34
+- center:
+  - 37.36836980817203
+  - 36.92661196976662
+  - 63.811927095140256
+  radius: 8.0
+  burgers:
+  - 0.7071067811865475
+  - 0.0
+  - 0.7071067811865475
+  plane:
+  - 0.5773502691896258
+  - 0.5773502691896258
+  - -0.5773502691896258
+  slip_system: 4
+  sense: 1
+  n_nodes: 34
+- center:
+  - 37.38604281484504
+  - 89.81701148705737
+  - 29.992067535966047
+  radius: 8.0
+  burgers:
+  - 0.7071067811865475
+  - 0.0
+  - 0.7071067811865475
+  plane:
+  - -0.5773502691896258
+  - 0.5773502691896258
+  - 0.5773502691896258
+  slip_system: 5
+  sense: -1
+  n_nodes: 34
+- center:
+  - 89.45045524429605
+  - 36.3865922313436
+  - 97.70237901665602
+  radius: 8.0
+  burgers:
+  - 0.7071067811865475
+  - 0.0
+  - -0.7071067811865475
+  plane:
+  - 0.5773502691896258
+  - 0.5773502691896258
+  - 0.5773502691896258
+  slip_system: 6
+  sense: 1
+  n_nodes: 34
+- center:
+  - 89.56119924367916
+  - 38.490647188802654
+  - 62.775891387595685
+  radius: 8.0
+  burgers:
+  - 0.7071067811865475
+  - 0.0
+  - -0.7071067811865475
+  plane:
+  - 0.5773502691896258
+  - -0.5773502691896258
+  - 0.5773502691896258
+  slip_system: 7
+  sense: 1
+  n_nodes: 34
+- center:
+  - 38.01779737917286
+  - 37.617184737554695
+  - 97.48626354179287
+  radius: 8.0
+  burgers:
+  - 0.0
+  - 0.7071067811865475
+  - 0.7071067811865475
+  plane:
+  - 0.5773502691896258
+  - 0.5773502691896258
+  - -0.5773502691896258
+  slip_system: 8
+  sense: 1
+  n_nodes: 34
+- center:
+  - 39.248718898708866
+  - 88.95397225973448
+  - 98.10731596937693
+  radius: 8.0
+  burgers:
+  - 0.0
+  - 0.7071067811865475
+  - 0.7071067811865475
+  plane:
+  - 0.5773502691896258
+  - -0.5773502691896258
+  - 0.5773502691896258
+  slip_system: 9
+  sense: -1
+  n_nodes: 34
+- center:
+  - 90.30751189390655
+  - 89.13311965380537
+  - 29.77730510699934
+  radius: 8.0
+  burgers:
+  - 0.0
+  - 0.7071067811865475
+  - -0.7071067811865475
+  plane:
+  - 0.5773502691896258
+  - 0.5773502691896258
+  - 0.5773502691896258
+  slip_system: 10
+  sense: 1
+  n_nodes: 34
+- center:
+  - 89.68837131459959
+  - 89.65102541940406
+  - 97.15328867219918
+  radius: 8.0
+  burgers:
+  - 0.0
+  - 0.7071067811865475
+  - -0.7071067811865475
+  plane:
+  - -0.5773502691896258
+  - 0.5773502691896258
+  - 0.5773502691896258
+  slip_system: 11
+  sense: 1
+  n_nodes: 34
+lines: []
+box_size:
+- 128.0
+- 128.0
+- 128.0
+fov:
+- 128.0
+- 128.0
+- 128.0
+pbc:
+- true
+- true
+- true
+stress:
+  mode: uniaxial
+  magnitude: 400000000.0
+  axis:
+  - 0.0
+  - 2.0
+  - 5.0
+  shear_dir:
+  - 1.0
+  - 0.0
+  - 0.0
+  shear_normal:
+  - 0.0
+  - 1.0
+  - 0.0
+  voigt:
+  - 0.0
+  - 55172413.79310345
+  - 344827586.2068966
+  - 137931034.48275864
+  - 0.0
+  - 0.0
+  perturbation: {}
+seed: 7
+num_steps: 100
+write_freq: 2
+print_freq: 5
+physics:
+  description: 'Elasticity-enabled glissile-loop reference (SimpleGlide): FCC Cu,
+    DDD-FFT force model, GLIDE mobility, trapezoid integration, retroactive collisions,
+    parallel topology, length-based remeshing.'
+  units:
+    unit_b: 200.0
+    length: b (burgmag)
+    stress: Pa
+    time: s
+  material:
+    crystal: fcc
+    burgmag: 2.55e-10
+    mu: 54600000000.0
+    nu: 0.324
+    a: 6.0
+  discretization:
+    maxseg: 300.0
+    minseg: 80.0
+    rann: 10.0
+    rtol: 1.0
+    fft_grid_spacing: 400.0
+    fft_grid_min: 8
+    fft_grid_max: 64
+  force:
+    force_mode: DDD_FFT_MODEL
+    Ec: -1.0
+  mobility:
+    mobility_law: SimpleGlide
+    mob: 1000.0
+  time_integration:
+    integrator: Trapezoid
+    nextdt: 5.0e-13
+    maxdt: 1.0e-10
+  collision:
+    collision_mode: Retroactive
+  topology:
+    topology_mode: TopologyParallel
+    splitMultiNodeAlpha: 0.001
+  remesh:
+    remesh_rule: LengthBased
+  cross_slip: null
+  loading:
+    loading_mode: stress
+  boundary_conditions:
+    pbc:
+    - true
+    - true
+    - true
+  output:
+    config_format: paradis
+    properties_file: stress_strain_dens.dat
+    write_freq: 2
+    print_freq: 5
+    num_steps: 100
+derived:
+  n_loops: 12
+  n_lines: 0
+  unit_b: 200.0
+  box_size_b:
+  - 25600.0
+  - 25600.0
+  - 25600.0
+  fov_b:
+  - 25600.0
+  - 25600.0
+  - 25600.0
+  fft_grid:
+  - 64
+  - 64
+  - 64
+  applied_stress_voigt_Pa:
+    xx: 0.0
+    yy: 55172413.79310345
+    zz: 344827586.2068966
+    yz: 137931034.48275864
+    xz: 0.0
+    xy: 0.0
+  applied_stress_von_mises_Pa: 400000000.00000006

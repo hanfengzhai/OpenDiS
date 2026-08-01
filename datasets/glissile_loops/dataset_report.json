@@ -1,0 +1,672 @@
+{
+  "dataset_root": "/workspace/datasets/glissile_loops",
+  "n_cases": 18,
+  "cases": [
+    {
+      "case": "line01loop01_lnlp_b032_f032_s0400_r008",
+      "case_type": "line_loop",
+      "interaction": "line_loop",
+      "box": 32.0,
+      "fov": 32.0,
+      "n_loops": 1,
+      "n_lines": 1,
+      "stress_MPa": 400.0,
+      "seed": 8,
+      "inputs": true,
+      "trajectory": true,
+      "initial_png": true,
+      "final_png": true,
+      "video": true,
+      "n_raw_frames": 51,
+      "validation": {
+        "config": {
+          "ok": true,
+          "warn": 0,
+          "fail": 0
+        },
+        "network": {
+          "ok": true,
+          "warn": 0,
+          "fail": 0
+        },
+        "run": {
+          "ok": true,
+          "warn": 0,
+          "fail": 0
+        }
+      },
+      "walltime_s": 1.7,
+      "final_time_s": 1.2078417904499396e-08,
+      "complete": true
+    },
+    {
+      "case": "line01loop03_lnlp_b064_f064_s0400_r009",
+      "case_type": "line_multiloop",
+      "interaction": "line_loop",
+      "box": 64.0,
+      "fov": 64.0,
+      "n_loops": 3,
+      "n_lines": 1,
+      "stress_MPa": 400.0,
+      "seed": 9,
+      "inputs": true,
+      "trajectory": true,
+      "initial_png": true,
+      "final_png": true,
+      "video": true,
+      "n_raw_frames": 51,
+      "validation": {
+        "config": {
+          "ok": true,
+          "warn": 0,
+          "fail": 0
+        },
+        "network": {
+          "ok": true,
+          "warn": 0,
+          "fail": 0
+        },
+        "run": {
+          "ok": true,
+          "warn": 0,
+          "fail": 0
+        }
+      },
+      "walltime_s": 2.6,
+      "final_time_s": 9.323314417271825e-09,
+      "complete": true
+    },
+    {
+      "case": "loop01_iso_b032_f032_s0200_r001",
+      "case_type": "single_loop",
+      "interaction": "isolated",
+      "box": 32.0,
+      "fov": 32.0,
+      "n_loops": 1,
+      "n_lines": 0,
+      "stress_MPa": 200.0,
+      "seed": 1,
+      "inputs": true,
+      "trajectory": true,
+      "initial_png": true,
+      "final_png": true,
+      "video": true,
+      "n_raw_frames": 51,
+      "validation": {
+        "config": {
+          "ok": true,
+          "warn": 0,
+          "fail": 0
+        },
+        "network": {
+          "ok": true,
+          "warn": 0,
+          "fail": 0
+        },
+        "run": {
+          "ok": true,
+          "warn": 0,
+          "fail": 0
+        }
+      },
+      "walltime_s": 0.2,
+      "final_time_s": 7.590940784499427e-09,
+      "complete": true
+    },
+    {
+      "case": "loop01_iso_b032_f032_s0400_r001",
+      "case_type": "single_loop",
+      "interaction": "isolated",
+      "box": 32.0,
+      "fov": 32.0,
+      "n_loops": 1,
+      "n_lines": 0,
+      "stress_MPa": 400.0,
+      "seed": 1,
+      "inputs": true,
+      "trajectory": true,
+      "initial_png": true,
+      "final_png": true,
+      "video": true,
+      "n_raw_frames": 51,
+      "validation": {
+        "config": {
+          "ok": true,
+          "warn": 0,
+          "fail": 0
+        },
+        "network": {
+          "ok": true,
+          "warn": 0,
+          "fail": 0
+        },
+        "run": {
+          "ok": true,
+          "warn": 0,
+          "fail": 0
+        }
+      },
+      "walltime_s": 0.2,
+      "final_time_s": 7.590940784499427e-09,
+      "complete": true
+    },
+    {
+      "case": "loop01_iso_b032_f032_s0600_r001",
+      "case_type": "single_loop",
+      "interaction": "isolated",
+      "box": 32.0,
+      "fov": 32.0,
+      "n_loops": 1,
+      "n_lines": 0,
+      "stress_MPa": 600.0,
+      "seed": 1,
+      "inputs": true,
+      "trajectory": true,
+      "initial_png": true,
+      "final_png": true,
+      "video": true,
+      "n_raw_frames": 51,
+      "validation": {
+        "config": {
+          "ok": true,
+          "warn": 0,
+          "fail": 0
+        },
+        "network": {
+          "ok": true,
+          "warn": 0,
+          "fail": 0
+        },
+        "run": {
+          "ok": true,
+          "warn": 0,
+          "fail": 0
+        }
+      },
+      "walltime_s": 0.2,
+      "final_time_s": 7.590940784499427e-09,
+      "complete": true
+    },
+    {
+      "case": "loop01_iso_b032_f032_s0800_r001",
+      "case_type": "single_loop",
+      "interaction": "isolated",
+      "box": 32.0,
+      "fov": 32.0,
+      "n_loops": 1,
+      "n_lines": 0,
+      "stress_MPa": 800.0,
+      "seed": 1,
+      "inputs": true,
+      "trajectory": true,
+      "initial_png": true,
+      "final_png": true,
+      "video": true,
+      "n_raw_frames": 51,
+      "validation": {
+        "config": {
+          "ok": true,
+          "warn": 0,
+          "fail": 0
+        },
+        "network": {
+          "ok": true,
+          "warn": 0,
+          "fail": 0
+        },
+        "run": {
+          "ok": true,
+          "warn": 0,
+          "fail": 0
+        }
+      },
+      "walltime_s": 0.3,
+      "final_time_s": 7.590940784499427e-09,
+      "complete": true
+    },
+    {
+      "case": "loop02_copl_b032_f032_s0400_r002",
+      "case_type": "double_loop",
+      "interaction": "coplanar",
+      "box": 32.0,
+      "fov": 32.0,
+      "n_loops": 2,
+      "n_lines": 0,
+      "stress_MPa": 400.0,
+      "seed": 2,
+      "inputs": true,
+      "trajectory": true,
+      "initial_png": true,
+      "final_png": true,
+      "video": true,
+      "n_raw_frames": 51,
+      "validation": {
+        "config": {
+          "ok": true,
+          "warn": 0,
+          "fail": 0
+        },
+        "network": {
+          "ok": true,
+          "warn": 0,
+          "fail": 0
+        },
+        "run": {
+          "ok": true,
+          "warn": 0,
+          "fail": 0
+        }
+      },
+      "walltime_s": 0.5,
+      "final_time_s": 1.1836817904499395e-08,
+      "complete": true
+    },
+    {
+      "case": "loop02_dip_b032_f032_s0400_r004",
+      "case_type": "double_loop",
+      "interaction": "dipole",
+      "box": 32.0,
+      "fov": 32.0,
+      "n_loops": 2,
+      "n_lines": 0,
+      "stress_MPa": 400.0,
+      "seed": 4,
+      "inputs": true,
+      "trajectory": true,
+      "initial_png": true,
+      "final_png": true,
+      "video": true,
+      "n_raw_frames": 51,
+      "validation": {
+        "config": {
+          "ok": true,
+          "warn": 0,
+          "fail": 0
+        },
+        "network": {
+          "ok": true,
+          "warn": 0,
+          "fail": 0
+        },
+        "run": {
+          "ok": true,
+          "warn": 0,
+          "fail": 0
+        }
+      },
+      "walltime_s": 0.3,
+      "final_time_s": 1.1313704093546388e-08,
+      "complete": true
+    },
+    {
+      "case": "loop02_junc_b032_f032_s0400_r003",
+      "case_type": "double_loop",
+      "interaction": "junction",
+      "box": 32.0,
+      "fov": 32.0,
+      "n_loops": 2,
+      "n_lines": 0,
+      "stress_MPa": 400.0,
+      "seed": 3,
+      "inputs": true,
+      "trajectory": true,
+      "initial_png": true,
+      "final_png": true,
+      "video": true,
+      "n_raw_frames": 51,
+      "validation": {
+        "config": {
+          "ok": true,
+          "warn": 0,
+          "fail": 0
+        },
+        "network": {
+          "ok": true,
+          "warn": 0,
+          "fail": 0
+        },
+        "run": {
+          "ok": true,
+          "warn": 0,
+          "fail": 0
+        }
+      },
+      "walltime_s": 0.7,
+      "final_time_s": 1.1212442653546387e-08,
+      "complete": true
+    },
+    {
+      "case": "loop03_mix_b032_f016_s0400_r005",
+      "case_type": "triple_loop",
+      "interaction": "mixed",
+      "box": 32.0,
+      "fov": 16.0,
+      "n_loops": 3,
+      "n_lines": 0,
+      "stress_MPa": 400.0,
+      "seed": 5,
+      "inputs": true,
+      "trajectory": true,
+      "initial_png": true,
+      "final_png": true,
+      "video": true,
+      "n_raw_frames": 51,
+      "validation": {
+        "config": {
+          "ok": true,
+          "warn": 0,
+          "fail": 0
+        },
+        "network": {
+          "ok": true,
+          "warn": 0,
+          "fail": 0
+        },
+        "run": {
+          "ok": true,
+          "warn": 0,
+          "fail": 0
+        }
+      },
+      "walltime_s": 0.6,
+      "final_time_s": 7.589847581915999e-09,
+      "complete": true
+    },
+    {
+      "case": "loop03_mix_b032_f032_s0400_r005",
+      "case_type": "triple_loop",
+      "interaction": "mixed",
+      "box": 32.0,
+      "fov": 32.0,
+      "n_loops": 3,
+      "n_lines": 0,
+      "stress_MPa": 400.0,
+      "seed": 5,
+      "inputs": true,
+      "trajectory": true,
+      "initial_png": true,
+      "final_png": true,
+      "video": true,
+      "n_raw_frames": 51,
+      "validation": {
+        "config": {
+          "ok": true,
+          "warn": 0,
+          "fail": 0
+        },
+        "network": {
+          "ok": true,
+          "warn": 0,
+          "fail": 0
+        },
+        "run": {
+          "ok": true,
+          "warn": 0,
+          "fail": 0
+        }
+      },
+      "walltime_s": 0.6,
+      "final_time_s": 7.589847581915999e-09,
+      "complete": true
+    },
+    {
+      "case": "loop03_mix_b032_f032_s0400_r011",
+      "case_type": "triple_loop",
+      "interaction": "mixed",
+      "box": 32.0,
+      "fov": 32.0,
+      "n_loops": 3,
+      "n_lines": 0,
+      "stress_MPa": 400.0,
+      "seed": 11,
+      "inputs": true,
+      "trajectory": true,
+      "initial_png": true,
+      "final_png": true,
+      "video": true,
+      "n_raw_frames": 51,
+      "validation": {
+        "config": {
+          "ok": true,
+          "warn": 0,
+          "fail": 0
+        },
+        "network": {
+          "ok": true,
+          "warn": 0,
+          "fail": 0
+        },
+        "run": {
+          "ok": true,
+          "warn": 0,
+          "fail": 0
+        }
+      },
+      "walltime_s": 0.5,
+      "final_time_s": 7.559626060483156e-09,
+      "complete": true
+    },
+    {
+      "case": "loop03_mix_b032_f032_s0400_r012",
+      "case_type": "triple_loop",
+      "interaction": "mixed",
+      "box": 32.0,
+      "fov": 32.0,
+      "n_loops": 3,
+      "n_lines": 0,
+      "stress_MPa": 400.0,
+      "seed": 12,
+      "inputs": true,
+      "trajectory": true,
+      "initial_png": true,
+      "final_png": true,
+      "video": true,
+      "n_raw_frames": 51,
+      "validation": {
+        "config": {
+          "ok": true,
+          "warn": 0,
+          "fail": 0
+        },
+        "network": {
+          "ok": true,
+          "warn": 0,
+          "fail": 0
+        },
+        "run": {
+          "ok": true,
+          "warn": 0,
+          "fail": 0
+        }
+      },
+      "walltime_s": 0.5,
+      "final_time_s": 7.590940784499427e-09,
+      "complete": true
+    },
+    {
+      "case": "loop06_mix_b064_f032_s0400_r006",
+      "case_type": "six_loops",
+      "interaction": "mixed",
+      "box": 64.0,
+      "fov": 32.0,
+      "n_loops": 6,
+      "n_lines": 0,
+      "stress_MPa": 400.0,
+      "seed": 6,
+      "inputs": true,
+      "trajectory": true,
+      "initial_png": true,
+      "final_png": true,
+      "video": true,
+      "n_raw_frames": 51,
+      "validation": {
+        "config": {
+          "ok": true,
+          "warn": 0,
+          "fail": 0
+        },
+        "network": {
+          "ok": true,
+          "warn": 0,
+          "fail": 0
+        },
+        "run": {
+          "ok": true,
+          "warn": 0,
+          "fail": 0
+        }
+      },
+      "walltime_s": 1.2,
+      "final_time_s": 7.590940784499427e-09,
+      "complete": true
+    },
+    {
+      "case": "loop06_mix_b064_f048_s0400_r006",
+      "case_type": "six_loops",
+      "interaction": "mixed",
+      "box": 64.0,
+      "fov": 48.0,
+      "n_loops": 6,
+      "n_lines": 0,
+      "stress_MPa": 400.0,
+      "seed": 6,
+      "inputs": true,
+      "trajectory": true,
+      "initial_png": true,
+      "final_png": true,
+      "video": true,
+      "n_raw_frames": 51,
+      "validation": {
+        "config": {
+          "ok": true,
+          "warn": 0,
+          "fail": 0
+        },
+        "network": {
+          "ok": true,
+          "warn": 0,
+          "fail": 0
+        },
+        "run": {
+          "ok": true,
+          "warn": 0,
+          "fail": 0
+        }
+      },
+      "walltime_s": 1.2,
+      "final_time_s": 7.590940784499427e-09,
+      "complete": true
+    },
+    {
+      "case": "loop06_mix_b064_f064_s0400_r006",
+      "case_type": "six_loops",
+      "interaction": "mixed",
+      "box": 64.0,
+      "fov": 64.0,
+      "n_loops": 6,
+      "n_lines": 0,
+      "stress_MPa": 400.0,
+      "seed": 6,
+      "inputs": true,
+      "trajectory": true,
+      "initial_png": true,
+      "final_png": true,
+      "video": true,
+      "n_raw_frames": 51,
+      "validation": {
+        "config": {
+          "ok": true,
+          "warn": 0,
+          "fail": 0
+        },
+        "network": {
+          "ok": true,
+          "warn": 0,
+          "fail": 0
+        },
+        "run": {
+          "ok": true,
+          "warn": 0,
+          "fail": 0
+        }
+      },
+      "walltime_s": 1.2,
+      "final_time_s": 7.590940784499427e-09,
+      "complete": true
+    },
+    {
+      "case": "loop06_mix_b064_f064_s0500_r013",
+      "case_type": "six_loops",
+      "interaction": "mixed",
+      "box": 64.0,
+      "fov": 64.0,
+      "n_loops": 6,
+      "n_lines": 0,
+      "stress_MPa": 500.0,
+      "seed": 13,
+      "inputs": true,
+      "trajectory": true,
+      "initial_png": true,
+      "final_png": true,
+      "video": true,
+      "n_raw_frames": 51,
+      "validation": {
+        "config": {
+          "ok": true,
+          "warn": 0,
+          "fail": 0
+        },
+        "network": {
+          "ok": true,
+          "warn": 0,
+          "fail": 0
+        },
+        "run": {
+          "ok": true,
+          "warn": 0,
+          "fail": 0
+        }
+      },
+      "walltime_s": 1.2,
+      "final_time_s": 7.588754379332569e-09,
+      "complete": true
+    },
+    {
+      "case": "loop12_mix_b128_f128_s0400_r007",
+      "case_type": "twelve_loops",
+      "interaction": "mixed",
+      "box": 128.0,
+      "fov": 128.0,
+      "n_loops": 12,
+      "n_lines": 0,
+      "stress_MPa": 400.0,
+      "seed": 7,
+      "inputs": true,
+      "trajectory": true,
+      "initial_png": true,
+      "final_png": true,
+      "video": true,
+      "n_raw_frames": 51,
+      "validation": {
+        "config": {
+          "ok": true,
+          "warn": 0,
+          "fail": 0
+        },
+        "network": {
+          "ok": true,
+          "warn": 0,
+          "fail": 0
+        },
+        "run": {
+          "ok": true,
+          "warn": 0,
+          "fail": 0
+        }
+      },
+      "walltime_s": 5.2,
+      "final_time_s": 7.590940784499427e-09,
+      "complete": true
+    }
+  ]
+}
