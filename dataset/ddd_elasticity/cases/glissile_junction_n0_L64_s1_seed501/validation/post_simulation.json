@@ -3,10 +3,17 @@
   "issues": [],
   "warnings": [],
   "n_frames": 7,
+  "run_report": {
+    "steps_completed": 60,
+    "annihilated": false,
+    "final_nodes": 52,
+    "stopped_early": false
+  },
   "final_network": {
-    "n_nodes": 50,
-    "n_segments": 49,
+    "n_nodes": 52,
+    "n_segments": 50,
     "ok": true,
-    "issues": []
+    "issues": [],
+    "annihilated": false
   }
 }

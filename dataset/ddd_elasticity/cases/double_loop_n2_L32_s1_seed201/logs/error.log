@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/workspace/dataset/ddd_elasticity/scripts/run_case.py", line 434, in build_and_run
+    viz = visualize_case(case_dir, box=box_f, fov=fov_f)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/dataset/ddd_elasticity/scripts/visualize.py", line 278, in visualize_case
+    fig, _ = render_frame(N0, box=box, fov=fov, title=f"initial (step {init_step})", out_path=init_png)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/dataset/ddd_elasticity/scripts/visualize.py", line 132, in render_frame
+    origin = np.zeros(3)
+                    ^^^^^
+  File "/workspace/dataset/ddd_elasticity/scripts/visualize.py", line 56, in _segment_polylines
+    lines = []
+        ^^^^^^^
+ValueError: not enough values to unpack (expected 2, got 0)

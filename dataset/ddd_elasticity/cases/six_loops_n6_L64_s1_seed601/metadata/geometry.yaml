@@ -26,7 +26,7 @@ loops:
   - 32.0
   radius: 7.428972047151689
   burgers:
-  - -1.0
+  - 1.0
   - 0.0
   - 0.0
   plane:
@@ -41,8 +41,8 @@ loops:
   - 32.0
   radius: 7.782960562734472
   burgers:
-  - 0.0
   - 1.0
+  - 0.0
   - 0.0
   plane:
   - 0.0
@@ -56,8 +56,8 @@ loops:
   - 32.0
   radius: 7.704035841888048
   burgers:
+  - 1.0
   - 0.0
-  - -1.0
   - 0.0
   plane:
   - 0.0
@@ -71,8 +71,8 @@ loops:
   - 32.0
   radius: 6.902822589934731
   burgers:
-  - 0.7071067811865475
-  - 0.7071067811865475
+  - 1.0
+  - 0.0
   - 0.0
   plane:
   - 0.0
@@ -86,14 +86,18 @@ loops:
   - 32.0
   radius: 6.973486142830062
   burgers:
-  - 0.7071067811865475
-  - -0.7071067811865475
+  - 1.0
+  - 0.0
   - 0.0
   plane:
   - 0.0
   - 0.0
   - 1.0
   plane_name: '001'
+common_burgers:
+- 1.0
+- 0.0
+- 0.0
 loop_kind: circular_glissile_001
 dimensionality: 2D
 glide_plane: '001'

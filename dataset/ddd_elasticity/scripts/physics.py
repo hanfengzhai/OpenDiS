@@ -138,9 +138,11 @@ def case_config_dict(
         "physics_source": physics_source,
         "notes": [
             "All dislocations are constrained to the (001) plane (2D glide).",
+            "All glissile loops share the same Burgers vector b=[100].",
             "Dataset FOV/box sizing is the in-plane LxL extent (e.g. 64^2 on 001).",
             "ForceFFT still requires a 3D cubic periodic cell L^3 with full PBC.",
             "Reference stress is sigma_xz < 0 so (001)[100] loops expand.",
+            "Proximity collision + LengthBased remesh allow glissile annihilation.",
         ],
     }
     return cfg

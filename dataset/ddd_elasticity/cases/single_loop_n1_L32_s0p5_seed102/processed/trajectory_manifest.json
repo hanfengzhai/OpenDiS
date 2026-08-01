@@ -1,13 +1,15 @@
 {
-  "n_frames": 7,
+  "n_frames": 3,
   "frames": [
     "config.0.data",
     "config.10.data",
-    "config.20.data",
-    "config.30.data",
-    "config.40.data",
-    "config.50.data",
-    "config.60.data"
+    "config.18.data"
   ],
-  "stress_strain_dens": "raw_trajectory/stress_strain_dens.dat"
+  "stress_strain_dens": "raw_trajectory/stress_strain_dens.dat",
+  "run_report": {
+    "steps_completed": 18,
+    "annihilated": true,
+    "final_nodes": 0,
+    "stopped_early": true
+  }
 }

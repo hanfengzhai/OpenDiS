@@ -20,7 +20,7 @@ applied_stress_voigt_xx_yy_zz_yz_xz_xy:
 - 0.0
 - 0.0
 - 0.0
-- -5000000000.0
+- 0.0
 - -5000000000.0
 - 0.0
 state:
@@ -38,9 +38,9 @@ solver:
   mobility_law: SimpleGlide
   mobility_mob: 400.0
   integrator: Trapezoid
-  collision_mode: null
+  collision_mode: Proximity
   topology_mode: null
-  remesh_rule: null
+  remesh_rule: LengthBased
   loading_mode: stress
   ngrid: 32
   pbc:
@@ -80,7 +80,7 @@ geometry:
     - 32.0
     radius: 7.428972047151689
     burgers:
-    - -1.0
+    - 1.0
     - 0.0
     - 0.0
     plane:
@@ -95,8 +95,8 @@ geometry:
     - 32.0
     radius: 7.782960562734472
     burgers:
-    - 0.0
     - 1.0
+    - 0.0
     - 0.0
     plane:
     - 0.0
@@ -110,8 +110,8 @@ geometry:
     - 32.0
     radius: 7.704035841888048
     burgers:
+    - 1.0
     - 0.0
-    - -1.0
     - 0.0
     plane:
     - 0.0
@@ -125,8 +125,8 @@ geometry:
     - 32.0
     radius: 6.902822589934731
     burgers:
-    - 0.7071067811865475
-    - 0.7071067811865475
+    - 1.0
+    - 0.0
     - 0.0
     plane:
     - 0.0
@@ -140,14 +140,18 @@ geometry:
     - 32.0
     radius: 6.973486142830062
     burgers:
-    - 0.7071067811865475
-    - -0.7071067811865475
+    - 1.0
+    - 0.0
     - 0.0
     plane:
     - 0.0
     - 0.0
     - 1.0
     plane_name: '001'
+  common_burgers:
+  - 1.0
+  - 0.0
+  - 0.0
   loop_kind: circular_glissile_001
   dimensionality: 2D
   glide_plane: '001'
@@ -157,12 +161,14 @@ geometry:
   - 1.0
   z_plane: 32.0
 simulation:
-  max_step: 60
+  max_step: 100
   write_freq: 10
   print_freq: 10
 physics_source: /workspace/dataset/ddd_elasticity/configs/reference_physics.yaml
 notes:
 - All dislocations are constrained to the (001) plane (2D glide).
+- All glissile loops share the same Burgers vector b=[100].
 - Dataset FOV/box sizing is the in-plane LxL extent (e.g. 64^2 on 001).
 - ForceFFT still requires a 3D cubic periodic cell L^3 with full PBC.
 - Reference stress is sigma_xz < 0 so (001)[100] loops expand.
+- Proximity collision + LengthBased remesh allow glissile annihilation.

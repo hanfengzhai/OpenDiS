@@ -1,13 +1,13 @@
 CASE DIR: /workspace/dataset/ddd_elasticity/cases/line_loop_n1_L32_s1_seed401
-APPLIED STRESS: [0.0, 0.0, 0.0, -5000000000.0, -5000000000.0, 0.0]
+APPLIED STRESS: [0.0, 0.0, 0.0, 0.0, -5000000000.0, 0.0]
 SOLVER: {
   "force_mode": "DDD_FFT_MODEL",
   "mobility_law": "SimpleGlide",
   "mobility_mob": 400.0,
   "integrator": "Trapezoid",
-  "collision_mode": null,
+  "collision_mode": "Proximity",
   "topology_mode": null,
-  "remesh_rule": null,
+  "remesh_rule": "LengthBased",
   "loading_mode": "stress",
   "ngrid": 16,
   "pbc": [
@@ -21,10 +21,11 @@ SOLVER: {
     32.0
   ]
 }
-step = 10, nodes = 35, dt = 1.074954e-13, time = 9.324497e-13, elapsed = 0.0 sec
-step = 20, nodes = 35, dt = 1.155527e-13, time = 2.342817e-12, elapsed = 0.0 sec
-step = 30, nodes = 35, dt = 1.035115e-13, time = 3.453711e-12, elapsed = 0.1 sec
-step = 40, nodes = 35, dt = 9.272512e-14, time = 4.803909e-12, elapsed = 0.1 sec
-step = 50, nodes = 35, dt = 1.196103e-13, time = 6.043959e-12, elapsed = 0.1 sec
-step = 60, nodes = 35, dt = 1.071463e-13, time = 7.351723e-12, elapsed = 0.1 sec
-RUN TIME: 0.107071 sec
+step = 10, nodes = 38, dt = 1.074954e-13, time = 7.682205e-13, elapsed = 0.0 sec
+step = 20, nodes = 29, dt = 2.773264e-13, time = 2.750145e-12, elapsed = 0.0 sec
+step = 30, nodes = 24, dt = 2.981132e-13, time = 5.554664e-12, elapsed = 0.1 sec
+step = 40, nodes = 21, dt = 3.204580e-13, time = 9.694459e-12, elapsed = 0.1 sec
+step = 50, nodes = 23, dt = 3.444777e-13, time = 1.500574e-11, elapsed = 0.1 sec
+step = 60, nodes = 22, dt = 3.702978e-13, time = 2.046826e-11, elapsed = 0.1 sec
+RUN TIME: 0.107867 sec
+RUN REPORT: {"steps_completed": 60, "annihilated": false, "final_nodes": 22, "stopped_early": false}

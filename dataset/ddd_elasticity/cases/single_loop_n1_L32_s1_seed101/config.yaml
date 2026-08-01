@@ -20,7 +20,7 @@ applied_stress_voigt_xx_yy_zz_yz_xz_xy:
 - 0.0
 - 0.0
 - 0.0
-- -5000000000.0
+- 0.0
 - -5000000000.0
 - 0.0
 state:
@@ -38,9 +38,9 @@ solver:
   mobility_law: SimpleGlide
   mobility_mob: 400.0
   integrator: Trapezoid
-  collision_mode: null
+  collision_mode: Proximity
   topology_mode: null
-  remesh_rule: null
+  remesh_rule: LengthBased
   loading_mode: stress
   ngrid: 16
   pbc:
@@ -73,6 +73,10 @@ geometry:
     - 0.0
     - 1.0
     plane_name: '001'
+  common_burgers:
+  - 1.0
+  - 0.0
+  - 0.0
   loop_kind: circular_glissile_001
   dimensionality: 2D
   glide_plane: '001'
@@ -88,6 +92,8 @@ simulation:
 physics_source: /workspace/dataset/ddd_elasticity/configs/reference_physics.yaml
 notes:
 - All dislocations are constrained to the (001) plane (2D glide).
+- All glissile loops share the same Burgers vector b=[100].
 - Dataset FOV/box sizing is the in-plane LxL extent (e.g. 64^2 on 001).
 - ForceFFT still requires a 3D cubic periodic cell L^3 with full PBC.
 - Reference stress is sigma_xz < 0 so (001)[100] loops expand.
+- Proximity collision + LengthBased remesh allow glissile annihilation.

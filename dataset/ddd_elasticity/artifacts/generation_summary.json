@@ -1,143 +1,169 @@
 {
-  "n_jobs": 8,
-  "n_success": 8,
+  "n_jobs": 9,
+  "n_success": 9,
   "n_failed": 0,
   "results": [
-    {
-      "job": {
-        "case_type": "single_loop",
-        "n_loops": 1,
-        "seed": 101,
-        "stress_factor": 1.0,
-        "box": null,
-        "fov": null,
-        "max_step": 60,
-        "write_freq": 10,
-        "print_freq": 10,
-        "remesh_rule": null,
-        "collision_mode": null
-      },
-      "case_dir": "/workspace/dataset/ddd_elasticity/cases/single_loop_n1_L32_s1_seed101",
-      "status": "success"
-    },
     {
       "job": {
         "case_type": "double_loop",
         "n_loops": 2,
         "seed": 201,
-        "stress_factor": 1.0,
-        "box": null,
-        "fov": null,
-        "max_step": 60,
-        "write_freq": 10,
-        "print_freq": 10,
-        "remesh_rule": null,
-        "collision_mode": null
+        "stress_factor": 1.0
       },
       "case_dir": "/workspace/dataset/ddd_elasticity/cases/double_loop_n2_L32_s1_seed201",
-      "status": "success"
-    },
-    {
-      "job": {
-        "case_type": "triple_loop",
-        "n_loops": 3,
-        "seed": 301,
-        "stress_factor": 1.0,
-        "box": null,
-        "fov": null,
-        "max_step": 60,
-        "write_freq": 10,
-        "print_freq": 10,
-        "remesh_rule": null,
-        "collision_mode": null
-      },
-      "case_dir": "/workspace/dataset/ddd_elasticity/cases/triple_loop_n3_L32_s1_seed301",
-      "status": "success"
-    },
-    {
-      "job": {
-        "case_type": "six_loops",
-        "n_loops": 6,
-        "seed": 601,
-        "stress_factor": 1.0,
-        "box": null,
-        "fov": null,
-        "max_step": 60,
-        "write_freq": 10,
-        "print_freq": 10,
-        "remesh_rule": null,
-        "collision_mode": null
-      },
-      "case_dir": "/workspace/dataset/ddd_elasticity/cases/six_loops_n6_L64_s1_seed601",
-      "status": "success"
-    },
-    {
-      "job": {
-        "case_type": "twelve_loops",
-        "n_loops": 12,
-        "seed": 1201,
-        "stress_factor": 1.0,
-        "box": null,
-        "fov": null,
-        "max_step": 40,
-        "write_freq": 10,
-        "print_freq": 10,
-        "remesh_rule": null,
-        "collision_mode": null
-      },
-      "case_dir": "/workspace/dataset/ddd_elasticity/cases/twelve_loops_n12_L128_s1_seed1201",
-      "status": "success"
-    },
-    {
-      "job": {
-        "case_type": "line_loop",
-        "n_loops": 1,
-        "seed": 401,
-        "stress_factor": 1.0,
-        "box": null,
-        "fov": null,
-        "max_step": 60,
-        "write_freq": 10,
-        "print_freq": 10,
-        "remesh_rule": null,
-        "collision_mode": null
-      },
-      "case_dir": "/workspace/dataset/ddd_elasticity/cases/line_loop_n1_L32_s1_seed401",
-      "status": "success"
-    },
-    {
-      "job": {
-        "case_type": "glissile_junction",
-        "n_loops": 0,
-        "seed": 501,
-        "stress_factor": 1.0,
-        "box": 64.0,
-        "fov": null,
-        "max_step": 60,
-        "write_freq": 10,
-        "print_freq": 10,
-        "remesh_rule": "LengthBased",
-        "collision_mode": "Proximity"
-      },
-      "case_dir": "/workspace/dataset/ddd_elasticity/cases/glissile_junction_n0_L64_s1_seed501",
-      "status": "success"
+      "status": "success",
+      "annihilated": true,
+      "final_nodes": 0,
+      "steps_completed": 42,
+      "common_burgers": [
+        1.0,
+        0.0,
+        0.0
+      ]
     },
     {
       "job": {
         "case_type": "fov_variant",
         "n_loops": 2,
         "seed": 701,
-        "stress_factor": 1.0,
-        "box": 64.0,
-        "fov": 32.0,
-        "max_step": 60,
-        "write_freq": 10,
-        "print_freq": 10,
-        "remesh_rule": null,
-        "collision_mode": null
+        "stress_factor": 1.0
       },
       "case_dir": "/workspace/dataset/ddd_elasticity/cases/fov_variant_n2_L64_s1_seed701_fov32",
-      "status": "success"
+      "status": "success",
+      "annihilated": true,
+      "final_nodes": 0,
+      "steps_completed": 64,
+      "common_burgers": [
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "job": {
+        "case_type": "glissile_junction",
+        "n_loops": 0,
+        "seed": 501,
+        "stress_factor": 1.0
+      },
+      "case_dir": "/workspace/dataset/ddd_elasticity/cases/glissile_junction_n0_L64_s1_seed501",
+      "status": "success",
+      "annihilated": false,
+      "final_nodes": 52,
+      "steps_completed": 60,
+      "common_burgers": [
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "job": {
+        "case_type": "line_loop",
+        "n_loops": 1,
+        "seed": 401,
+        "stress_factor": 1.0
+      },
+      "case_dir": "/workspace/dataset/ddd_elasticity/cases/line_loop_n1_L32_s1_seed401",
+      "status": "success",
+      "annihilated": false,
+      "final_nodes": 22,
+      "steps_completed": 60,
+      "common_burgers": [
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "job": {
+        "case_type": "single_loop",
+        "n_loops": 1,
+        "seed": 102,
+        "stress_factor": 0.5
+      },
+      "case_dir": "/workspace/dataset/ddd_elasticity/cases/single_loop_n1_L32_s0p5_seed102",
+      "status": "success",
+      "annihilated": true,
+      "final_nodes": 0,
+      "steps_completed": 18,
+      "common_burgers": [
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "job": {
+        "case_type": "single_loop",
+        "n_loops": 1,
+        "seed": 101,
+        "stress_factor": 1.0
+      },
+      "case_dir": "/workspace/dataset/ddd_elasticity/cases/single_loop_n1_L32_s1_seed101",
+      "status": "success",
+      "annihilated": false,
+      "final_nodes": 54,
+      "steps_completed": 60,
+      "common_burgers": [
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "job": {
+        "case_type": "six_loops",
+        "n_loops": 6,
+        "seed": 601,
+        "stress_factor": 1.0
+      },
+      "case_dir": "/workspace/dataset/ddd_elasticity/cases/six_loops_n6_L64_s1_seed601",
+      "status": "success",
+      "annihilated": true,
+      "final_nodes": 0,
+      "steps_completed": 75,
+      "common_burgers": [
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "job": {
+        "case_type": "triple_loop",
+        "n_loops": 3,
+        "seed": 301,
+        "stress_factor": 1.0
+      },
+      "case_dir": "/workspace/dataset/ddd_elasticity/cases/triple_loop_n3_L32_s1_seed301",
+      "status": "success",
+      "annihilated": true,
+      "final_nodes": 0,
+      "steps_completed": 76,
+      "common_burgers": [
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "job": {
+        "case_type": "twelve_loops",
+        "n_loops": 12,
+        "seed": 1201,
+        "stress_factor": 1.0
+      },
+      "case_dir": "/workspace/dataset/ddd_elasticity/cases/twelve_loops_n12_L128_s1_seed1201",
+      "status": "success",
+      "annihilated": true,
+      "final_nodes": 0,
+      "steps_completed": 69,
+      "common_burgers": [
+        1.0,
+        0.0,
+        0.0
+      ]
     }
   ],
   "major_categories_covered": [
@@ -149,5 +175,9 @@
     "six_loops",
     "triple_loop",
     "twelve_loops"
+  ],
+  "notes": [
+    "All glissile loops share Burgers vector b=[100] on the (001) plane.",
+    "Proximity collision + LengthBased remesh enabled so same-b glissile arms annihilate."
   ]
 }

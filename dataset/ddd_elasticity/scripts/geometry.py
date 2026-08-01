@@ -16,22 +16,10 @@ from pyexadis_utils import insert_frank_read_src, insert_infinite_line  # noqa: 
 # All dataset geometries are confined to the (001) plane.
 PLANE_001 = np.array([0.0, 0.0, 1.0])
 
-# In-plane Burgers vectors on (001). Primary loading is sigma_xz, which expands
-# loops with b ∥ ±[100]. Secondary ±[010] families are included for multi-loop
-# diversity; they respond to sigma_yz if that component is present.
-BURGS_001 = np.array(
-    [
-        [1.0, 0.0, 0.0],
-        [-1.0, 0.0, 0.0],
-        [0.0, 1.0, 0.0],
-        [0.0, -1.0, 0.0],
-        [1.0, 1.0, 0.0],
-        [1.0, -1.0, 0.0],
-        [-1.0, 1.0, 0.0],
-        [-1.0, -1.0, 0.0],
-    ],
-    dtype=float,
-)
+# All glissile loops share one in-plane Burgers vector on (001).
+# With reference sigma_xz < 0, b=[100] loops expand; Proximity collision then
+# allows coplanar same-b arms to annihilate when they meet (including via PBC).
+BURG_001 = np.array([1.0, 0.0, 0.0], dtype=float)
 
 
 def _normalize(v: np.ndarray) -> np.ndarray:
@@ -157,26 +145,17 @@ def build_planar_loops_001(
     seed: int,
     margin: float,
     min_sep: float,
-    prefer_expanding_burgers: bool = True,
 ) -> tuple[DisNetManager, dict[str, Any]]:
-    """One or more circular glissile loops lying on the (001) plane."""
+    """One or more circular glissile loops on (001), all with the same Burgers vector."""
     rng = np.random.default_rng(seed)
     cell = pyexadis.Cell(h=box * np.eye(3), is_periodic=[1, 1, 1])
     z = 0.5 * box
     centers = _sample_centers_2d(rng, n_loops, box, z, margin, min_sep)
-
-    # Prefer ±[100] so reference sigma_xz expands/contracts coherently.
-    if prefer_expanding_burgers:
-        burg_list = np.array([[1.0, 0.0, 0.0], [-1.0, 0.0, 0.0]])
-    else:
-        burg_list = BURGS_001.copy()
-    for i in range(len(burg_list)):
-        burg_list[i] = _normalize(burg_list[i]) * np.linalg.norm(BURGS_001[0])
+    b = BURG_001.copy()
 
     nodes, segs = [], []
     loop_meta = []
     for i in range(n_loops):
-        b = burg_list[i % len(burg_list)]
         # Slight radius jitter for multi-loop diversity
         ri = radius * float(rng.uniform(0.92, 1.08)) if n_loops > 1 else radius
         nodes, segs = insert_circular_glissile_loop(
@@ -201,6 +180,7 @@ def build_planar_loops_001(
         "maxseg": maxseg,
         "seed": seed,
         "loops": loop_meta,
+        "common_burgers": b.tolist(),
         "loop_kind": "circular_glissile_001",
         "dimensionality": "2D",
         "glide_plane": "001",
@@ -223,21 +203,20 @@ def build_line_loop_001(
     z = 0.5 * box
     nodes, segs = [], []
 
-    b_line = np.array([1.0, 0.0, 0.0])
+    b = BURG_001.copy()
     # Edge line along y (theta=90° from b in the plane)
     origin = np.array([0.35 * box, 0.50 * box, z])
     origin[:2] += rng.uniform(-0.03, 0.03, size=2) * box
     origin[:2] = np.clip(origin[:2], margin, box - margin)
     nodes, segs = insert_infinite_line(
-        cell, nodes, segs, b_line, PLANE_001, origin, theta=90.0, maxseg=maxseg
+        cell, nodes, segs, b, PLANE_001, origin, theta=90.0, maxseg=maxseg
     )
 
-    b_loop = np.array([1.0, 0.0, 0.0])
     center = np.array([0.65 * box, 0.50 * box, z])
     center[:2] += rng.uniform(-0.04, 0.04, size=2) * box
     center[:2] = np.clip(center[:2], margin + radius, box - margin - radius)
     nodes, segs = insert_circular_glissile_loop(
-        cell, nodes, segs, b_loop, PLANE_001, radius, center, maxseg
+        cell, nodes, segs, b, PLANE_001, radius, center, maxseg
     )
 
     G = ExaDisNet(cell, nodes, segs)
@@ -248,15 +227,16 @@ def build_line_loop_001(
         "radius": radius,
         "maxseg": maxseg,
         "seed": seed,
+        "common_burgers": b.tolist(),
         "line": {
-            "burgers": b_line.tolist(),
+            "burgers": b.tolist(),
             "plane": PLANE_001.tolist(),
             "origin": origin.tolist(),
             "theta_deg": 90.0,
         },
         "loop": {
             "center": center.tolist(),
-            "burgers": b_loop.tolist(),
+            "burgers": b.tolist(),
             "plane": PLANE_001.tolist(),
             "radius": float(radius),
         },
@@ -281,9 +261,9 @@ def build_glissile_junction_001(
     nodes, segs = [], []
 
     length = 0.45 * box
-    b1 = np.array([1.0, 0.0, 0.0])
-    b2 = np.array([0.0, 1.0, 0.0])
-    # Lines oriented to cross in-plane
+    # Same Burgers for both FR sources (glissile on 001); they interact/annihilate
+    # under Proximity collision rather than forming a multi-slip junction.
+    b = BURG_001.copy()
     center = np.array([0.5 * box, 0.5 * box, z])
     delta = 0.03 * box
     c1 = center + np.array([-delta, 0.0, 0.0])
@@ -298,10 +278,10 @@ def build_glissile_junction_001(
         return np.array([np.cos(ph), np.sin(ph), 0.0])
 
     nodes, segs = insert_frank_read_src(
-        cell, nodes, segs, b1, PLANE_001, length, c1, linedir=ldir(phi1), numnodes=numnodes
+        cell, nodes, segs, b, PLANE_001, length, c1, linedir=ldir(phi1), numnodes=numnodes
     )
     nodes, segs = insert_frank_read_src(
-        cell, nodes, segs, b2, PLANE_001, length, c2, linedir=ldir(phi2), numnodes=numnodes
+        cell, nodes, segs, b, PLANE_001, length, c2, linedir=ldir(phi2), numnodes=numnodes
     )
 
     # Force all nodes exactly onto z-plane (FR insert is already planar if linedir.z=0)
@@ -324,7 +304,8 @@ def build_glissile_junction_001(
         "glide_plane": "001",
         "plane_normal": PLANE_001.tolist(),
         "z_plane": float(z),
-        "burgers": [b1.tolist(), b2.tolist()],
+        "common_burgers": b.tolist(),
+        "burgers": [b.tolist(), b.tolist()],
     }
     return DisNetManager(G), meta
 
@@ -364,7 +345,6 @@ def build_geometry(
         usable = box - 2.0 * margin_eff
         if n > 1 and min_sep_eff > usable / np.ceil(np.sqrt(n)):
             min_sep_eff = 0.90 * usable / np.ceil(np.sqrt(n))
-        prefer = case_type in ("single_loop", "fov_variant", "double_loop", "triple_loop")
         return build_planar_loops_001(
             box,
             n,
@@ -373,7 +353,6 @@ def build_geometry(
             seed,
             margin_eff,
             min_sep_eff,
-            prefer_expanding_burgers=prefer,
         )
     if case_type == "line_loop":
         return build_line_loop_001(box, radius, maxseg, seed, margin)

@@ -19,6 +19,10 @@ loops:
   - 0.0
   - 1.0
   plane_name: '001'
+common_burgers:
+- 1.0
+- 0.0
+- 0.0
 loop_kind: circular_glissile_001
 dimensionality: 2D
 glide_plane: '001'

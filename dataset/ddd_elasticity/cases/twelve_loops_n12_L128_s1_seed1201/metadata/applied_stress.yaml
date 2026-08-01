@@ -9,7 +9,7 @@ applied_stress:
 - 0.0
 - 0.0
 - 0.0
-- -5000000000.0
+- 0.0
 - -5000000000.0
 - 0.0
 stress_factor: 1.0
@@ -17,7 +17,8 @@ reference_applied_stress:
 - 0.0
 - 0.0
 - 0.0
-- -5.0e9
+- 0.0
 - -5.0e9
 - 0.0
-loading_note: sigma_xz drives (001)[100] glide; negative expands loops
+loading_note: sigma_xz drives (001)[100] glide; negative expands loops; same-b glissile
+  arms annihilate under Proximity collision

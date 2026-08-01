@@ -1,149 +1,56 @@
-{
-  "n_cases": 9,
-  "cases": [
-    {
-      "case_name": "double_loop_n2_L32_s1_seed201",
-      "case_type": "double_loop",
-      "dimensionality": "2D",
-      "glide_plane": "001",
-      "box_size_solver_3d": [
-        32.0,
-        32.0,
-        32.0
-      ],
-      "field_of_view_001_2d": [
-        32.0,
-        32.0
-      ],
-      "video": "/workspace/dataset/ddd_elasticity/cases/double_loop_n2_L32_s1_seed201/visualizations/evolution.mp4"
-    },
-    {
-      "case_name": "fov_variant_n2_L64_s1_seed701_fov32",
-      "case_type": "fov_variant",
-      "dimensionality": "2D",
-      "glide_plane": "001",
-      "box_size_solver_3d": [
-        64.0,
-        64.0,
-        64.0
-      ],
-      "field_of_view_001_2d": [
-        32.0,
-        32.0
-      ],
-      "video": "/workspace/dataset/ddd_elasticity/cases/fov_variant_n2_L64_s1_seed701_fov32/visualizations/evolution.mp4"
-    },
-    {
-      "case_name": "glissile_junction_n0_L64_s1_seed501",
-      "case_type": "glissile_junction",
-      "dimensionality": "2D",
-      "glide_plane": "001",
-      "box_size_solver_3d": [
-        64.0,
-        64.0,
-        64.0
-      ],
-      "field_of_view_001_2d": [
-        64.0,
-        64.0
-      ],
-      "video": "/workspace/dataset/ddd_elasticity/cases/glissile_junction_n0_L64_s1_seed501/visualizations/evolution.mp4"
-    },
-    {
-      "case_name": "line_loop_n1_L32_s1_seed401",
-      "case_type": "line_loop",
-      "dimensionality": "2D",
-      "glide_plane": "001",
-      "box_size_solver_3d": [
-        32.0,
-        32.0,
-        32.0
-      ],
-      "field_of_view_001_2d": [
-        32.0,
-        32.0
-      ],
-      "video": "/workspace/dataset/ddd_elasticity/cases/line_loop_n1_L32_s1_seed401/visualizations/evolution.mp4"
-    },
-    {
-      "case_name": "single_loop_n1_L32_s0p5_seed102",
-      "case_type": "single_loop",
-      "dimensionality": "2D",
-      "glide_plane": "001",
-      "box_size_solver_3d": [
-        32.0,
-        32.0,
-        32.0
-      ],
-      "field_of_view_001_2d": [
-        32.0,
-        32.0
-      ],
-      "video": "/workspace/dataset/ddd_elasticity/cases/single_loop_n1_L32_s0p5_seed102/visualizations/evolution.mp4"
-    },
-    {
-      "case_name": "single_loop_n1_L32_s1_seed101",
-      "case_type": "single_loop",
-      "dimensionality": "2D",
-      "glide_plane": "001",
-      "box_size_solver_3d": [
-        32.0,
-        32.0,
-        32.0
-      ],
-      "field_of_view_001_2d": [
-        32.0,
-        32.0
-      ],
-      "video": "/workspace/dataset/ddd_elasticity/cases/single_loop_n1_L32_s1_seed101/visualizations/evolution.mp4"
-    },
-    {
-      "case_name": "six_loops_n6_L64_s1_seed601",
-      "case_type": "six_loops",
-      "dimensionality": "2D",
-      "glide_plane": "001",
-      "box_size_solver_3d": [
-        64.0,
-        64.0,
-        64.0
-      ],
-      "field_of_view_001_2d": [
-        64.0,
-        64.0
-      ],
-      "video": "/workspace/dataset/ddd_elasticity/cases/six_loops_n6_L64_s1_seed601/visualizations/evolution.mp4"
-    },
-    {
-      "case_name": "triple_loop_n3_L32_s1_seed301",
-      "case_type": "triple_loop",
-      "dimensionality": "2D",
-      "glide_plane": "001",
-      "box_size_solver_3d": [
-        32.0,
-        32.0,
-        32.0
-      ],
-      "field_of_view_001_2d": [
-        32.0,
-        32.0
-      ],
-      "video": "/workspace/dataset/ddd_elasticity/cases/triple_loop_n3_L32_s1_seed301/visualizations/evolution.mp4"
-    },
-    {
-      "case_name": "twelve_loops_n12_L128_s1_seed1201",
-      "case_type": "twelve_loops",
-      "dimensionality": "2D",
-      "glide_plane": "001",
-      "box_size_solver_3d": [
-        128.0,
-        128.0,
-        128.0
-      ],
-      "field_of_view_001_2d": [
-        128.0,
-        128.0
-      ],
-      "video": "/workspace/dataset/ddd_elasticity/cases/twelve_loops_n12_L128_s1_seed1201/visualizations/evolution.mp4"
-    }
-  ]
-}
+[
+  {
+    "case_dir": "/workspace/dataset/ddd_elasticity/cases/double_loop_n2_L32_s1_seed201",
+    "case_type": "double_loop",
+    "status": "success",
+    "annihilated": true
+  },
+  {
+    "case_dir": "/workspace/dataset/ddd_elasticity/cases/fov_variant_n2_L64_s1_seed701_fov32",
+    "case_type": "fov_variant",
+    "status": "success",
+    "annihilated": true
+  },
+  {
+    "case_dir": "/workspace/dataset/ddd_elasticity/cases/glissile_junction_n0_L64_s1_seed501",
+    "case_type": "glissile_junction",
+    "status": "success",
+    "annihilated": false
+  },
+  {
+    "case_dir": "/workspace/dataset/ddd_elasticity/cases/line_loop_n1_L32_s1_seed401",
+    "case_type": "line_loop",
+    "status": "success",
+    "annihilated": false
+  },
+  {
+    "case_dir": "/workspace/dataset/ddd_elasticity/cases/single_loop_n1_L32_s0p5_seed102",
+    "case_type": "single_loop",
+    "status": "success",
+    "annihilated": true
+  },
+  {
+    "case_dir": "/workspace/dataset/ddd_elasticity/cases/single_loop_n1_L32_s1_seed101",
+    "case_type": "single_loop",
+    "status": "success",
+    "annihilated": false
+  },
+  {
+    "case_dir": "/workspace/dataset/ddd_elasticity/cases/six_loops_n6_L64_s1_seed601",
+    "case_type": "six_loops",
+    "status": "success",
+    "annihilated": true
+  },
+  {
+    "case_dir": "/workspace/dataset/ddd_elasticity/cases/triple_loop_n3_L32_s1_seed301",
+    "case_type": "triple_loop",
+    "status": "success",
+    "annihilated": true
+  },
+  {
+    "case_dir": "/workspace/dataset/ddd_elasticity/cases/twelve_loops_n12_L128_s1_seed1201",
+    "case_type": "twelve_loops",
+    "status": "success",
+    "annihilated": true
+  }
+]

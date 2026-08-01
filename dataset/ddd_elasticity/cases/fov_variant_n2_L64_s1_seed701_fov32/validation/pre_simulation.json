@@ -9,9 +9,9 @@
     64.0,
     64.0
   ],
-  "segment_length_min": 3.63398410612784,
+  "segment_length_min": 3.6339841061278397,
   "segment_length_max": 3.70675912947468,
-  "segment_length_mean": 3.668231175938118,
+  "segment_length_mean": 3.6682311759381174,
   "planarity_001": {
     "z_mean": 32.0,
     "z_span": 0.0,

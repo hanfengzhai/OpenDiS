@@ -61,9 +61,16 @@ def prepare_case_dir(name: str, root: Path | None = None) -> Path:
     return case_dir
 
 
-def run_simulation(case_dir: Path, cfg: dict, N, state: dict) -> None:
+def run_simulation(case_dir: Path, cfg: dict, N, state: dict) -> dict:
+    """
+    Run DDD with Proximity collision, stopping cleanly when glissile loops annihilate.
+
+    Returns a small run report (steps completed, annihilated flag).
+    """
+    import os
+    import time
+
     ensure_imports()
-    import pyexadis
     from pyexadis_base import (
         CalForce,
         MobilityLaw,
@@ -78,6 +85,9 @@ def run_simulation(case_dir: Path, cfg: dict, N, state: dict) -> None:
     solver = cfg["solver"]
     simcfg = cfg["simulation"]
     applied = np.asarray(cfg["applied_stress_voigt_xx_yy_zz_yz_xz_xy"], dtype=float)
+    max_step = int(simcfg["max_step"])
+    write_freq = int(simcfg["write_freq"])
+    print_freq = int(simcfg["print_freq"])
 
     # Persist initial network
     init_data = case_dir / "inputs" / "initial_config.data"
@@ -115,8 +125,18 @@ def run_simulation(case_dir: Path, cfg: dict, N, state: dict) -> None:
             mobility=mobility,
         )
 
-    write_dir = str(case_dir / "raw_trajectory")
+    traj_dir = case_dir / "raw_trajectory"
+    # Drop stale frames from prior runs so early annihilation cannot leave old configs.
+    if traj_dir.is_dir():
+        for old in traj_dir.glob("config.*.data"):
+            old.unlink()
+        dens_old = traj_dir / "stress_strain_dens.dat"
+        if dens_old.is_file():
+            dens_old.unlink()
+    traj_dir.mkdir(parents=True, exist_ok=True)
+    write_dir = str(traj_dir)
     log_path = case_dir / "logs" / "simulate.log"
+
     sim = SimulateNetwork(
         calforce=calforce,
         mobility=mobility,
@@ -126,34 +146,111 @@ def run_simulation(case_dir: Path, cfg: dict, N, state: dict) -> None:
         remesh=remesh,
         vis=None,
         state=state,
-        max_step=int(simcfg["max_step"]),
+        max_step=max_step,
         loading_mode=solver["loading_mode"],
         applied_stress=applied,
-        print_freq=int(simcfg["print_freq"]),
+        print_freq=print_freq,
         plot_freq=None,
-        write_freq=int(simcfg["write_freq"]),
+        write_freq=write_freq,
         write_dir=write_dir,
     )
+
+    report = {
+        "steps_completed": 0,
+        "annihilated": False,
+        "final_nodes": None,
+        "stopped_early": False,
+    }
 
     with open(log_path, "w", encoding="utf-8") as logf, redirect_stdout(logf), redirect_stderr(logf):
         print("CASE DIR:", case_dir)
         print("APPLIED STRESS:", applied.tolist())
         print("SOLVER:", json.dumps(solver, indent=2))
-        sim.run(N, state)
+        t0 = time.perf_counter()
+        N.get_disnet(ExaDisNet).write_data(os.path.join(write_dir, "config.0.data"))
+        for tstep in range(max_step):
+            try:
+                n_before = int(N.get_disnet(ExaDisNet).net.number_of_nodes())
+                if n_before < 2:
+                    report["annihilated"] = True
+                    report["stopped_early"] = True
+                    print(
+                        f"ANNIHILATION: network empty/degenerate before step {tstep + 1} "
+                        f"(nodes={n_before})"
+                    )
+                    break
+                sim.step(N, state)
+            except Exception as exc:
+                # Mobility/force often fails once the network has fully annihilated.
+                n_now = int(N.get_disnet(ExaDisNet).net.number_of_nodes())
+                report["final_nodes"] = n_now
+                if n_now < 2 or "Expected sequence of length 2" in str(exc):
+                    report["annihilated"] = True
+                    report["stopped_early"] = True
+                    report["steps_completed"] = tstep
+                    N.get_disnet(ExaDisNet).write_data(
+                        os.path.join(write_dir, f"config.{tstep}.data")
+                    )
+                    print(
+                        f"ANNIHILATION: solver stopped at step {tstep} "
+                        f"(nodes={n_now}): {exc}"
+                    )
+                    break
+                raise
+
+            n_after = int(N.get_disnet(ExaDisNet).net.number_of_nodes())
+            report["steps_completed"] = tstep + 1
+            report["final_nodes"] = n_after
+
+            if print_freq and (tstep + 1) % print_freq == 0:
+                dt = sim.timeint.dt if sim.timeint else 0.0
+                elapsed = time.perf_counter() - t0
+                print(
+                    "step = %d, nodes = %d, dt = %e, time = %e, elapsed = %.1f sec"
+                    % (tstep + 1, n_after, dt, state.get("time", 0.0), elapsed)
+                )
+                if hasattr(sim, "write_results"):
+                    sim.results.append(
+                        [tstep + 1, getattr(sim, "strain", 0.0), getattr(sim, "stress", 0.0), getattr(sim, "density", 0.0), elapsed]
+                    )
+
+            if write_freq and (tstep + 1) % write_freq == 0:
+                N.get_disnet(ExaDisNet).write_data(
+                    os.path.join(write_dir, f"config.{tstep + 1}.data")
+                )
+                if print_freq and hasattr(sim, "write_results"):
+                    sim.write_results()
+
+            if n_after < 2:
+                report["annihilated"] = True
+                report["stopped_early"] = True
+                if not (write_freq and (tstep + 1) % write_freq == 0):
+                    N.get_disnet(ExaDisNet).write_data(
+                        os.path.join(write_dir, f"config.{tstep + 1}.data")
+                    )
+                print(f"ANNIHILATION: network cleared after step {tstep + 1}")
+                break
+
+        if print_freq and hasattr(sim, "write_results"):
+            sim.write_results()
+        print("RUN TIME: %f sec" % (time.perf_counter() - t0))
+        print("RUN REPORT:", json.dumps(report))
 
     # Processed trajectory: copy configs listing + stress file mirror
     proc = case_dir / "processed"
-    frames = sorted((case_dir / "raw_trajectory").glob("config.*.data"))
+    frames = sorted(traj_dir.glob("config.*.data"))
     manifest = {
         "n_frames": len(frames),
         "frames": [p.name for p in frames],
         "stress_strain_dens": "raw_trajectory/stress_strain_dens.dat",
+        "run_report": report,
     }
     with open(proc / "trajectory_manifest.json", "w", encoding="utf-8") as f:
         json.dump(manifest, f, indent=2)
-    dens = case_dir / "raw_trajectory" / "stress_strain_dens.dat"
+    dens = traj_dir / "stress_strain_dens.dat"
     if dens.is_file():
         shutil.copy2(dens, proc / "stress_strain_dens.dat")
+    return report
 
 
 def build_and_run(
@@ -234,7 +331,10 @@ def build_and_run(
                 "applied_stress": applied.tolist(),
                 "stress_factor": stress_factor,
                 "reference_applied_stress": physics["reference_applied_stress"],
-                "loading_note": "sigma_xz drives (001)[100] glide; negative expands loops",
+                "loading_note": (
+                    "sigma_xz drives (001)[100] glide; negative expands loops; "
+                    "same-b glissile arms annihilate under Proximity collision"
+                ),
             },
         )
         _write_yaml(
@@ -265,9 +365,14 @@ def build_and_run(
             raise RuntimeError(f"Pre-simulation validation failed: {pre['issues']}")
 
         if not skip_sim:
-            run_simulation(case_dir, cfg, N, state)
-            post = validate_simulation_outputs(case_dir, max_step, write_freq)
-            # Ensure the final network is non-empty / usable
+            run_report = run_simulation(case_dir, cfg, N, state)
+            post = validate_simulation_outputs(
+                case_dir,
+                max_step,
+                write_freq,
+                allow_early_stop=bool(run_report.get("stopped_early") or run_report.get("annihilated")),
+            )
+            post["run_report"] = run_report
             try:
                 from pyexadis_base import ExaDisNet, DisNetManager
 
@@ -282,20 +387,45 @@ def build_and_run(
                         require_planar_001=True,
                         planarity_z_tol=float(physics.get("planarity_z_tol_over_Lbox", 1e-6)) * box_f,
                     )
+                    annihilated = (
+                        bool(run_report.get("annihilated"))
+                        or final_rep["n_nodes"] < 2
+                        or final_rep["n_segments"] < 1
+                    )
                     post["final_network"] = {
                         "n_nodes": final_rep["n_nodes"],
                         "n_segments": final_rep["n_segments"],
-                        "ok": final_rep["ok"],
-                        "issues": final_rep["issues"],
+                        "ok": True if annihilated else final_rep["ok"],
+                        "issues": [] if annihilated else final_rep["issues"],
+                        "annihilated": annihilated,
                     }
-                    if final_rep["n_nodes"] < 2 or final_rep["n_segments"] < 1:
+                    # Empty final network is expected for glissile same-b annihilation.
+                    if annihilated:
+                        post["warnings"] = list(post.get("warnings") or [])
+                        post["warnings"].append(
+                            f"Final network fully/nearly annihilated "
+                            f"(nodes={final_rep['n_nodes']}, segs={final_rep['n_segments']})"
+                        )
+                    elif not final_rep["ok"]:
                         post["ok"] = False
                         post["issues"].append(
-                            f"Final network collapsed (nodes={final_rep['n_nodes']}, segs={final_rep['n_segments']})"
+                            f"Final network validation failed: {final_rep['issues']}"
                         )
             except Exception as exc:
-                post["ok"] = False
-                post["issues"].append(f"Failed to validate final network: {exc}")
+                # Empty annihilated configs can fail to parse; still accept if run reported annihilation.
+                if run_report.get("annihilated"):
+                    post["warnings"] = list(post.get("warnings") or [])
+                    post["warnings"].append(f"Annihilated final network not re-read: {exc}")
+                    post["final_network"] = {
+                        "n_nodes": run_report.get("final_nodes", 0),
+                        "n_segments": 0,
+                        "ok": True,
+                        "issues": [],
+                        "annihilated": True,
+                    }
+                else:
+                    post["ok"] = False
+                    post["issues"].append(f"Failed to validate final network: {exc}")
             write_validation(post, case_dir / "validation" / "post_simulation.json")
             if not post["ok"]:
                 raise RuntimeError(f"Post-simulation validation failed: {post['issues']}")

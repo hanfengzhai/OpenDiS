@@ -36,22 +36,20 @@ force_mode: DDD_FFT_MODEL
 mobility_law: SimpleGlide
 mobility_mob: 400.0
 integrator: Trapezoid
-# Collision/remesh can annihilate small planar FFT loops; keep off by default.
-# Enable per-case via case_catalog overrides (e.g. glissile_junction).
-collision_mode: null
+# Glissile same-b loops on (001) must be able to annihilate when arms meet.
+collision_mode: Proximity
 topology_mode: null
-remesh_rule: null
+remesh_rule: LengthBased
 loading_mode: stress
 
 # Voigt order: [xx, yy, zz, yz, xz, xy]
-# For (001) glide:
-#   RSS(b=[100]) = sigma_xz, RSS(b=[010]) = sigma_yz
-# Negative values expand planar loops against self-stress (no-remesh FFT).
+# For (001)[100] glide, RSS = sigma_xz. Negative expands planar loops.
+# sigma_yz kept for completeness but all loops use b=[100].
 reference_applied_stress:
   - 0.0
   - 0.0
   - 0.0
-  - -5.0e9
+  - 0.0
   - -5.0e9
   - 0.0
 

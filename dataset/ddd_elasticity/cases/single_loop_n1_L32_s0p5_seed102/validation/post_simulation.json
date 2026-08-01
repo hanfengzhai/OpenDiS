@@ -1,12 +1,22 @@
 {
   "ok": true,
   "issues": [],
-  "warnings": [],
-  "n_frames": 7,
+  "warnings": [
+    "Early stop before max_step; missing later frames: [20, 30, 40, 50, 60]",
+    "Annihilated final network not re-read: not enough values to unpack (expected 2, got 0)"
+  ],
+  "n_frames": 3,
+  "run_report": {
+    "steps_completed": 18,
+    "annihilated": true,
+    "final_nodes": 0,
+    "stopped_early": true
+  },
   "final_network": {
-    "n_nodes": 19,
-    "n_segments": 19,
+    "n_nodes": 0,
+    "n_segments": 0,
     "ok": true,
-    "issues": []
+    "issues": [],
+    "annihilated": true
   }
 }

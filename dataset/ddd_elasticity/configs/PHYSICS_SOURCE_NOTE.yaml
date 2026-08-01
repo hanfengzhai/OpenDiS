@@ -21,11 +21,13 @@ mobility_mob: 400.0
 dimensionality: "2D"
 glide_plane: "001"
 plane_normal: [0.0, 0.0, 1.0]
-# Voigt [xx,yy,zz,yz,xz,xy]: sigma_yz and sigma_xz drive (001)[010]/[100]
-# glide; negative values expand planar loops against self-stress.
-reference_applied_stress_voigt: [0.0, 0.0, 0.0, -5.0e9, -5.0e9, 0.0]
+# Voigt [xx,yy,zz,yz,xz,xy]: sigma_xz drives (001)[100] glide for all loops.
+# All glissile loops share b=[100]; Proximity collision enables annihilation.
+reference_applied_stress_voigt: [0.0, 0.0, 0.0, 0.0, -5.0e9, 0.0]
+common_burgers: [1.0, 0.0, 0.0]
 dataset_fov_is_2d_on_001: true
 solver_cell_is_3d_cubic: true
 fft_requires_full_pbc: true
-collision_remesh_default: null
-note_remesh: "Remesh/collision off by default; enabled only for glissile_junction."
+collision_mode: Proximity
+remesh_rule: LengthBased
+note_annihilation: "Same-b glissile loops on 001 annihilate under Proximity+LengthBased."

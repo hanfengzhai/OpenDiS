@@ -174,6 +174,14 @@ def validate_network(
             bz = np.abs(b[:, 2]) / (np.linalg.norm(b, axis=1) + 1e-30)
             if np.any(bz > 1e-3):
                 issues.append(f"{int((bz > 1e-3).sum())} segments have out-of-plane Burgers")
+            # Dataset policy: all glissile content shares one Burgers vector b=[100]
+            b_unit = b / (np.linalg.norm(b, axis=1)[:, None] + 1e-30)
+            ref = np.array([1.0, 0.0, 0.0])
+            align = np.abs(np.sum(b_unit * ref[None, :], axis=1))
+            if np.any(align < 0.999):
+                issues.append(
+                    f"{int((align < 0.999).sum())} segments do not share common Burgers b=[100]"
+                )
 
     report = {
         "ok": len(issues) == 0,
@@ -190,7 +198,12 @@ def validate_network(
     return report
 
 
-def validate_simulation_outputs(case_dir: Path, max_step: int, write_freq: int) -> dict[str, Any]:
+def validate_simulation_outputs(
+    case_dir: Path,
+    max_step: int,
+    write_freq: int,
+    allow_early_stop: bool = False,
+) -> dict[str, Any]:
     issues = []
     warnings = []
     raw_dir = case_dir / "raw_trajectory"
@@ -202,17 +215,24 @@ def validate_simulation_outputs(case_dir: Path, max_step: int, write_freq: int) 
     if not configs:
         issues.append("No config.*.data trajectory files")
     else:
-        expected = {0}
-        expected.update(range(write_freq, max_step + 1, write_freq))
         found = set()
         for p in configs:
             try:
                 found.add(int(p.name.split(".")[1]))
             except Exception:
                 warnings.append(f"Unexpected filename {p.name}")
+        if 0 not in found:
+            issues.append("Missing initial trajectory frame config.0.data")
+        expected = {0}
+        expected.update(range(write_freq, max_step + 1, write_freq))
         missing = sorted(expected - found)
-        if missing:
+        if missing and not allow_early_stop:
             issues.append(f"Missing trajectory frames: {missing[:10]}{'...' if len(missing)>10 else ''}")
+        elif missing and allow_early_stop:
+            warnings.append(
+                f"Early stop before max_step; missing later frames: "
+                f"{missing[:10]}{'...' if len(missing)>10 else ''}"
+            )
 
     log = case_dir / "logs" / "simulate.log"
     if not log.is_file():

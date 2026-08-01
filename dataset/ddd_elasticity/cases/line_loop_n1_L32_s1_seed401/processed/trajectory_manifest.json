@@ -9,5 +9,11 @@
     "config.50.data",
     "config.60.data"
   ],
-  "stress_strain_dens": "raw_trajectory/stress_strain_dens.dat"
+  "stress_strain_dens": "raw_trajectory/stress_strain_dens.dat",
+  "run_report": {
+    "steps_completed": 60,
+    "annihilated": false,
+    "final_nodes": 22,
+    "stopped_early": false
+  }
 }

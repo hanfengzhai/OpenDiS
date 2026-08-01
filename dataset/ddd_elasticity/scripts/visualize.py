@@ -48,9 +48,11 @@ def _segment_polylines(N: DisNetManager, ref_center: np.ndarray):
         h=cell["h"], origin=cell.get("origin", [0, 0, 0]), is_periodic=cell.get("is_periodic", [1, 1, 1])
     )
     rn = np.asarray(data["nodes"]["positions"], dtype=float)
+    if rn.size == 0:
+        return [], np.zeros((0, 3))
     segs = data["segs"]
-    ids = np.asarray(segs["nodeids"], dtype=int)
-    burgs = np.asarray(segs["burgers"], dtype=float)
+    ids = np.asarray(segs["nodeids"], dtype=int).reshape(-1, 2) if len(segs["nodeids"]) else np.zeros((0, 2), dtype=int)
+    burgs = np.asarray(segs["burgers"], dtype=float).reshape(-1, 3) if len(segs["burgers"]) else np.zeros((0, 3))
     lines = []
     colors = []
     for (i0, i1), b in zip(ids, burgs):
@@ -161,7 +163,11 @@ def render_frame(
     ax.set_aspect("equal", adjustable="box")
     ax.set_xlabel("x")
     ax.set_ylabel("y")
-    ax.set_title(title + "  —  2D (001) plane", fontsize=11)
+    suffix = "  —  2D (001) plane"
+    if not len(lines):
+        suffix += " [annihilated]"
+        ax.text(0.5 * box, 0.5 * box, "annihilated", ha="center", va="center", color="0.45", fontsize=14)
+    ax.set_title(title + suffix, fontsize=11)
     ax.grid(True, alpha=0.25)
     fig.tight_layout()
     if out_path is not None:

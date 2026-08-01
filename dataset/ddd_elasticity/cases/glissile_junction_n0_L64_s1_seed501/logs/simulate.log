@@ -1,5 +1,5 @@
 CASE DIR: /workspace/dataset/ddd_elasticity/cases/glissile_junction_n0_L64_s1_seed501
-APPLIED STRESS: [0.0, 0.0, 0.0, -5000000000.0, -5000000000.0, 0.0]
+APPLIED STRESS: [0.0, 0.0, 0.0, 0.0, -5000000000.0, 0.0]
 SOLVER: {
   "force_mode": "DDD_FFT_MODEL",
   "mobility_law": "SimpleGlide",
@@ -21,10 +21,11 @@ SOLVER: {
     64.0
   ]
 }
-step = 10, nodes = 21, dt = 2.579890e-13, time = 1.297934e-12, elapsed = 0.1 sec
-step = 20, nodes = 33, dt = 2.773264e-13, time = 5.003794e-12, elapsed = 0.1 sec
-step = 30, nodes = 37, dt = 2.981132e-13, time = 8.689311e-12, elapsed = 0.2 sec
-step = 40, nodes = 42, dt = 1.335242e-13, time = 1.193004e-11, elapsed = 0.2 sec
-step = 50, nodes = 47, dt = 1.435324e-13, time = 1.342811e-11, elapsed = 0.3 sec
-step = 60, nodes = 50, dt = 1.851489e-13, time = 1.510643e-11, elapsed = 0.3 sec
-RUN TIME: 0.341680 sec
+step = 10, nodes = 20, dt = 2.579890e-13, time = 1.297934e-12, elapsed = 0.1 sec
+step = 20, nodes = 25, dt = 1.155527e-13, time = 2.761502e-12, elapsed = 0.1 sec
+step = 30, nodes = 29, dt = 1.490566e-13, time = 5.347431e-12, elapsed = 0.2 sec
+step = 40, nodes = 29, dt = 1.922748e-13, time = 7.340824e-12, elapsed = 0.2 sec
+step = 50, nodes = 39, dt = 4.133733e-13, time = 9.856442e-12, elapsed = 0.3 sec
+step = 60, nodes = 52, dt = 4.443573e-13, time = 1.372818e-11, elapsed = 0.3 sec
+RUN TIME: 0.336637 sec
+RUN REPORT: {"steps_completed": 60, "annihilated": false, "final_nodes": 52, "stopped_early": false}

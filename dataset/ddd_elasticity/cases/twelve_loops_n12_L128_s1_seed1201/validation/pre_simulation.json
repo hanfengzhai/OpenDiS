@@ -9,9 +9,9 @@
     128.0,
     128.0
   ],
-  "segment_length_min": 5.656202230420391,
+  "segment_length_min": 5.656202230420383,
   "segment_length_max": 6.385566083657001,
-  "segment_length_mean": 6.104348238259833,
+  "segment_length_mean": 6.104348238259831,
   "planarity_001": {
     "z_mean": 64.0,
     "z_span": 0.0,
